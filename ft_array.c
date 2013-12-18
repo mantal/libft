@@ -6,17 +6,16 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/17 12:42:35 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/18 16:02:05 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/18 16:11:19 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
+
 /*
 ** Return a ptr to a mallocated t_array.
-** Type is the type of the array (CHAR, INT, UINT ...) type should not be set
-** at multiple type as the behavior is undefined. If the first byte of type is
-** 1, the memory will be inialised to nul.
+** Current flags : TRUE -> memory will always be initialised to nul.
 ** Return NULL if an error occured.
 */
 t_array	*array_new_c(size_t capacity, size_t size_change, size_t size_type,
@@ -47,7 +46,6 @@ t_array	*array_add(t_array *arr, void* value)
 		if (!array_resize(arr, BUFF_SIZE))
 			return (NULL);
 	}
-	//ft_set_i(arr->tab, value, arr->size, arr->flags);
 	array_set(arr, value, arr->size);
 	arr->size++;
 	return (arr);	
