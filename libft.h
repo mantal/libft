@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/29 09:41:14 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/15 17:16:52 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/18 15:54:56 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,23 +26,42 @@
 
 # define LOAD_FACTOR 0.75
 
+# define CHAR 2
+# define UCHAR 4
+# define SHORT 8
+# define USHORT 16
+# define INT 32
+# define UINT 64
+# define LINT 128
+# define ULINT 256
+# define LLINT 512
+# define ULLINT 1028
+# define DOUBLE 2048
+# define FLOAT 4096
+
 typedef unsigned char	t_bool;
+typedef unsigned int	t_flags;
+typedef unsigned int	t_uint;
 
 typedef struct	s_array
 {
-	int		*tab;
+	char	*tab;
 	size_t	size;
 	size_t	capacity;
+	size_t	size_change;
+	size_t	size_type;
+	t_flags	flags;
 }				t_array;
 
 /*
 ** Dynamic array function
 */
 
-t_array	*array_new();
-t_array	*array_new_c(size_t capacity, t_bool set);
-t_array	*array_add(t_array *arr, int value);
-t_array	*array_resize(t_array *arr, size_t add);
+t_array	*array_new_c(size_t capacity, size_t size_change, size_t size_type,
+						t_flags flags);
+t_array	*array_add(t_array *arr, void* value);
+t_array	*array_set(t_array *arr, void *value, unsigned int index);
+t_array	*array_resize(t_array *arr, t_bool auto_resize);
 void	array_free(t_array **arr);
 
 /*
@@ -80,10 +99,10 @@ void	*ft_memset(void *b, int c, size_t len);
 ** Math function
 */
 int		ft_pow(int x, unsigned int n);
+size_t	ft_get_size(int n);
 
 /*
 ** Display function
-** ft_putdouble and ft_putdouble_fd dont work.
 */
 void	ft_putchar(char c);
 void	ft_putchar_fd(char c, int fd);
@@ -91,6 +110,7 @@ void	ft_putendl(const char *s);
 void	ft_putendl_fd(const char *s, int fd);
 void	ft_putnbr(int n);
 void	ft_putnbr_fd(int n, int fd);
+void	ft_putint_base(unsigned int n, unsigned int base);
 void	ft_putstr(const char *s);
 void	ft_putstr_fd(const char *s, int fd);
 void	ft_putfstr(const char *s1, const void *arg);
@@ -140,5 +160,11 @@ char	*ft_strjoinf(char *s1, char *s2, unsigned char flag);
 ** File read function
 */
 int		ft_get_next(const int fd, char **line, char c);
+
+/*
+** Misc functions
+*/
+void	ft_set(void *data, const void *value, t_flags type);
+void	ft_set_i(void *data, const void *value, t_uint index, t_flags flags);
 #endif /* !LIBFT_H */
 

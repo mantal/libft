@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strnew.c                                        :+:      :+:    :+:   */
+/*   ft_get_size.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/27 16:38:06 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/17 12:24:52 by dlancar          ###   ########.fr       */
+/*   Created: 2013/12/17 12:27:16 by dlancar           #+#    #+#             */
+/*   Updated: 2013/12/17 12:35:11 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdlib.h>
+#include <string.h>
 
-char	*ft_strnew(size_t size)
+size_t	ft_get_size(int n)
 {
-	char	*s;
-
-	if (!size)
-		return (NULL);
-	s = (char*)malloc(sizeof(char) * size);
-	if (!s)
-		return (NULL);
-	ft_memset(s, '\0', size);
-	return (s);
+	unsigned int	res;
+	double			d;
+	
+	res = 0;
+	d = (n > 0) ? (double)n : -((double)n);
+	if (n == 0)
+		return (1);
+	while ((long int)d > 0)
+	{
+		d /= 10;
+		res++;
+	}
+	if (n < 0)
+		res++;
+	return (res);
 }
+
