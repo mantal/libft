@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/17 12:20:34 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/18 15:44:48 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/19 13:25:19 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void	ft_putint_base(unsigned int n, unsigned int base)
 	t_uint	temp;
 	int		i;
 	
-	res = array_new_c(5, 5, sizeof(unsigned int), UINT);
+	res = array_new(5, 5, sizeof(unsigned int), UINT);
 	while (n)
 	{
 		temp = n % base;
@@ -57,7 +57,7 @@ void	ft_putint_base_l(unsigned int n, unsigned int base)
 	t_uint	temp;
 	int		i;
 	
-	res = array_new_c(5, 5, sizeof(unsigned int), UINT);
+	res = array_new(5, 5, sizeof(unsigned int), UINT);
 	while (n)
 	{
 		temp = n % base;

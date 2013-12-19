@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/17 12:42:35 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/18 16:11:19 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/19 13:25:41 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 ** Current flags : TRUE -> memory will always be initialised to nul.
 ** Return NULL if an error occured.
 */
-t_array	*array_new_c(size_t capacity, size_t size_change, size_t size_type,
+t_array	*array_new(size_t capacity, size_t size_change, size_t size_type,
 						t_flags flags)
 {
 	t_array	*res;
