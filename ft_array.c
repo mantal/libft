@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/17 12:42:35 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/19 13:25:41 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/20 17:39:13 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ t_array	*array_new(size_t capacity, size_t size_change, size_t size_type,
 	if (!res->tab)
 		return (NULL);
 	if (flags & 1)
-		ft_bzero(res->tab, capacity);
+		ft_bzero(res->tab, size_change * capacity);
 	return (res);
 }
 
@@ -46,15 +46,20 @@ t_array	*array_add(t_array *arr, void* value)
 		if (!array_resize(arr, BUFF_SIZE))
 			return (NULL);
 	}
-	array_set(arr, value, arr->size);
+	if (arr->flags & PTR)
+		ft_memcpy((arr->tab + (arr->size * arr->size_type)),
+				&value, arr->size_type);
+	else
+		ft_memcpy((arr->tab + (arr->size * arr->size_type)),
+				value, arr->size_type);
 	arr->size++;
 	return (arr);	
 }
 
-t_array	*array_set(t_array *arr, void* value, unsigned int index)
+t_array	*array_insert(t_array *arr, void* value, unsigned int index)
 {
 	while (arr->capacity < index)
-		arr->capacity += arr->size_change;
+		array_resize(arr, FALSE);
 	if (index + 1 >= arr->size)
 		arr->size = index;
 	ft_memcpy(&arr->tab[arr->size_type * index], value, 1);
@@ -70,7 +75,7 @@ t_array	*array_set(t_array *arr, void* value, unsigned int index)
 */
 t_array	*array_resize(t_array *arr, t_bool auto_resize)
 {
-	char	*tab;
+	void	*tab;
 	
 	(void)auto_resize;
 	arr->capacity += arr->size_change;
@@ -78,7 +83,7 @@ t_array	*array_resize(t_array *arr, t_bool auto_resize)
 	if (!tab)
 		return (NULL);
 	if (arr->flags & 1)
-		ft_bzero(tab, arr->capacity);
+		ft_bzero(tab, arr->size_type * arr->capacity);
 	ft_memcpy(tab, arr->tab, arr->size * arr->size_type);
 	free(arr->tab);
 	arr->tab = tab;

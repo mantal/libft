@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/29 09:41:14 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/19 13:24:48 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/20 17:39:09 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,13 +39,15 @@
 # define DOUBLE 2048
 # define FLOAT 4096
 
+# define PTR 8192
+
 typedef unsigned char	t_bool;
 typedef unsigned int	t_flags;
 typedef unsigned int	t_uint;
 
 typedef struct	s_array
 {
-	char	*tab;
+	void	*tab;
 	size_t	size;
 	size_t	capacity;
 	size_t	size_change;
@@ -60,8 +62,9 @@ typedef struct	s_array
 t_array	*array_new(size_t capacity, size_t size_change, size_t size_type,
 						t_flags flags);
 t_array	*array_add(t_array *arr, void *value);
-t_array	*array_set(t_array *arr, void *value, unsigned int index);
+t_array	*array_insert(t_array *arr, void *value, unsigned int index);
 t_array	*array_resize(t_array *arr, t_bool auto_resize);
+void	*array_get(t_array *arr, unsigned int index);
 void	array_free(t_array **arr);
 
 /*

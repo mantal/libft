@@ -6,7 +6,7 @@
 #    By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+         #
 #                                                +#+#+#+#+#+   +#+             #
 #    Created: 2013/11/29 09:40:24 by dlancar           #+#    #+#              #
-#    Updated: 2013/12/17 14:36:08 by dlancar          ###   ########.fr        #
+#    Updated: 2013/12/19 15:43:23 by dlancar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,7 +27,7 @@ SRC		= ft_bzero.c ft_memset.c ft_memcpy.c ft_tolower.c ft_toupper.c \
 			ft_putfstr.c ft_snprintf.c ft_strjoinf.c ft_strnjoin.c \
 			ft_putint_base.c \
 			ft_get_next.c \
-			ft_array.c \
+			ft_array.c ft_array_2.c\
 			ft_get_size.c ft_misc.c
 OBJ		= $(SRC:.c=.o)
 INCL	= .
