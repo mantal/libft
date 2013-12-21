@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/17 12:42:35 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/20 17:39:13 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/21 10:55:31 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,14 +62,18 @@ t_array	*array_insert(t_array *arr, void* value, unsigned int index)
 		array_resize(arr, FALSE);
 	if (index + 1 >= arr->size)
 		arr->size = index;
-	ft_memcpy(&arr->tab[arr->size_type * index], value, 1);
+	if (arr->flags & PTR)
+		ft_memcpy((arr->tab + (index * arr->size_type)), &value,
+					arr->size_type);
+	else
+		ft_memcpy((arr->tab + (index * arr->size_type)), value, arr->size_type);
 	return (arr);
 }
 
 /*
 ** Increase the capacity of arr.
-** If auto_resize = TRUE, the new size will be calculated to feet a load factor
-** of LOAD_FACTOR.
+** If auto_resize = TRUE, the new capacity will be calculated to feet a
+** load factor of LOAD_FACTOR instead of be capacity + size_change.
 ** Return NULL if an error occured.
 ** TODO : Implemente auto resize.
 */
