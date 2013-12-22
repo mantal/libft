@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/10 12:59:28 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/10 14:39:46 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/22 15:11:23 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ int				ft_get_next(const int fd, char **line, char c)
 	*line = ft_strdup("");
 	if (!*line)
 		return (-1);
-	if (ft_read(line, &(entry->buf), c, BUFF_SIZE) > 0)
+	if ((res = ft_read(line, &(entry->buf), c, BUFF_SIZE)) > 0)
 		return (ft_strlen(*line));
 	while ((res = read(fd, entry->buf, BUFF_SIZE)))
 	{
@@ -67,7 +67,7 @@ int				ft_get_next(const int fd, char **line, char c)
 ** Return 1 if buf containt more than one '\n' and/or dont end with a '\n'
 ** (+copy the first line of buf in line and realloc/reorganize
 ** buf without the copied content).
-** /!\ l.88 may cause segfault.
+** /!\ l.94 may cause segfault.
 */
 static int		ft_read(char **line, char **buf, char c, unsigned int max_s)
 {
@@ -91,7 +91,8 @@ static int		ft_read(char **line, char **buf, char c, unsigned int max_s)
 		ft_memset(*buf, '\0', BUFF_SIZE);
 		return (0);
 	}
-	*line = ft_strnjoin(*line, *buf, size);
+	if (!(*line = ft_strnjoin(*line, *buf, size)))
+		return (-42);
 	ft_memmove(*buf, (*buf) + size + 1, max_s);
 	ft_memset((*buf) + size + 1, '\0', BUFF_SIZE - max_s);
 	return (1);
