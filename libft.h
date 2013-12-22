@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/29 09:41:14 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/20 17:39:09 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/22 19:11:18 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,8 @@
 # define FLOAT 4096
 
 # define PTR 8192
+# define FATAL_ERR 16384
+# define DISP_ERR 32768
 
 typedef unsigned char	t_bool;
 typedef unsigned int	t_flags;
@@ -170,6 +172,7 @@ int		ft_get_next(const int fd, char **line, char c);
 */
 void	ft_set(void *data, const void *value, t_flags type);
 void	ft_set_i(void *data, const void *value, t_uint index, t_flags flags);
+void	*ft_error(t_flags flags);
 
 #endif /* !LIBFT_H */
 
