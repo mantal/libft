@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/10 12:59:28 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/22 15:20:49 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/22 17:01:17 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,10 @@ int				ft_get_next(const int fd, char **line, char c)
 		entry->buf[BUFF_SIZE] = '\0';
 		if (res < 0)
 			return (res);
-		if (res == 0 && !entry->buf)
-			return (ft_free(list, fd));
 		if ((res = ft_read(line, &(entry->buf), c, res) > 0))
 			return (1);
+		if (!res && !entry->buf)
+			return (ft_free(list, fd));
 		if (res == -42)
 			return (-1);
 	}
@@ -94,7 +94,7 @@ static int		ft_read(char **line, char **buf, char c, unsigned int max_s)
 	if (!(*line = ft_strnjoin(*line, *buf, size)))
 		return (-42);
 	ft_memmove(*buf, (*buf) + size + 1, max_s);
-	ft_memset((*buf) + size + 1, '\0', BUFF_SIZE - max_s);
+	ft_memset((*buf) + max_s - size, '\0', BUFF_SIZE - max_s);
 	return (1);
 }
 
@@ -149,5 +149,5 @@ static int		ft_free(t_entry *list, const int fd)
 		}
 		list = list->next;
 	}
-	return (0);
+	return (1);
 }

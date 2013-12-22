@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/27 16:52:21 by dlancar           #+#    #+#             */
-/*   Updated: 2013/11/27 16:57:30 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/22 18:11:34 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	*ft_memmove(void *s1, const void *s2, size_t n)
 {
-	char	*s3;
+	char			*s3;
 	unsigned int	i;
 
 	i = 0;
