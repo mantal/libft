@@ -6,16 +6,12 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 11:18:17 by dlancar           #+#    #+#             */
-/*   Updated: 2013/11/22 11:18:18 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/22 18:35:34 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#if defined(_WIN32) || defined(__WIN32__)
- #include <io.h>
-#else
- #include <unistd.h>
-#endif
+#include <unistd.h>
 
 void	ft_putendl_fd(const char *s, int fd)
 {

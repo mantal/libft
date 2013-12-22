@@ -6,15 +6,11 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 11:17:03 by dlancar           #+#    #+#             */
-/*   Updated: 2013/11/22 11:17:04 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/22 18:34:45 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#if defined(_WIN32) || defined(__WIN32__)
- #include <io.h>
-#else
- #include <unistd.h>
-#endif
+#include <unistd.h>
 
 void	ft_putchar_fd(char c, int fd)
 {

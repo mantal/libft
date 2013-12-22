@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/25 13:55:46 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/17 14:35:26 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/22 18:32:35 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 #define INT_MIN -2147483648
 #define INT_MAX 2147483647
 
-static	void	set(int *a, int *b, int a_val, int b_val)
+static void	set(int *a, int *b, int a_val, int b_val)
 {
 	*a = a_val;
 	*b = b_val;
@@ -63,7 +63,7 @@ char			*ft_itoa(int n)
 	while (exp >= 1)
 	{
 		f = (float)(n / exp);
-		set((int*)res, &n, ((int)f) + '0', n - ((int)f) * exp);
+		set((int *)res, &n, ((int)f) + '0', n - ((int)f) * exp);
 		ft_setintchar(&res, &exp, res + 1, exp / 10);
 	}
 	return (res - size);

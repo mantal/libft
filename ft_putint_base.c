@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putuint_base.c                                  :+:      :+:    :+:   */
+/*   ft_putint_base.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/18 17:05:55 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/20 17:56:06 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/22 18:36:33 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int			ft_putuint_base(unsigned int n, unsigned int base)
 	t_array	*res;
 	t_uint	temp;
 	int		i;
-	
+
 	res = array_new(5, 5, sizeof(unsigned int), PTR);
 	while (n)
 	{
@@ -61,7 +61,7 @@ int			ft_putuint_base_l(unsigned int n, unsigned int base)
 	t_array	*res;
 	t_uint	temp;
 	int		i;
-	
+
 	res = array_new(5, 5, sizeof(unsigned int), FALSE);
 	while (n)
 	{

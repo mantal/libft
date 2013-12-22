@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/17 12:42:35 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/21 10:55:31 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/22 18:40:46 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ t_array	*array_add(t_array *arr, void* value)
 		ft_memcpy((arr->tab + (arr->size * arr->size_type)),
 				value, arr->size_type);
 	arr->size++;
-	return (arr);	
+	return (arr);
 }
 
 t_array	*array_insert(t_array *arr, void* value, unsigned int index)
@@ -80,7 +80,7 @@ t_array	*array_insert(t_array *arr, void* value, unsigned int index)
 t_array	*array_resize(t_array *arr, t_bool auto_resize)
 {
 	void	*tab;
-	
+
 	(void)auto_resize;
 	arr->capacity += arr->size_change;
 	tab = (char*)malloc(arr->size_type * arr->capacity);

@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/17 12:27:16 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/17 12:35:11 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/22 18:30:42 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ size_t	ft_get_size(int n)
 {
 	unsigned int	res;
 	double			d;
-	
+
 	res = 0;
 	d = (n > 0) ? (double)n : -((double)n);
 	if (n == 0)
