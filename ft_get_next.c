@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/10 12:59:28 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/22 15:11:23 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/22 15:20:49 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,9 @@ static t_entry	*ft_search(t_entry **list, const int fd);
 static int		ft_free(t_entry *entry, const int fd);
 
 /*
-** Return the number of readen char or -1 in case of error.
-** TODO : Use static array in t_entry.
+** Return 1 if something was read, 0 if the function has reach the end of
+** the file or -1 in case of error.
+** TODO : Use array instead of pointer in t_entry.
 */
 int				ft_get_next(const int fd, char **line, char c)
 {
@@ -43,7 +44,7 @@ int				ft_get_next(const int fd, char **line, char c)
 	if (!*line)
 		return (-1);
 	if ((res = ft_read(line, &(entry->buf), c, BUFF_SIZE)) > 0)
-		return (ft_strlen(*line));
+		return (1);
 	while ((res = read(fd, entry->buf, BUFF_SIZE)))
 	{
 		entry->buf[BUFF_SIZE] = '\0';
@@ -52,7 +53,7 @@ int				ft_get_next(const int fd, char **line, char c)
 		if (res == 0 && !entry->buf)
 			return (ft_free(list, fd));
 		if ((res = ft_read(line, &(entry->buf), c, res) > 0))
-			return (ft_strlen(*line));
+			return (1);
 		if (res == -42)
 			return (-1);
 	}
@@ -67,7 +68,6 @@ int				ft_get_next(const int fd, char **line, char c)
 ** Return 1 if buf containt more than one '\n' and/or dont end with a '\n'
 ** (+copy the first line of buf in line and realloc/reorganize
 ** buf without the copied content).
-** /!\ l.94 may cause segfault.
 */
 static int		ft_read(char **line, char **buf, char c, unsigned int max_s)
 {
