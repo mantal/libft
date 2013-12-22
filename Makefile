@@ -6,7 +6,7 @@
 #    By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+         #
 #                                                +#+#+#+#+#+   +#+             #
 #    Created: 2013/11/29 09:40:24 by dlancar           #+#    #+#              #
-#    Updated: 2013/12/22 19:07:58 by dlancar          ###   ########.fr        #
+#    Updated: 2013/12/22 19:49:01 by dlancar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,8 @@ $(NAME): $(OBJ)
 	@ranlib $(NAME)
 %.o: %.c
 	@$(CMP) -I $(INCL) -o $@ -c $? $(FLAGS)
+
+.PHONY: clean fclean re
 
 clean:
 	@rm -f $(OBJ)
