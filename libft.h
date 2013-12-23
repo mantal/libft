@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/29 09:41:14 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/22 19:11:18 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/23 13:36:15 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,24 +49,25 @@ typedef unsigned int	t_uint;
 
 typedef struct	s_array
 {
-	void	*tab;
-	size_t	size;
-	size_t	capacity;
-	size_t	size_change;
-	size_t	size_type;
-	t_flags	flags;
+	void			*tab;
+	size_t			size;
+	size_t			capacity;
+	size_t			size_change;
+	size_t			size_type;
+	unsigned int	it;
+	t_flags			flags;
 }				t_array;
 
 /*
 ** Dynamic array function
 */
-
 t_array	*array_new(size_t capacity, size_t size_change, size_t size_type,
 						t_flags flags);
 t_array	*array_add(t_array *arr, void *value);
 t_array	*array_insert(t_array *arr, void *value, unsigned int index);
 t_array	*array_resize(t_array *arr, t_bool auto_resize);
 void	*array_get(t_array *arr, unsigned int index);
+void	*array_next(t_array *arr);
 void	array_free(t_array **arr);
 
 /*
@@ -153,7 +154,7 @@ char 	*ft_strnew(size_t size);
 char	*ft_strnstr(const char *s1, const char *s2, size_t n);
 char	*ft_strsub(const char *s, unsigned int start, size_t len);
 char	*ft_strtrim(const char *s);
-char	**ft_strsplit(const char *s, char c);
+t_array	*ft_strsplit(const char *s, char c);
 char	*ft_strnstr(const char *s1, const char *s2, size_t n);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strstr(const char *s1, const char *s2);
