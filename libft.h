@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/29 09:41:14 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/23 13:36:15 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/26 11:01:15 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -169,10 +169,7 @@ int		ft_get_next(const int fd, char **line, char c);
 
 /*
 ** Misc functions
-** ft_set and ft_set_i may be useless and could be replaced with ft_memcpy.
 */
-void	ft_set(void *data, const void *value, t_flags type);
-void	ft_set_i(void *data, const void *value, t_uint index, t_flags flags);
 void	*ft_error(t_flags flags);
 
 #endif /* !LIBFT_H */
