@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/17 12:42:35 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/23 13:30:13 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/27 12:04:28 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,9 @@
 
 /*
 ** Return a ptr to a mallocated t_array.
-** Current flags : TRUE -> memory will always be initialised to nul.
+** Current flags : TRUE -> memory will be initialised to nul.
+**                 DISP_ERR -> in case of error, perror is called.
+**                 FATAL_ERR -> in case of error, exit is called.
 ** Return NULL if an error occured.
 */
 t_array	*array_new(size_t capacity, size_t size_change, size_t size_type,
@@ -23,7 +25,7 @@ t_array	*array_new(size_t capacity, size_t size_change, size_t size_type,
 {
 	t_array	*res;
 
-	res = (t_array*)malloc(sizeof(t_array));
+	res = (t_array *)malloc(sizeof(t_array));
 	if (!res)
 		return (ft_error(flags));
 	res->size = 0;
@@ -32,7 +34,7 @@ t_array	*array_new(size_t capacity, size_t size_change, size_t size_type,
 	res->size_type = size_type;
 	res->it = 0;
 	res->flags = flags;
-	res->tab = (char*)malloc(size_change * capacity);
+	res->tab = (char *)malloc(size_change * capacity);
 	if (!res->tab)
 		return (ft_error(flags));
 	if (flags & 1)

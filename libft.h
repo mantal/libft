@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/29 09:41:14 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/26 11:01:15 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/27 12:06:27 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,7 @@ typedef struct	s_array
 */
 t_array	*array_new(size_t capacity, size_t size_change, size_t size_type,
 						t_flags flags);
+t_array	*array_cpy(const t_array *src);
 t_array	*array_add(t_array *arr, void *value);
 t_array	*array_insert(t_array *arr, void *value, unsigned int index);
 t_array	*array_resize(t_array *arr, t_bool auto_resize);
