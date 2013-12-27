@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 09:20:49 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/23 13:30:00 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/26 12:17:05 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ t_array		*ft_strsplit(const char *s, char c)
 			return (NULL);
 		}
 		array_add(res, temp);
-		s++;
+		s += ft_strclen(s, c);
 	}
 	return (res);
 }
