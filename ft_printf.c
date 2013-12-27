@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/28 11:39:58 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/12 11:19:15 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/27 17:41:57 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ void	ft_printf(const char* str, ...)
 	va_list		ap;
 
 	va_start(ap, str);
-
 	while (*str)
 	{
 		if (*str == '%')
