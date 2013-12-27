@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/20 17:16:54 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/27 12:07:06 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/27 13:22:58 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*array_get(t_array *arr, unsigned int index)
 
 void	*array_next(t_array *arr)
 {
+	if (arr->flags & LOOP && arr->it >= arr->size)
+		arr->it = 0;
 	if (arr->it < arr->size)
 	{
 		arr->it++;
@@ -42,5 +44,19 @@ t_array	*array_cpy(const t_array *src)
 	res->size = src->size;
 	ft_memcpy(res->tab, src->tab, src->size * src->size_change);
 	return (res);
+}
+
+/*
+** Remove the content at index.
+*/
+t_array	*array_remove(t_array *arr, unsigned int index)
+{
+	arr->size--;
+	ft_memmove(arr->tab + index * arr->size_type,
+				arr->tab + (index + 1) * arr->size_type,
+				arr->size_type * arr->size);
+	if (arr->flags & 1)
+		ft_bzero(arr->tab + (arr->size_type * arr->size), arr->size_type);
+	return (arr);
 }
 

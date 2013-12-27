@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/29 09:41:14 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/27 12:06:27 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/27 13:04:41 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,9 +39,10 @@
 # define DOUBLE 2048
 # define FLOAT 4096
 
-# define PTR 8192
-# define FATAL_ERR 16384
-# define DISP_ERR 32768
+# define PTR 2
+# define LOOP 4
+# define FATAL_ERR 8
+# define DISP_ERR 16
 
 typedef unsigned char	t_bool;
 typedef unsigned int	t_flags;
@@ -66,6 +67,7 @@ t_array	*array_new(size_t capacity, size_t size_change, size_t size_type,
 t_array	*array_cpy(const t_array *src);
 t_array	*array_add(t_array *arr, void *value);
 t_array	*array_insert(t_array *arr, void *value, unsigned int index);
+t_array	*array_remove(t_array *arr, unsigned int index);
 t_array	*array_resize(t_array *arr, t_bool auto_resize);
 void	*array_get(t_array *arr, unsigned int index);
 void	*array_next(t_array *arr);

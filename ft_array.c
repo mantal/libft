@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/17 12:42:35 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/27 12:04:28 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/27 13:23:24 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 /*
 ** Return a ptr to a mallocated t_array.
 ** Current flags : TRUE -> memory will be initialised to nul.
+**                 LOOP -> make array_next loop (don't work).
 **                 DISP_ERR -> in case of error, perror is called.
 **                 FATAL_ERR -> in case of error, exit is called.
 ** Return NULL if an error occured.
