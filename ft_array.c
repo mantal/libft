@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/17 12:42:35 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/29 17:31:18 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/29 17:34:55 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@
 ** Current flags : TRUE -> memory will be initialised to nul.
 **                 PTR  -> enable the array to store pointer.
 **                 LOOP -> make array_next loop (don't work).
-**                 DISP_ERR -> in case of error, perror is called.
-**                 FATAL_ERR -> in case of error, exit is called.
+**                 DISP_ERR -> see ft_error.
+**                 FATAL_ERR -> see ft_error.
 ** Return NULL if an error occured.
 */
 t_array	*array_new(size_t capacity, size_t size_change, size_t size_type,
