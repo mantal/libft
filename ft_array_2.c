@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/20 17:16:54 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/29 15:23:57 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/29 17:08:40 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ t_array	*array_cpy(const t_array *src)
 {
 	t_array	*res;
 
-	res = array_new(src->capacity, src->size_change, src->size_change,
+	res = array_new(src->capacity, src->size_change, src->size_type,
 					src->flags);
 	if (!res)
 		return (NULL);
