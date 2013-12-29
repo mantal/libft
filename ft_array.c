@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/17 12:42:35 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/29 13:30:45 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/29 15:22:42 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,12 @@
 #include <stdlib.h>
 
 /*
-** Return a ptr to a mallocated t_array.
+** Return a pointer to a mallocated t_array.
+** capacity is the inital capacity of the array.
+** size_type is the number of byte of the data that the array will
+** contain (usually get with sizeof()).
+** If nul is passed to capacity, size_change or size_type, the behavior is
+** undefined.
 ** Current flags : TRUE -> memory will be initialised to nul.
 **                 LOOP -> make array_next loop (don't work).
 **                 DISP_ERR -> in case of error, perror is called.
@@ -35,6 +40,7 @@ t_array	*array_new(size_t capacity, size_t size_change, size_t size_type,
 	res->size_type = size_type;
 	res->it = 0;
 	res->flags = flags;
+	res->err_func = &ft_error;
 	res->tab = (char *)malloc(size_change * capacity);
 	if (!res->tab)
 		return (ft_error(flags));
@@ -87,7 +93,7 @@ t_array	*array_resize(t_array *arr, t_bool auto_resize)
 	arr->capacity += arr->size_change;
 	tab = (char*)malloc(arr->size_type * arr->capacity);
 	if (!tab)
-		return (ft_error(arr->flags));
+		return (arr->err_func(arr->flags));
 	if (arr->flags & 1)
 		ft_bzero(tab, arr->size_type * arr->capacity);
 	ft_memcpy(tab, arr->tab, arr->size * arr->size_type);

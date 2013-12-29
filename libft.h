@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/29 09:41:14 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/29 13:44:40 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/29 14:51:00 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ typedef struct	s_array
 	size_t			size_change;
 	size_t			size_type;
 	unsigned int	it;
+	void			*(*err_func)(t_flags);
 	t_flags			flags;
 }				t_array;
 
