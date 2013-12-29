@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/17 12:42:35 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/27 13:23:24 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/29 13:30:45 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,8 @@ t_array	*array_insert(t_array *arr, void* value, unsigned int index)
 /*
 ** Increase the capacity of arr.
 ** If auto_resize = TRUE, the new capacity will be calculated to feet a
-** load factor of LOAD_FACTOR instead of be capacity + size_change.
+** load factor of LOAD_FACTOR.
+** If auto_resize = FALSE, the new capacity will be increase by size_change.
 ** Return NULL if an error occured.
 ** TODO : Implemente auto resize.
 */
