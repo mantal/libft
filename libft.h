@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/29 09:41:14 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/27 13:04:41 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/29 13:44:40 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,8 @@ t_array	*array_resize(t_array *arr, t_bool auto_resize);
 void	*array_get(t_array *arr, unsigned int index);
 void	*array_next(t_array *arr);
 void	array_free(t_array **arr);
+
+# define A_G(arr, index) array_get(arr, index)
 
 /*
 ** Conversion function
