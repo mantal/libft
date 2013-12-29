@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/01 14:39:29 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/29 17:41:49 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/29 17:43:55 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ int		ft_snprintf(char *s, size_t n, const char *format, ...)
 {
 	va_list			ap;
 	unsigned int	res;
-	char			*temp;
 
 	res = 0;
 	va_start(ap, format);
@@ -37,7 +36,6 @@ int		ft_snprintf(char *s, size_t n, const char *format, ...)
 		{
 			if (*format == 's')
 			{
-				temp = va_arg(ap, char*);
 				ft_strcpy(s, va_arg(ap, char *));
 				while (*s)
 					s++;
