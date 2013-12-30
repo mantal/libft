@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/29 09:41:14 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/29 14:51:00 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/30 15:07:22 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <string.h>
+# include <stdarg.h>
 
 # define BUFF_SIZE 32
 
@@ -129,6 +130,7 @@ void	ft_putfstr(const char *s1, const void *arg);
 void	ft_putdouble(double d);
 void	ft_putdouble_fd(double d, int fd);
 void	ft_printf(const char *s, ...);
+void	ft_vprintf(const char *s, va_list ap);
 
 /*
 ** String function
