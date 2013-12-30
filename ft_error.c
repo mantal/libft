@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/22 19:04:53 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/30 15:24:57 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/30 15:52:05 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,9 @@
 #include <stdarg.h>
 
 /*
-** DISP_ERR -> call perror.
-** FATAL_ERR -> call exit after an eventual call to perror.
+** Supported flags :
+** ERR_DISP  -> call perror.
+** ERR_FATAL -> call exit(EXIT_FAILURE) after an eventual call to perror.
 ** Return value is always NULL.
 */
 void	*ft_error(t_flags flags)
@@ -29,6 +30,16 @@ void	*ft_error(t_flags flags)
 	return (NULL);
 }
 
+/*
+** Supported errors :
+** ERR_MALLOC -> memory allocation error.
+** ERR_FORK   -> fork error.
+** Supported flags :
+** ERR_FATAL  -> call exit(EXIT_FAILURE) after display error message.
+** msg is a formated string.
+** If flags is non-nul, msg and additionals parameters are ignored.
+** Return value is always NULL.
+*/
 void	*ft_error_msg(const char *msg, t_flags flags, ...)
 {
 	va_list	ap;
@@ -41,6 +52,8 @@ void	*ft_error_msg(const char *msg, t_flags flags, ...)
 	else if (flags & ERR_FORK)
 		ft_putendl("Error : can not fork process.");
 	va_end(ap);
+	if (flags & ERR_FATAL)
+		exit(EXIT_FAILURE);
 	return (NULL);
 }
 
