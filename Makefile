@@ -6,7 +6,7 @@
 #    By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+         #
 #                                                +#+#+#+#+#+   +#+             #
 #    Created: 2013/11/29 09:40:24 by dlancar           #+#    #+#              #
-#    Updated: 2013/12/26 11:00:56 by dlancar          ###   ########.fr        #
+#    Updated: 2013/12/30 15:27:13 by dlancar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ SRC		= ft_bzero.c ft_memset.c ft_memcpy.c ft_tolower.c ft_toupper.c \
 			ft_putnbr_fd.c ft_putendl.c ft_putendl_fd.c \
 			ft_putdouble.c ft_putdouble_fd.c ft_printf.c ft_strcharstr.c \
 			ft_putfstr.c ft_snprintf.c ft_strjoinf.c ft_strnjoin.c \
+			ft_vprintf.c \
 			ft_strsplit.c \
 			ft_putint_base.c \
 			ft_get_next.c \

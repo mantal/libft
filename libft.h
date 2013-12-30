@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/29 09:41:14 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/30 15:07:22 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/30 15:25:36 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,34 +16,44 @@
 # include <string.h>
 # include <stdarg.h>
 
-# define BUFF_SIZE 32
-
-# define STDIN 0
+/*
+** I/O define
+*/
+# define STDIN  0
 # define STDOUT 1
 # define STDERR 2
 
-# define TRUE 1
+/*
+** Boolean flags
+*/
+# define TRUE  1
 # define FALSE 0
 
+/*
+** Error flags
+** These flags are compatible with Dynamic array flags.
+*/
+# define ERR_FATAL  8
+# define ERR_DISP   16
+# define ERR_MALLOC 32
+# define ERR_FORK   64
+# define ERR_OPEN   128
+
+/*
+** Dynamic array flags
+*/
+# define PTR  2
+# define LOOP 4
+
+/*
+** Dynamic array constants
+*/
 # define LOAD_FACTOR 0.75
 
-# define CHAR 2
-# define UCHAR 4
-# define SHORT 8
-# define USHORT 16
-# define INT 32
-# define UINT 64
-# define LINT 128
-# define ULINT 256
-# define LLINT 512
-# define ULLINT 1028
-# define DOUBLE 2048
-# define FLOAT 4096
-
-# define PTR 2
-# define LOOP 4
-# define FATAL_ERR 8
-# define DISP_ERR 16
+/*
+** Misc define
+*/
+# define BUFF_SIZE 32
 
 typedef unsigned char	t_bool;
 typedef unsigned int	t_flags;
@@ -176,9 +186,10 @@ char	*ft_strjoinf(char *s1, char *s2, unsigned char flag);
 int		ft_get_next(const int fd, char **line, char c);
 
 /*
-** Misc functions
+** Error handling function.
 */
 void	*ft_error(t_flags flags);
+void	*ft_error_msg(const char *msg, t_flags flags, ...);
 
 #endif /* !LIBFT_H */
 
