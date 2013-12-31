@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/10 12:59:28 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/22 17:01:17 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/31 14:18:14 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int				ft_get_next(const int fd, char **line, char c)
 		return (-1);
 	if ((res = ft_read(line, &(entry->buf), c, BUFF_SIZE)) > 0)
 		return (1);
-	while ((res = read(fd, entry->buf, BUFF_SIZE)))
+	while ((res = read(fd, entry->buf, BUFF_SIZE)) > 0)
 	{
 		entry->buf[BUFF_SIZE] = '\0';
 		if (res < 0)
