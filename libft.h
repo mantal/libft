@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/29 09:41:14 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/30 15:25:36 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/31 12:35:05 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@
 # define ERR_MALLOC 32
 # define ERR_FORK   64
 # define ERR_OPEN   128
+# define ERR_PIPE   256
 
 /*
 ** Dynamic array flags

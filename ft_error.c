@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/22 19:04:53 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/30 15:52:05 by dlancar          ###   ########.fr       */
+/*   Updated: 2013/12/31 12:36:59 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,13 @@ void	*ft_error(t_flags flags)
 ** Supported errors :
 ** ERR_MALLOC -> memory allocation error.
 ** ERR_FORK   -> fork error.
+** ERR_PIPE   -> pipe error.
 ** Supported flags :
 ** ERR_FATAL  -> call exit(EXIT_FAILURE) after display error message.
 ** msg is a formated string.
 ** If flags is non-nul, msg and additionals parameters are ignored.
 ** Return value is always NULL.
+** Note : everything is printed to STDERR.
 */
 void	*ft_error_msg(const char *msg, t_flags flags, ...)
 {
@@ -48,9 +50,11 @@ void	*ft_error_msg(const char *msg, t_flags flags, ...)
 	if (*msg)
 		ft_vprintf(msg, ap);
 	else if (flags & ERR_MALLOC)
-		ft_putendl("Error : can not allocate memory.");
+		ft_putendl_fd("Error : can not allocate memory.", STDERR);
 	else if (flags & ERR_FORK)
-		ft_putendl("Error : can not fork process.");
+		ft_putendl_fd("Error : can not fork process.", STDERR);
+	else if (flags & ERR_PIPE)
+		ft_putendl_fd("Error : can not pipe.", STDERR);
 	va_end(ap);
 	if (flags & ERR_FATAL)
 		exit(EXIT_FAILURE);
