@@ -6,17 +6,16 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/27 15:27:06 by dlancar           #+#    #+#             */
-/*   Updated: 2013/11/27 15:56:44 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/01/03 12:19:53 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "ft_math.h"
 #include <string.h>
 
 #define INT_MIN_S "-2147483648"
 #define INT_MAX_S "2147483647"
-
-#define BERK {neg = 1; result = 0;}
 
 static char		*skip_white_space(const char *s);
 static char		*skip_nul(const char *s);
@@ -29,7 +28,7 @@ int		ft_atoi(const char *str)
 	size_t		size;
 	char		*s;
 
-	BERK
+	neg = (result = 0) + 1;
 	s = ft_strdup(skip_white_space(str));
 	if (!s)
 		return (0);
