@@ -6,7 +6,7 @@
 #    By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+         #
 #                                                +#+#+#+#+#+   +#+             #
 #    Created: 2013/11/29 09:40:24 by dlancar           #+#    #+#              #
-#    Updated: 2014/01/03 11:41:55 by dlancar          ###   ########.fr        #
+#    Updated: 2014/01/03 14:25:38 by dlancar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,7 @@ SRC		= ft_bzero.c ft_memset.c ft_memcpy.c ft_memccpy.c ft_memmove.c 		\
 
 OBJ		= $(SRC:.c=.o)
 CMP		= cc
-FLAGS	= -Wall -Werror -Wextra -O3 -g
+FLAGS	= -Wall -Werror -Wextra -O0 -g
 
 
 all: $(NAME)

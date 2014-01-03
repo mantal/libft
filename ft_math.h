@@ -6,14 +6,14 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/12 16:59:15 by dlancar           #+#    #+#             */
-/*   Updated: 2014/01/03 11:46:28 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/01/03 14:09:37 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_MATH_H
 # define FT_MATH_H
 
-# include <libft.h>
+# include "libft.h"
 
 # define ABS(X) (((X) < 0) ? (-1 * (X)) : (X))
 
@@ -36,6 +36,8 @@ typedef struct	s_vec3d
 */
 int		ft_round(double d);
 int		ft_pow(int a, unsigned int n);
+t_uint	ft_sqrt(t_uint n);
+double	ft_sqrt_d(t_uint n);
 
 /*
 ** Vector operation :
