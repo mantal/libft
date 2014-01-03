@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/29 09:41:14 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/31 12:35:05 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/01/03 11:46:59 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -120,9 +120,8 @@ void	*ft_memmove(void *s1, const void *s2, size_t n);
 void	*ft_memset(void *b, int c, size_t len);
 
 /*
-** Math function
+** Math function (TODO: move functions to math.h)
 */
-int		ft_pow(int x, unsigned int n);
 size_t	ft_get_size(int n);
 
 /*

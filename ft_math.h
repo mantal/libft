@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/12 16:59:15 by dlancar           #+#    #+#             */
-/*   Updated: 2014/01/03 11:15:29 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/01/03 11:46:28 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ typedef struct	s_vec3d
 ** Basic math operations.
 */
 int		ft_round(double d);
+int		ft_pow(int a, unsigned int n);
 
 /*
 ** Vector operation :
