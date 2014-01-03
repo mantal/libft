@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/12 16:59:15 by dlancar           #+#    #+#             */
-/*   Updated: 2014/01/03 14:09:37 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/01/03 16:18:50 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 # include "libft.h"
 
-# define ABS(X) (((X) < 0) ? (-1 * (X)) : (X))
+# define ABS(X)     (((X) < 0) ? (-1 * (X)) : (X))
+# define FMOD(N, D) ((N) - ((int)((N) / (D))) * (D))
 
 typedef struct	s_vec3
 {
