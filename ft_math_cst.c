@@ -6,9 +6,14 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/03 17:30:43 by dlancar           #+#    #+#             */
-/*   Updated: 2014/01/03 17:44:44 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/01/03 17:50:04 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*
+** Contain value of tan(), sin() and cos() with a step of 0.01 and precision of
+** 0.005.
+*/
 
 const double	g_tan[] =
 {

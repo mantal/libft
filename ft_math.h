@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/12 16:59:15 by dlancar           #+#    #+#             */
-/*   Updated: 2014/01/03 16:18:50 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/01/04 13:59:01 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,15 +33,27 @@ typedef struct	s_vec3d
 }				t_vec3d;
 
 /*
-** Basic math operations.
+** Basic math operations
 */
-int		ft_round(double d);
 int		ft_pow(int a, unsigned int n);
 t_uint	ft_sqrt(t_uint n);
 double	ft_sqrt_d(t_uint n);
 
 /*
-** Vector operation :
+** Double operations
+*/
+double	ft_trunc(double d, t_uint p);
+int		ft_round(double d);
+
+/*
+** Trigonometric function
+*/
+double	ft_sin(double d);
+double	ft_cos(double d);
+double	ft_tan(double d);
+
+/*
+** Vector operation
 */
 void	set_vec3(t_vec3 *vec, int x, int y, int z);
 void	set_vec3d(t_vec3d *vec, double x, double y, double z);
