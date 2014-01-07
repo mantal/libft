@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/29 09:41:14 by dlancar           #+#    #+#             */
-/*   Updated: 2014/01/03 11:46:59 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/01/07 12:59:43 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -186,10 +186,16 @@ char	*ft_strjoinf(char *s1, char *s2, unsigned char flag);
 int		ft_get_next(const int fd, char **line, char c);
 
 /*
-** Error handling function.
+** Error handling function
 */
 void	*ft_error(t_flags flags);
 void	*ft_error_msg(const char *msg, t_flags flags, ...);
+
+/*
+** Unix configuration function
+*/
+char	*get_env_var(const char name);
+char	*get_path(int index);
 
 #endif /* !LIBFT_H */
 
