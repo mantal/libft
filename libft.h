@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/29 09:41:14 by dlancar           #+#    #+#             */
-/*   Updated: 2014/01/07 12:59:43 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/01/10 20:16:08 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,10 @@ void	*array_next(t_array *arr);
 void	array_free(t_array **arr);
 
 # define A_G(arr, index) array_get(arr, index)
+# define A_N(arr) array_next(arr)
+
+# define A_GI(arr, index)  (*(int *)array_get(arr, index))
+# define A_GUI(arr, index) (*(unsigned int *)array_get(arr, index))
 
 /*
 ** Conversion function
@@ -194,7 +198,7 @@ void	*ft_error_msg(const char *msg, t_flags flags, ...);
 /*
 ** Unix configuration function
 */
-char	*get_env_var(const char name);
+char	*get_env(const char *name);
 char	*get_path(int index);
 
 #endif /* !LIBFT_H */
