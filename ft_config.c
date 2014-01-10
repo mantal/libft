@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/26 17:56:57 by dlancar           #+#    #+#             */
-/*   Updated: 2014/01/07 13:00:55 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/01/10 20:17:42 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*get_env(const char *name)
 	size = ft_strlen(name);
 	while (environ[i])
 	{
-		if (!ft_strncmp(environ[i], name, size))
+		if (ft_strcmp(environ[i], name) == 61)
 			return (environ[i] + size + 1);
 		i++;
 	}
