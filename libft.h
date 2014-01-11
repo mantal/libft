@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/29 09:41:14 by dlancar           #+#    #+#             */
-/*   Updated: 2014/01/10 20:19:16 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/01/11 13:14:07 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -198,7 +198,7 @@ void	*ft_error_msg(const char *msg, t_flags flags, ...);
 /*
 ** Unix configuration function
 */
-char	*get_env(const char *name); __warning("Return value is '%VAR=%VALUE'")__
+char	*get_env(const char *name);
 char	*get_path(int index);
 
 #endif /* !LIBFT_H */
