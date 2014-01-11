@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/20 17:16:54 by dlancar           #+#    #+#             */
-/*   Updated: 2014/01/10 20:07:40 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/01/11 17:46:42 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ t_array	*array_remove(t_array *arr, unsigned int index)
 	i = index;
 	while (i < arr->size)
 	{
-		ft_memcpy(arr->tab + index * arr->size_type, arr->tab + (index + 1)
+		ft_memcpy(arr->tab + i * arr->size_type, arr->tab + (i + 1)
 				* arr->size_type, arr->size_type);
 		i++;
 	}
