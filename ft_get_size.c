@@ -6,10 +6,11 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/17 12:27:16 by dlancar           #+#    #+#             */
-/*   Updated: 2014/01/03 11:45:48 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/01/11 13:22:29 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <string.h>
 
 size_t	ft_get_size(int n)

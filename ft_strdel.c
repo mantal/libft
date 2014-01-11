@@ -6,17 +6,15 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/27 09:41:47 by dlancar           #+#    #+#             */
-/*   Updated: 2013/11/27 14:10:28 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/01/11 13:11:53 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 
 void	ft_strdel(char **as)
 {
-	if (as && *as)
-	{
-		free(*as);
-		*as = NULL;
-	}
+	free(*as);
+	*as = NULL;
 }

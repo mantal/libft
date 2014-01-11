@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/29 09:41:14 by dlancar           #+#    #+#             */
-/*   Updated: 2014/01/11 13:14:07 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/01/11 13:22:03 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -137,7 +137,8 @@ void	ft_putendl(const char *s);
 void	ft_putendl_fd(const char *s, int fd);
 void	ft_putnbr(int n);
 void	ft_putnbr_fd(int n, int fd);
-void	ft_putint_base(unsigned int n, unsigned int base);
+int		ft_putuint_base(unsigned int n, unsigned int base);
+int		ft_putuint_base_l(unsigned int n, unsigned int base);
 void	ft_putstr(const char *s);
 void	ft_putstr_fd(const char *s, int fd);
 void	ft_putfstr(const char *s1, const void *arg);

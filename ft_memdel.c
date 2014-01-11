@@ -6,17 +6,15 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/27 16:38:06 by dlancar           #+#    #+#             */
-/*   Updated: 2013/11/27 17:32:10 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/01/11 13:12:05 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <stdlib.h>
 
 void	ft_memdel(void **ap)
 {
-	if (ap && *ap)
-	{
-		free(*ap);
-		*ap = NULL;
-	}
+	free(*ap);
+	*ap = NULL;
 }

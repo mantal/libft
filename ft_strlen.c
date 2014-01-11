@@ -6,10 +6,11 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/27 09:41:47 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/03 16:16:17 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/01/11 13:13:48 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
 #include <string.h>
 
 size_t	ft_strlen(const char *s)

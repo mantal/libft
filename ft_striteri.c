@@ -6,18 +6,18 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 14:52:08 by dlancar           #+#    #+#             */
-/*   Updated: 2013/11/21 15:09:09 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/01/11 13:16:47 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
 	unsigned int	i;
 
 	i = 0;
-	if (!f)
-		return ;
-	while (&s[i] && s[i])
+	while (s[i])
 	{
 		f(i, &s[i]);
 		i++;

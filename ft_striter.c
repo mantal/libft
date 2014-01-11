@@ -6,15 +6,15 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 14:30:32 by dlancar           #+#    #+#             */
-/*   Updated: 2013/11/21 14:30:34 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/01/11 13:16:12 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "libft.h"
+
 void	ft_striter(char *s, void (*f)(char *))
 {
-	if (!f)
-		return ;
-	while (s && *s)
+	while (*s)
 	{
 		f(&*s);
 		s++;

@@ -6,7 +6,7 @@
 #    By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+         #
 #                                                +#+#+#+#+#+   +#+             #
 #    Created: 2013/11/29 09:40:24 by dlancar           #+#    #+#              #
-#    Updated: 2014/01/07 13:00:26 by dlancar          ###   ########.fr        #
+#    Updated: 2014/01/11 13:15:07 by dlancar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -47,8 +47,8 @@ SRC		= ft_bzero.c ft_memset.c ft_memcpy.c ft_memccpy.c ft_memmove.c 		\
 			ft_config.c
 
 OBJ		= $(SRC:.c=.o)
-CMP		= cc
-FLAGS	= -Wall -Werror -Wextra -O0 -g
+CMP		= cc #llvm-gcc
+FLAGS	= -Wall -Werror -Wextra -O3 -g -Wmissing-prototypes
 
 
 all: $(NAME)
