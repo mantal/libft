@@ -6,12 +6,11 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/05 10:28:00 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/22 18:38:10 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/01/17 19:44:21 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 /*
 ** Return a new string composed of the concanation of s1 and s2, not more than

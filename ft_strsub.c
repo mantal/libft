@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 16:27:08 by dlancar           #+#    #+#             */
-/*   Updated: 2014/01/17 14:41:57 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/01/17 19:45:34 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strsub(const char *s, unsigned int start, size_t len)
 	char	*res;
 
 	s += start;
-	res = (char *)malloc(sizeof(char) * (len + 1));
+	res = (char *)ft_malloc(sizeof(char) * (len + 1));
 	if (!res)
 		return (NULL);
 	res = ft_strncpy(res, s, len);

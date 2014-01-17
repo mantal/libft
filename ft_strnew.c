@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/27 16:38:06 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/17 12:24:52 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/01/17 19:43:55 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strnew(size_t size)
 
 	if (!size)
 		return (NULL);
-	s = (char*)malloc(sizeof(char) * size);
+	s = (char *)ft_malloc(sizeof(char) * size);
 	if (!s)
 		return (NULL);
 	ft_memset(s, '\0', size);
