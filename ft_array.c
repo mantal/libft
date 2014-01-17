@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/17 12:42:35 by dlancar           #+#    #+#             */
-/*   Updated: 2014/01/17 19:00:59 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/01/17 20:40:21 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,22 +64,22 @@ t_array	*array_add(t_array *arr, void* value)
 
 /*
 ** Insert an element at index.
-** If index is higher than size, the array will be resize to match the index
-** (warning : memory will be initialised only if flags & TRUE).
-** If index already exist, the function will not insert but replace.
-** TODO: make insert function insert and add a set function.
 */
 t_array	*array_insert(t_array *arr, void* value, unsigned int index)
 {
-	while (arr->capacity < index)
+	void	*temp;
+
+	temp = ft_malloc((arr->size - index) * arr->size_type);
+	if (!temp)
+		return (NULL);
+	ft_memcpy(temp, arr->tab + arr->size_type * index,
+				(arr->size - index) * arr->size_type);
+	ft_memcpy(arr->tab + arr->size_type * (index + 1), temp,
+				(arr->size - index) * arr->size_type);
+	array_set(arr, value, index);
+	arr->size++;
+	if (arr->size == arr->capacity)
 		array_resize(arr, FALSE);
-	if (index + 1 >= arr->size)
-		arr->size = index + 1;
-	if (arr->flags & PTR)
-		ft_memcpy((arr->tab + (index * arr->size_type)), &value,
-					arr->size_type);
-	else
-		ft_memcpy((arr->tab + (index * arr->size_type)), value, arr->size_type);
 	return (arr);
 }
 

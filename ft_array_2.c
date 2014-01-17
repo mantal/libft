@@ -6,12 +6,22 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/20 17:16:54 by dlancar           #+#    #+#             */
-/*   Updated: 2014/01/17 19:00:42 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/01/17 20:54:47 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "error.h"
 #include "libft.h"
+
+t_array	*array_set(t_array *arr, void* value, unsigned int index)
+{
+	if (arr->flags & PTR)
+		ft_memcpy((arr->tab + (index * arr->size_type)), &value,
+					arr->size_type);
+	else
+		ft_memcpy((arr->tab + (index * arr->size_type)), value, arr->size_type);
+	return (arr);
+}
 
 void	*array_get(t_array *arr, unsigned int index)
 {
@@ -24,7 +34,6 @@ void	*array_next(t_array *arr)
 		arr->it = 0;
 	if (arr->it < arr->size)
 	{
-		arr->it++;
 		return (arr->tab + (arr->size_type * (arr->it - 1)));
 	}
 	return (NULL);
