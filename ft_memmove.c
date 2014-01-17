@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/27 16:52:21 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/22 18:11:34 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/01/17 20:12:15 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@ void	*ft_memmove(void *s1, const void *s2, size_t n)
 	s3 = ft_strdup(s2);
 	if (!s3)
 		return (NULL);
-	while (s1 && i < n)
+	while (i < n)
 	{
-		((unsigned char*)s1)[i] = s3[i];
+		((char *)s1)[i] = s3[i];
 		i++;
 	}
 	free(s3);
