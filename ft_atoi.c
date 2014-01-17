@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/27 15:27:06 by dlancar           #+#    #+#             */
-/*   Updated: 2014/01/03 12:19:53 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/01/11 18:46:46 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static char		*skip_white_space(const char *s);
 static char		*skip_nul(const char *s);
 static size_t	get_size(const char *s);
 
-int		ft_atoi(const char *str)
+int				ft_atoi(const char *str)
 {
 	long long	result;
 	int			neg;
@@ -50,7 +50,7 @@ int		ft_atoi(const char *str)
 	return (result * neg);
 }
 
-static char	*skip_white_space(const char *s)
+static char		*skip_white_space(const char *s)
 {
 	char	*str;
 

@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/25 09:48:45 by dlancar           #+#    #+#             */
-/*   Updated: 2013/11/25 18:16:21 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/01/11 18:49:22 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ static int	is_useless(char c)
 	return (0);
 }
 
-char	*ft_strtrim(const char *s)
+char		*ft_strtrim(const char *s)
 {
 	char	*res;
 	char	*temp;

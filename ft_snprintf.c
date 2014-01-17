@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/01 14:39:29 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/29 17:43:55 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/01/11 18:49:07 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ int		ft_snprintf(char *s, size_t n, const char *format, ...)
 		}
 		else
 			*s = *format;
-		while ((s++ && format++ && res++) && 0);
+		while ((s++ && format++ && res++) && 0)
+			;
 	}
 	*s = '\0';
 	va_end(ap);

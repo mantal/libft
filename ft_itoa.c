@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/25 13:55:46 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/22 18:32:35 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/01/11 18:47:44 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 #define INT_MIN -2147483648
 #define INT_MAX 2147483647
 
-static void	set(int *a, int *b, int a_val, int b_val)
+static void		set(int *a, int *b, int a_val, int b_val)
 {
 	*a = a_val;
 	*b = b_val;

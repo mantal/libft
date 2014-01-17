@@ -6,13 +6,13 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/12 16:59:08 by dlancar           #+#    #+#             */
-/*   Updated: 2014/01/03 19:44:08 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/01/11 18:48:06 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_math.h"
 
-int				ft_pow(int a, unsigned int n)
+int		ft_pow(int a, unsigned int n)
 {
 	int		res;
 
@@ -38,7 +38,7 @@ t_uint	ft_sqrt(t_uint n)
 	return ((t_uint)res);
 }
 
-double			ft_sqrt_d(t_uint n)
+double	ft_sqrt_d(t_uint n)
 {
 	double	res;
 	t_uint	s;
