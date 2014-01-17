@@ -6,10 +6,11 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/20 17:16:54 by dlancar           #+#    #+#             */
-/*   Updated: 2014/01/11 17:46:42 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/01/17 19:00:42 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "error.h"
 #include "libft.h"
 
 void	*array_get(t_array *arr, unsigned int index)
@@ -19,7 +20,7 @@ void	*array_get(t_array *arr, unsigned int index)
 
 void	*array_next(t_array *arr)
 {
-	if (arr->flags & LOOP && arr->it >= arr->size)
+	if ((arr->flags & LOOP) && arr->it >= arr->size)
 		arr->it = 0;
 	if (arr->it < arr->size)
 	{
@@ -41,7 +42,6 @@ t_array	*array_cpy(const t_array *src)
 					src->flags);
 	if (!res)
 		return (NULL);
-	res->err_func = src->err_func;
 	res->size = src->size;
 	ft_memcpy(res->tab, src->tab, src->size * src->size_change);
 	return (res);

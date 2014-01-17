@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/29 09:41:14 by dlancar           #+#    #+#             */
-/*   Updated: 2014/01/11 18:55:07 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/01/17 18:59:42 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,10 @@
 
 # include <string.h>
 # include <stdarg.h>
+
+# ifndef NULL
+#  define NULL ((void *)0)
+# endif /* !NULL */
 
 /*
 ** I/O define
@@ -30,15 +34,9 @@
 # define FALSE 0
 
 /*
-** Error flags
-** These flags are compatible with Dynamic array flags.
+** Special value for flags
 */
-# define ERR_FATAL  8
-# define ERR_DISP   16
-# define ERR_MALLOC 32
-# define ERR_FORK   64
-# define ERR_OPEN   128
-# define ERR_PIPE   256
+# define NAF   3
 
 /*
 ** Dynamic array flags
@@ -68,7 +66,6 @@ typedef struct	s_array
 	size_t			size_change;
 	size_t			size_type;
 	unsigned int	it;
-	void			*(*err_func)(t_flags);
 	t_flags			flags;
 }				t_array;
 
@@ -114,6 +111,7 @@ int		ft_toupper(int c);
 ** Memory operation
 */
 void	ft_bzero(void *s, size_t n);
+void	*ft_malloc(size_t size);
 void	*ft_memalloc(size_t size);
 void	*ft_memccpy(void *s1, const void *s2, int c, size_t n);
 void	*ft_memchr(const void *s, int c, size_t n);
@@ -189,12 +187,6 @@ char	*ft_strjoinf(char *s1, char *s2, unsigned char flag);
 ** File read function
 */
 int		ft_get_next(const int fd, char **line, char c);
-
-/*
-** Error handling function
-*/
-void	*ft_error(t_flags flags);
-void	*ft_error_msg(const char *msg, t_flags flags, ...);
 
 /*
 ** Unix configuration function

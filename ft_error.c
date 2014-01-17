@@ -6,55 +6,72 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/22 19:04:53 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/31 12:36:59 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/01/17 19:33:12 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "error.h"
 #include "libft.h"
+#include <errno.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdarg.h>
 
 /*
-** Supported flags :
-** ERR_DISP  -> call perror.
-** ERR_FATAL -> call exit(EXIT_FAILURE) after an eventual call to perror.
+** This function set the options use by ft_error and ft_error_msg.
+** Use ERR_GET to get current flags.
+** Available display :
+** * ERR_DISP_NONE   -> No display.
+** * ERR_DISP_PERROR -> Display is done by the system perror function.
+** * ERR_DISP_AUTO   -> Display sys_errlist[errno] (usually produce the same
+** *                    output as perror).
+** Other flags :
+** * ERR_FATAL       -> Call exit(EXIT_FAILURE) instead of return.
+** ERR_DISP_AUTO and ERR_FATAL are set by default.
+*/
+t_flags		error_opt(t_flags flags)
+{
+	static t_flags	err_flags = 0;
+
+	if (flags == ERR_GET)
+		return (err_flags);
+	err_flags = flags;
+	return (err_flags);
+}
+
+/*
 ** Return value is always NULL.
 */
-void	*ft_error(t_flags flags)
+void	*ft_error(void)
 {
-	if (flags & ERR_DISP)
+	t_flags flags;
+
+	flags = error_opt(ERR_GET);
+	if (flags & ERR_DISP_PERROR)
 		perror(NULL);
+	else if (flags & ERR_DISP_AUTO)
+	{
+		if (errno > 106)
+			errno = 0;
+		ft_printf("Error : %s.\n", sys_errlist[errno]);
+	}
 	if (flags & ERR_FATAL)
 		exit(EXIT_FAILURE);
 	return (NULL);
 }
 
 /*
-** Supported errors :
-** ERR_MALLOC -> memory allocation error.
-** ERR_FORK   -> fork error.
-** ERR_PIPE   -> pipe error.
-** Supported flags :
-** ERR_FATAL  -> call exit(EXIT_FAILURE) after display error message.
 ** msg is a formated string.
-** If flags is non-nul, msg and additionals parameters are ignored.
 ** Return value is always NULL.
-** Note : everything is printed to STDERR.
 */
-void	*ft_error_msg(const char *msg, t_flags flags, ...)
+void	*ft_error_msg(const char *msg, ...)
 {
-	va_list	ap;
+	va_list		ap;
+	t_flags		flags;
 
-	va_start(ap, flags);
-	if (*msg)
-		ft_vprintf(msg, ap);
-	else if (flags & ERR_MALLOC)
-		ft_putendl_fd("Error : can not allocate memory.", STDERR);
-	else if (flags & ERR_FORK)
-		ft_putendl_fd("Error : can not fork process.", STDERR);
-	else if (flags & ERR_PIPE)
-		ft_putendl_fd("Error : can not pipe.", STDERR);
+	flags = error_opt(ERR_GET);
+	va_start(ap, msg);
+	ft_vprintf(msg, ap);
 	va_end(ap);
 	if (flags & ERR_FATAL)
 		exit(EXIT_FAILURE);

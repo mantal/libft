@@ -6,10 +6,11 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/17 12:42:35 by dlancar           #+#    #+#             */
-/*   Updated: 2014/01/11 18:32:41 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/01/17 19:00:59 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "error.h"
 #include "libft.h"
 #include <stdlib.h>
 
@@ -23,8 +24,6 @@
 ** Current flags : TRUE      -> memory will be initialised to nul.
 **                 PTR       -> enable the array to store pointer.
 **                 LOOP      -> make array_next loop (don't work).
-**                 ERR_DISP  -> see ft_error.
-**                 ERR_FATAL -> see ft_error.
 ** Return NULL if an error occured.
 */
 t_array	*array_new(size_t capacity, size_t size_change, size_t size_type,
@@ -32,19 +31,18 @@ t_array	*array_new(size_t capacity, size_t size_change, size_t size_type,
 {
 	t_array	*res;
 
-	res = (t_array *)malloc(sizeof(t_array));
+	res = (t_array *)ft_malloc(sizeof(t_array));
 	if (!res)
-		return (ft_error(flags | ERR_MALLOC));
+		return (NULL);
 	res->size = 0;
 	res->capacity = capacity;
 	res->size_change = size_change;
 	res->size_type = size_type;
 	res->it = 0;
 	res->flags = flags;
-	res->err_func = &ft_error;
-	res->tab = (char *)malloc(size_change * capacity);
+	res->tab = (char *)ft_malloc(size_change * capacity);
 	if (!res->tab)
-		return (ft_error(flags | ERR_MALLOC));
+		return (NULL);
 	if (flags & TRUE)
 		ft_bzero(res->tab, size_change * capacity);
 	return (res);
@@ -99,9 +97,9 @@ t_array	*array_resize(t_array *arr, t_bool auto_resize)
 
 	(void)auto_resize;
 	arr->capacity += arr->size_change;
-	tab = (char*)malloc(arr->size_type * arr->capacity);
+	tab = (char *)ft_malloc(arr->size_type * arr->capacity);
 	if (!tab)
-		return (arr->err_func(arr->flags | ERR_MALLOC));
+		return (NULL);
 	if (arr->flags & TRUE)
 		ft_bzero(tab, arr->size_type * arr->capacity);
 	ft_memcpy(tab, arr->tab, arr->size * arr->size_type);
