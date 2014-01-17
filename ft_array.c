@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/17 12:42:35 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/30 15:58:53 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/01/11 18:32:41 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,7 +76,7 @@ t_array	*array_insert(t_array *arr, void* value, unsigned int index)
 	while (arr->capacity < index)
 		array_resize(arr, FALSE);
 	if (index + 1 >= arr->size)
-		arr->size = index;
+		arr->size = index + 1;
 	if (arr->flags & PTR)
 		ft_memcpy((arr->tab + (index * arr->size_type)), &value,
 					arr->size_type);
