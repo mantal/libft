@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/22 19:04:53 by dlancar           #+#    #+#             */
-/*   Updated: 2014/01/17 19:33:12 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/02/04 16:30:12 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@
 */
 t_flags		error_opt(t_flags flags)
 {
-	static t_flags	err_flags = 0;
+	static t_flags	err_flags = ERR_DISP_AUTO | ERR_FATAL;
 
 	if (flags == ERR_GET)
 		return (err_flags);
