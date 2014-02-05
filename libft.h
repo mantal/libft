@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/29 09:41:14 by dlancar           #+#    #+#             */
-/*   Updated: 2014/01/17 20:05:15 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/02/05 19:30:47 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -144,7 +144,9 @@ void	ft_putfstr(const char *s1, const void *arg);
 void	ft_putdouble(double d);
 void	ft_putdouble_fd(double d, int fd);
 void	ft_printf(const char *s, ...);
+void	ft_printf_fd(int fd, const char *s, ...);
 void	ft_vprintf(const char *s, va_list ap);
+void	ft_vprintf_fd(int fd, const char *s, va_list ap);
 
 /*
 ** String function

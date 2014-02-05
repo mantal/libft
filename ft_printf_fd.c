@@ -1,36 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*   ft_printf_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/25 09:48:45 by dlancar           #+#    #+#             */
-/*   Updated: 2014/02/05 18:28:08 by dlancar          ###   ########.fr       */
+/*   Created: 2014/02/05 19:27:21 by dlancar           #+#    #+#             */
+/*   Updated: 2014/02/05 19:28:04 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdarg.h>
 
-static int	is_useless(char c)
+void	ft_printf_fd(int fd, const char* str, ...)
 {
-	if (c == ' ' || c == '\n' || c == '\t')
-		return (1);
-	return (0);
+	va_list		ap;
+
+	va_start(ap, str);
+	ft_vprintf_fd(fd, str, ap);
+	va_end(ap);
 }
 
-char		*ft_strtrim(const char *s)
-{
-	char	*res;
-	char	*temp;
-
-	while (is_useless(*s))
-		s++;
-	res = ft_strdup(s);
-	if (!res)
-		return (NULL);
-	temp = ft_strchr(res, '\0');
-	while (is_useless(*temp))
-		temp--;
-	return (ft_strsub(res, 0, temp - res));
-}
