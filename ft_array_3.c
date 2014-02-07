@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/07 16:56:09 by dlancar           #+#    #+#             */
-/*   Updated: 2014/02/07 17:03:09 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/02/07 17:12:49 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,10 @@ t_array		*array_clear(t_array *arr, t_bool b)
 	while (arr->it < arr->size)
 	{
 		if (b)
-			free(array_next(arr));
+			free(array_get(arr, arr->it));
+		arr->it++;
 	}
-	ft_bzero(arr->tab, arr->size);
+	ft_bzero(arr->tab, arr->size * arr->size_type);
 	arr->size = 0;
 	arr->it = 0;
 	return (arr);
