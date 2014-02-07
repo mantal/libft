@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/29 09:41:14 by dlancar           #+#    #+#             */
-/*   Updated: 2014/02/06 18:27:42 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/02/07 17:03:58 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,7 @@ t_array	*array_add(t_array *arr, void *value);
 t_array	*array_set(t_array *arr, void *value, unsigned int index);
 t_array	*array_insert(t_array *arr, void *value, unsigned int index);
 t_array	*array_remove(t_array *arr, unsigned int index);
+t_array	*array_clear(t_array *arr, t_bool b);
 t_array	*array_resize(t_array *arr, t_bool auto_resize);
 void	*array_get(t_array *arr, unsigned int index);
 void	*array_next(t_array *arr);
