@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/22 19:04:53 by dlancar           #+#    #+#             */
-/*   Updated: 2014/02/04 16:30:12 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/02/07 13:09:14 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ t_flags		error_opt(t_flags flags)
 */
 void	*ft_error(void)
 {
-	t_flags flags;
+	t_flags		flags;
 
 	flags = error_opt(ERR_GET);
 	if (flags & ERR_DISP_PERROR)
