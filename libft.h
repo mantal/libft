@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/29 09:41:14 by dlancar           #+#    #+#             */
-/*   Updated: 2014/02/05 19:30:47 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/02/06 18:27:42 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -179,6 +179,7 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n);
 char	*ft_strsub(const char *s, unsigned int start, size_t len);
 char	*ft_strtrim(const char *s);
 t_array	*ft_strsplit(const char *s, char c);
+t_array	*ft_strsplitstr(const char *s, const char *s1);
 char	*ft_strnstr(const char *s1, const char *s2, size_t n);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strstr(const char *s1, const char *s2);
