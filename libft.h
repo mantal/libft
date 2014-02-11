@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/29 09:41:14 by dlancar           #+#    #+#             */
-/*   Updated: 2014/02/07 17:03:58 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/02/11 17:26:16 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,6 +90,9 @@ void	array_free(t_array **arr);
 
 # define A_GI(arr, index)  (*(int *)array_get(arr, index))
 # define A_GUI(arr, index) (*(unsigned int *)array_get(arr, index))
+
+# define A_C(arr, index)  (*(char *)A_G(arr, index))
+# define A_S(arr, index)  (*(char **)A_G(arr, index))
 
 /*
 ** Conversion function
