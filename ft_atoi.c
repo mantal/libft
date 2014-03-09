@@ -6,13 +6,14 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/27 15:27:06 by dlancar           #+#    #+#             */
-/*   Updated: 2014/01/11 18:46:46 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/03/09 13:34:26 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "ft_math.h"
 #include <string.h>
+#include <stdlib.h>
 
 #define INT_MIN_S "-2147483648"
 #define INT_MAX_S "2147483647"
@@ -44,9 +45,9 @@ int				ft_atoi(const char *str)
 	while (ft_isdigit((int)*s))
 	{
 		result += (*s - '0') * ft_pow(10, size - 1);
-		s++;
-		size--;
+		(s++, size--);
 	}
+	free(s);
 	return (result * neg);
 }
 
