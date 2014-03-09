@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/29 09:41:14 by dlancar           #+#    #+#             */
-/*   Updated: 2014/02/11 17:26:16 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/03/09 16:43:59 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -169,6 +169,9 @@ int		ft_strequ(char const *s1, char const *s2);
 void	ft_striter(char *s, void (*f)(char *));
 void	ft_striteri(char *s, void (*f)(unsigned int, char *));
 char	*ft_strjoin(const char *s1, const char *s2);
+char	*ft_strjoinf(char *s1, char *s2, t_flags flag);
+char	*ft_strnjoin(const char *s1, const char *s2, size_t n);
+char	*ft_strnjoinf(char *s1, char *s2, size_t n, t_flags flag);
 size_t	ft_strlcat(char *dst, const char *src, size_t size);
 size_t	ft_strlen(const char *s);
 char	*ft_strmap(char const *s, char (*f)(char));
@@ -188,8 +191,6 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n);
 char	*ft_strrchr(const char *s, int c);
 char	*ft_strstr(const char *s1, const char *s2);
 int		ft_snprintf(char *s, size_t n, const char *format, ...);
-char	*ft_strnjoin(const char *s1, const char *s2, size_t n);
-char	*ft_strjoinf(char *s1, char *s2, unsigned char flag);
 
 /*
 ** File read function

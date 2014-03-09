@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/10 12:59:28 by dlancar           #+#    #+#             */
-/*   Updated: 2014/03/09 16:16:43 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/03/09 16:46:47 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,19 +80,19 @@ static int		ft_read(char **line, char **buf, char c, unsigned int max_s)
 	size = (size > max_s) ? max_s : size;
 	if (!ft_strchr(*buf, c))
 	{
-		if (!(*line = ft_strnjoin(*line, *buf, size)))
+		if (!(*line = ft_strnjoinf(*line, *buf, size, 1)))
 			return (-42);
 		ft_memset(*buf, '\0', BUFF_SIZE);
 		return (-1);
 	}
 	if (size == ft_strlen(*buf))
 	{
-		if (!(*line = ft_strnjoin(*line, *buf, size)))
+		if (!(*line = ft_strnjoinf(*line, *buf, size, 1)))
 			return (-42);
 		ft_memset(*buf, '\0', BUFF_SIZE);
 		return (0);
 	}
-	if (!(*line = ft_strnjoin(*line, *buf, size)))
+	if (!(*line = ft_strnjoinf(*line, *buf, size, 1)))
 		return (-42);
 	ft_memmove(*buf, (*buf) + size + 1, max_s);
 	ft_memset((*buf) + max_s - size, '\0', BUFF_SIZE - max_s);
@@ -141,12 +141,19 @@ static int		ft_free(t_entry *list, const int fd)
 {
 	t_entry		*temp;
 
+	if (!list->next)
+	{
+		free(list->buf);
+		free(list);
+		return (1);
+	}
 	while (list->next)
 	{
 		if (list->next->fd == fd)
 		{
 			temp = list->next;
 			list->next = list->next->next;
+			free(temp->buf);
 			free(temp);
 		}
 		list = list->next;
