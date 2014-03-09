@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/10 12:59:28 by dlancar           #+#    #+#             */
-/*   Updated: 2014/03/09 16:46:47 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/03/09 17:07:45 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int				ft_get_next(const int fd, char **line, char c)
 
 	entry = ft_search(&list, fd);
 	if (!entry || c == -1)
-		return (c == 1 ? ft_free(list, fd) : -1);
+		return (c == -1 ? ft_free(list, fd) : -1);
 	*line = ft_strdup("");
 	if (!*line)
 		return (-1);
