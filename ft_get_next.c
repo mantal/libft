@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/10 12:59:28 by dlancar           #+#    #+#             */
-/*   Updated: 2014/03/09 13:50:40 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/03/09 16:16:43 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ static int		ft_free(t_entry *entry, const int fd);
 /*
 ** Return 1 if something was read, 0 if the function has reach the end of
 ** the file or -1 in case of error.
+** If c == -1, free the memory associated to fd.
 ** TODO : Use static array instead of pointer in t_entry.
 */
 int				ft_get_next(const int fd, char **line, char c)
@@ -38,8 +39,8 @@ int				ft_get_next(const int fd, char **line, char c)
 	int				res;
 
 	entry = ft_search(&list, fd);
-	if (!entry)
-		return (-1);
+	if (!entry || c == -1)
+		return (c == 1 ? ft_free(list, fd) : -1);
 	*line = ft_strdup("");
 	if (!*line)
 		return (-1);
@@ -108,6 +109,7 @@ static t_entry	*ft_new(const int fd)
 	res->next = NULL;
 	res->fd = fd;
 	res->buf = (char*)ft_malloc(sizeof(char) * (BUFF_SIZE + 1));
+	ft_bzero(res->buf, sizeof(char) * (BUFF_SIZE + 1));
 	if (!res->buf)
 		return (NULL);
 	return (res);
