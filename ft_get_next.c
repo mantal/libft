@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/10 12:59:28 by dlancar           #+#    #+#             */
-/*   Updated: 2014/01/03 11:21:59 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/03/09 13:50:40 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,12 +102,12 @@ static t_entry	*ft_new(const int fd)
 {
 	t_entry	*res;
 
-	res = (t_entry*)ft_memalloc(sizeof(t_entry));
+	res = (t_entry*)ft_malloc(sizeof(t_entry));
 	if (!res)
 		return (NULL);
 	res->next = NULL;
 	res->fd = fd;
-	res->buf = (char*)ft_memalloc(sizeof(char) * (BUFF_SIZE + 1));
+	res->buf = (char*)ft_malloc(sizeof(char) * (BUFF_SIZE + 1));
 	if (!res->buf)
 		return (NULL);
 	return (res);
