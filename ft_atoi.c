@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/27 15:27:06 by dlancar           #+#    #+#             */
-/*   Updated: 2014/03/09 13:34:26 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/03/09 13:52:31 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int				ft_atoi(const char *str)
 	char		*s;
 
 	neg = (result = 0) + 1;
-	s = ft_strdup(skip_white_space(str));
+	s = skip_white_space(str);
 	if (!s)
 		return (0);
 	if (*s == '+')
@@ -47,7 +47,6 @@ int				ft_atoi(const char *str)
 		result += (*s - '0') * ft_pow(10, size - 1);
 		(s++, size--);
 	}
-	free(s);
 	return (result * neg);
 }
 
