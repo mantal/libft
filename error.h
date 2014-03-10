@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/17 15:14:37 by dlancar           #+#    #+#             */
-/*   Updated: 2014/01/17 18:04:14 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/03/10 15:32:23 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@
 t_flags		error_opt(t_flags flags);
 void		*ft_error(void);
 void		*ft_error_msg(const char *msg, ...);
+int			ft_perror(void);
 
 #endif /* !ERROR_H */
 

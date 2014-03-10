@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/22 19:04:53 by dlancar           #+#    #+#             */
-/*   Updated: 2014/02/07 13:09:14 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/03/10 15:32:34 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,11 +50,7 @@ void	*ft_error(void)
 	if (flags & ERR_DISP_PERROR)
 		perror(NULL);
 	else if (flags & ERR_DISP_AUTO)
-	{
-		if (errno > 106)
-			errno = 0;
-		ft_printf("Error : %s.\n", sys_errlist[errno]);
-	}
+		ft_perror();
 	if (flags & ERR_FATAL)
 		exit(EXIT_FAILURE);
 	return (NULL);
@@ -76,5 +72,16 @@ void	*ft_error_msg(const char *msg, ...)
 	if (flags & ERR_FATAL)
 		exit(EXIT_FAILURE);
 	return (NULL);
+}
+
+/*
+** Should do the same job as perror(3) do.
+** Return value is always 0.
+*/
+int		ft_perror(void)
+{
+	if (errno > 106)
+		errno = 0;
+	ft_printf_fd(STDERR, "Error : %s.\n", sys_errlist[errno]);
 }
 
