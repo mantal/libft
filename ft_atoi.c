@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/27 15:27:06 by dlancar           #+#    #+#             */
-/*   Updated: 2014/05/09 13:04:36 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/05/16 18:01:49 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@ int				ft_atoi(const char *str)
 	size_t		size;
 	char		*s;
 
-	neg = (result &= 0) + 1;
+	neg = 1;
+	result = 0;
 	s = skip_white_space(str);
 	if (!s)
 		return (0);
