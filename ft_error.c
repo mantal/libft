@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/22 19:04:53 by dlancar           #+#    #+#             */
-/*   Updated: 2014/05/09 13:04:05 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/05/16 16:45:08 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int			ft_error(void)
 		ft_perror();
 	if (flags & ERR_FATAL)
 		exit(EXIT_FAILURE);
-	return (NULL);
+	return (0);
 }
 
 int			ft_error_msg(const char *msg, ...)
@@ -52,7 +52,7 @@ int			ft_error_msg(const char *msg, ...)
 	va_end(ap);
 	if (flags & ERR_FATAL)
 		exit(EXIT_FAILURE);
-	return (NULL);
+	return (0);
 }
 
 int			ft_perror(void)
