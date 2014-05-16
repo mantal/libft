@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/22 19:04:53 by dlancar           #+#    #+#             */
-/*   Updated: 2014/03/10 15:40:06 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/05/14 18:38:25 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,9 +40,9 @@ t_flags		error_opt(t_flags flags)
 }
 
 /*
-** Return value is always NULL.
+** Return value is always 0.
 */
-void	*ft_error(void)
+int			ft_error(void)
 {
 	t_flags		flags;
 
@@ -53,14 +53,14 @@ void	*ft_error(void)
 		ft_perror();
 	if (flags & ERR_FATAL)
 		exit(EXIT_FAILURE);
-	return (NULL);
+	return (0);
 }
 
 /*
 ** msg is a formated string.
-** Return value is always NULL.
+** Return value is always 0.
 */
-void	*ft_error_msg(const char *msg, ...)
+int			ft_error_msg(const char *msg, ...)
 {
 	va_list		ap;
 	t_flags		flags;
@@ -71,14 +71,14 @@ void	*ft_error_msg(const char *msg, ...)
 	va_end(ap);
 	if (flags & ERR_FATAL)
 		exit(EXIT_FAILURE);
-	return (NULL);
+	return (0);
 }
 
 /*
 ** Should do the same job as perror(3) do.
 ** Return value is always 0.
 */
-int		ft_perror(void)
+int			ft_perror(void)
 {
 	if (errno > 106)
 		errno = 0;
