@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/17 15:14:37 by dlancar           #+#    #+#             */
-/*   Updated: 2014/05/14 18:37:05 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/06/21 13:10:54 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
 # define ERR_FATAL       8
 
 # define ERR_GET         3
+
+# define ERR_DEF		 ERR_DISP_AUTO | ERR_FATAL
 
 t_flags		error_opt(t_flags flags);
 int			ft_error(void);
