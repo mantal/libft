@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/05 19:28:46 by dlancar           #+#    #+#             */
-/*   Updated: 2014/05/09 13:00:33 by dlancar          ###   ########.fr       */
+/*   Updated: 2015/03/26 17:40:39 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_vprintf_fd(int fd, const char *str, va_list ap)
 				ft_putdouble_fd(va_arg(ap, double), fd);
 		}
 		else
-			ft_putchar(*str);
+			ft_putchar_fd(*str, fd);
 		str++;
 	}
 }
