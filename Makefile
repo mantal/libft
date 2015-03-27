@@ -6,7 +6,7 @@
 #    By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+         #
 #                                                +#+#+#+#+#+   +#+             #
 #    Created: 2013/11/29 09:40:24 by dlancar           #+#    #+#              #
-#    Updated: 2015/03/19 17:58:44 by dlancar          ###   ########.fr        #
+#    Updated: 2015/03/27 17:32:40 by dlancar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,15 +38,15 @@ SRC		= ft_bzero.c ft_memset.c ft_memcpy.c ft_memccpy.c ft_memmove.c 		\
 																			\
 			ft_get_next.c													\
 																			\
-			socket.c server.c												\
-																			\
 			ft_array.c ft_array_2.c	ft_array_3.c							\
 																			\
 			ft_error.c														\
 																			\
 			ft_get_size.c													\
 																			\
-			ft_config.c
+			ft_config.c														\
+																			\
+			socket.c socket_select.c socket_utils.c socket_var.c
 
 OBJ		= $(SRC:.c=.o)
 CMP		= clang #llvm-gcc
