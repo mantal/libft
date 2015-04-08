@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/25 13:55:46 by dlancar           #+#    #+#             */
-/*   Updated: 2014/01/11 18:47:44 by dlancar          ###   ########.fr       */
+/*   Updated: 2015/04/08 14:50:56 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ char			*ft_itoa(int n)
 
 	ft_init(&n, &neg, &exp, &size);
 	if (!(res = (n == INT_MIN ? ft_strdup("-2147483648") :
-				(char*)malloc(sizeof(char) * (size + 1))))
+				(char *)ft_malloc(sizeof(char) * (size + 1))))
 		|| (res && n == INT_MIN)
 		|| !(res = n == INT_MAX ? ft_strdup("2147483647") : res)
 		|| (res && n == INT_MAX))
