@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/01 14:39:29 by dlancar           #+#    #+#             */
-/*   Updated: 2015/04/09 17:05:30 by dlancar          ###   ########.fr       */
+/*   Updated: 2015/04/13 12:51:02 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void		add_string(t_array *arr, const char *s)
 {
 	while (*s)
 	{
-		array_add(arr, &s);
+		array_add(arr, (char *)s);
 		s++;
 	}
 }
@@ -52,9 +52,8 @@ int				ft_asprintf(char **s, const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			if (format[++i] == '%')
-				array_add(res, "%");
-			else if (format[i] == 'c')
+			i = format[++i] == '%' ? (array_add(res, "%"), i) : i;
+			if (format[i] == 'c')
 				array_add(res, (int[]){va_arg(ap, int)});
 			else if (format[i] == 's')
 				add_string(res, va_arg(ap, char *));
@@ -64,6 +63,7 @@ int				ft_asprintf(char **s, const char *format, ...)
 		else
 			array_add(res, &((char *)format)[i]);
 	}
-	(va_end(ap), *s = res->tab, ft_memset(&i, res->size, sizeof(i)), free(res));
+	(array_add(res, "\0"), va_end(ap), *s = res->tab);
+	(ft_memcpy(&i, &res->size, sizeof(i)), free(res));
 	return (i);
 }
