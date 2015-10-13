@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/27 09:41:47 by dlancar           #+#    #+#             */
-/*   Updated: 2013/11/27 12:05:44 by dlancar          ###   ########.fr       */
+/*   Updated: 2015/10/13 12:20:42 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,5 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n)
 			return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 		i++;
 	}
-	return (0);
+	return ((unsigned char)s1[i] - (unsigned char)s2[i]);
 }
