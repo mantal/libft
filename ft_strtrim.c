@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/25 09:48:45 by dlancar           #+#    #+#             */
-/*   Updated: 2015/10/13 18:02:25 by dlancar          ###   ########.fr       */
+/*   Updated: 2015/10/14 10:59:29 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ char		*ft_strtrim(const char *s)
 	while (is_useless(*s))
 		s++;
 	if (!*s)
-		return ft_strdup("");
+		return (ft_strdup(""));
 	temp = ft_strchr(s, '\0') - 1;
 	while (is_useless(*temp))
 		temp--;
