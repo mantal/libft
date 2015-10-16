@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/16 14:08:02 by dlancar           #+#    #+#             */
-/*   Updated: 2015/10/16 14:21:50 by dlancar          ###   ########.fr       */
+/*   Updated: 2015/10/16 16:07:31 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 char		cbuffer_cnext(t_cbuffer *buffer)
 {
-	buffer->write = FALSE;
 	buffer->start = (buffer->start + 1) % buffer->capacity;
 	return (cbuffer_next(buffer));
 }
@@ -31,7 +30,7 @@ t_cbuffer	*cbuffer_clear(t_cbuffer *buffer)
 {
 	buffer->start = 0;
 	buffer->end = 0;
-	buffer->it = 0;
+	buffer->it = buffer->start;
 	buffer->write = FALSE;
 	return (buffer);
 }

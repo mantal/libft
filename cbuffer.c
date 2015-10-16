@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/16 11:20:47 by dlancar           #+#    #+#             */
-/*   Updated: 2015/10/16 14:07:50 by dlancar          ###   ########.fr       */
+/*   Updated: 2015/10/16 16:06:10 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ t_cbuffer	*cbuffer_new(t_uint capacity)
 	res->capacity = capacity;
 	res->start = 0;
 	res->end = 0;
-	res->it = 0;
+	res->it = res->start;
 	return (res);
 }
 
@@ -65,6 +65,10 @@ char		cbuffer_get_next(const t_cbuffer *buffer)
 
 char		cbuffer_next(t_cbuffer *buffer)
 {
+	char	res;
+
+	res = buffer->arr[buffer->it];
+	buffer->write = FALSE;
 	buffer->it = (buffer->it + 1) % buffer->capacity;
-	return (buffer->arr[buffer->it]);
+	return (res);
 }
