@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/16 14:08:02 by dlancar           #+#    #+#             */
-/*   Updated: 2015/10/16 14:08:25 by dlancar          ###   ########.fr       */
+/*   Updated: 2015/10/16 14:21:50 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,4 +25,13 @@ void		cbuffer_free(t_cbuffer **buffer)
 	free((*buffer)->arr);
 	free(*buffer);
 	*buffer = NULL;
+}
+
+t_cbuffer	*cbuffer_clear(t_cbuffer *buffer)
+{
+	buffer->start = 0;
+	buffer->end = 0;
+	buffer->it = 0;
+	buffer->write = FALSE;
+	return (buffer);
 }

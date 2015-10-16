@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/16 11:19:19 by dlancar           #+#    #+#             */
-/*   Updated: 2015/10/16 14:03:42 by dlancar          ###   ########.fr       */
+/*   Updated: 2015/10/16 14:20:57 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define CBUFFER_H
 
 # include "libft.h"
+
+# define CBUFFER_IS_EMPTY(buffer) (buffer->start==buffer->end && buffer->write)
 
 typedef struct	s_cbuffer
 {
@@ -32,5 +34,6 @@ char			cbuffer_cnext(t_cbuffer *buffer);
 char			cbuffer_next(t_cbuffer *buffer);
 char			cbuffer_get_next(const t_cbuffer *buffer);
 void			cbuffer_free(t_cbuffer **buffer);
+t_cbuffer		*cbuffer_clear(t_cbuffer *buffer);
 
 #endif
