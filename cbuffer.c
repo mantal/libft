@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/16 11:20:47 by dlancar           #+#    #+#             */
-/*   Updated: 2015/10/19 12:32:32 by dlancar          ###   ########.fr       */
+/*   Updated: 2015/10/19 14:35:37 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ t_cbuffer	*cbuffer_new(t_uint capacity)
 	res->start = 0;
 	res->end = 0;
 	res->it = res->start;
+	res->write = FALSE;
 	return (res);
 }
 
