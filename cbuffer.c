@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/16 11:20:47 by dlancar           #+#    #+#             */
-/*   Updated: 2015/10/16 16:06:10 by dlancar          ###   ########.fr       */
+/*   Updated: 2015/10/19 12:32:32 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,8 @@ t_cbuffer	*cbuffer_add(t_cbuffer *buffer, const char *data, t_uint data_size)
 
 t_bool		cbuffer_has_next(const t_cbuffer *buffer)
 {
-	return (buffer->it != buffer->end || buffer->write);
+	return ((buffer->it + 1) % buffer->capacity != buffer->end
+			|| buffer->write);
 }
 
 char		cbuffer_get_next(const t_cbuffer *buffer)
