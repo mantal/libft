@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/16 11:19:19 by dlancar           #+#    #+#             */
-/*   Updated: 2015/10/19 12:23:02 by dlancar          ###   ########.fr       */
+/*   Updated: 2015/10/19 13:40:51 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,5 @@ char			cbuffer_cnext(t_cbuffer *buffer);
 char			cbuffer_next(t_cbuffer *buffer);
 char			cbuffer_get_next(const t_cbuffer *buffer);
 char			cbuffer_get(const t_cbuffer *buffer);
-
 
 #endif
