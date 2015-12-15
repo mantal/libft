@@ -6,13 +6,12 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 14:35:16 by dlancar           #+#    #+#             */
-/*   Updated: 2015/12/11 15:44:36 by dlancar          ###   ########.fr       */
+/*   Updated: 2015/12/15 10:33:23 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "io.h"
 #include "error.h"
-#include "libft.h"
 #include <fcntl.h>
 #include <unistd.h>
 #include <stdarg.h>
