@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 16:12:37 by dlancar           #+#    #+#             */
-/*   Updated: 2015/12/16 17:02:00 by dlancar          ###   ########.fr       */
+/*   Updated: 2015/12/16 17:22:46 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static size_t	get_size(const char **s)
 	return (r);
 }
 
-char	*ft_strmerge(const char **s)
+char			*ft_strmerge(const char **s)
 {
 	char	*res;
 	int		i;
