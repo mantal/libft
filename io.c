@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 14:35:16 by dlancar           #+#    #+#             */
-/*   Updated: 2015/12/19 11:54:00 by dlancar          ###   ########.fr       */
+/*   Updated: 2015/12/22 15:35:18 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 #include <sys/mman.h>
 #include <sys/stat.h>
 
-int		ft_open(const char *path, int oflag, ...)
+int				ft_open(const char *path, int oflag, ...)
 {
 	va_list	ap;
 	int		r;
@@ -34,7 +34,7 @@ int		ft_open(const char *path, int oflag, ...)
 	return (r);
 }
 
-int		ft_close(int fd)
+int				ft_close(int fd)
 {
 	if (close(fd) < 0)
 	{
@@ -62,7 +62,7 @@ static int		get_index(void *p)
 	return (-1);
 }
 
-char	*io_map_file(int fd, int prot)
+char			*io_map_file(int fd, int prot)
 {
 	struct stat	stats;
 	char		*res;
@@ -75,11 +75,11 @@ char	*io_map_file(int fd, int prot)
 		return (NULL);
 	}
 	res = mmap(NULL, stats.st_size, prot, MAP_FILE | MAP_SHARED, fd, 0);
-	array_add(g_iomap, (t_iomap []) { { res, stats.st_size } });
+	array_add(g_iomap, (t_iomap[]) { { res, stats.st_size } });
 	return (res);
 }
 
-int		io_unmap_file(char *p)
+int				io_unmap_file(char *p)
 {
 	int		i;
 	size_t	size;
