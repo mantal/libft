@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/29 09:41:14 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/08 16:43:22 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/08 17:15:33 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,8 +104,6 @@ size_t			ft_get_size(int n);
 
 void			ft_putchar(char c);
 void			ft_putchar_fd(char c, int fd);
-void			ft_putendl(const char *s);
-void			ft_putendl_fd(const char *s, int fd);
 void			ft_putnbr(int n);
 void			ft_putnbr_fd(int n, int fd);
 void			ft_putubase_fd(unsigned long n, unsigned base, int fd);
