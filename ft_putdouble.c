@@ -6,11 +6,11 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/28 11:50:42 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/09 14:13:30 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/09 17:02:31 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ftio.h"
 
 void	ft_putdouble(double d)
 {

@@ -6,11 +6,11 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/05 19:27:21 by dlancar           #+#    #+#             */
-/*   Updated: 2014/05/09 12:56:08 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/09 17:03:41 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ftio.h"
 #include <stdarg.h>
 
 void	ft_printf_fd(int fd, const char *str, ...)

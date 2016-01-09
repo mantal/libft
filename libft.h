@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 16:15:49 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/09 16:52:52 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/09 16:59:58 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,6 @@
 # include <stdarg.h>
 # include <stdbool.h>
 # include <stddef.h>
-
-# define STDIN  STDIN_FILENO
-# define STDOUT STDOUT_FILENO
-# define STDERR STDERR_FILENO
-
-# ifndef STDIN_FILENO
-#  define STDIN_FILENO 0
-# endif
-
-# ifndef STDOUT_FILENO
-#  define STDOUT_FILENO 1
-# endif
-
-# ifndef STDERR_FILENO
-#  define STDERR_FILENO 2
-# endif
 
 # define TRUE  true
 # define FALSE false
@@ -110,21 +94,6 @@ void			*ft_memset(void *b, int c, size_t len);
 size_t			count_digit(unsigned int n);
 size_t			count_digit_base(unsigned int n, unsigned int base);
 
-void			ft_putchar(char c);
-void			ft_putchar_fd(int fd, char c);
-void			ft_putint(int n);
-void			ft_putint_fd(int fd, int n);
-void			ft_putubase_fd(int fd, unsigned long n, unsigned base);
-void			ft_putstr(const char *s);
-void			ft_putstr_fd(int fd, const char *s);
-void			ft_putdouble(double d);
-void			ft_putdouble_fd(int fd, double d);
-void			ft_printf(const char *s, ...);
-void			ft_printf_fd(int fd, const char *s, ...);
-int				ft_asprintf(char **s, const char *format, ...);
-void			ft_vprintf(const char *s, va_list ap);
-void			ft_vprintf_fd(int fd, const char *s, va_list ap);
-
 char			*ft_strcat(char *s1, const char *s2);
 char			*ft_strchar(const char *s1, const char *s2);
 char			*ft_strchr(const char *s, int c);
@@ -160,8 +129,6 @@ char			*ft_strrchr(const char *s, int c);
 char			*ft_strstr(const char *s1, const char *s2);
 bool			ft_strisdigit(const char *s);
 char			*ft_strmerge(const char **s);
-
-int				ft_get_next(const int fd, char **line, char c);
 
 char			*get_env(const char *name);
 char			*get_path(int index);

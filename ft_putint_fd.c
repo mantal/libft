@@ -6,11 +6,11 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/25 09:48:45 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/09 13:56:31 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/09 17:02:06 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ftio.h"
 
 void	ft_putint_fd(int n, int fd)
 {

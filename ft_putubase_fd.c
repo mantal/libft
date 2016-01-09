@@ -6,10 +6,11 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/08 13:30:58 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/09 14:14:41 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/09 17:04:36 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ftio.h"
 #include "libft.h"
 
 void	ft_putubase_fd(int fd, unsigned long n, unsigned int base)

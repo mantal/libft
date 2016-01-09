@@ -6,11 +6,12 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/19 16:43:03 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/09 11:43:59 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/09 17:05:48 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "error.h"
+#include "ftio.h"
 #include "net.h"
 
 #include <stdlib.h>

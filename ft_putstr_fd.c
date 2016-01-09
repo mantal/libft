@@ -6,10 +6,11 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/27 16:38:06 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/09 14:14:11 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/09 17:01:07 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ftio.h"
 #include "libft.h"
 #include <unistd.h>
 

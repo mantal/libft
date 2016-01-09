@@ -6,11 +6,11 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 14:35:16 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/09 14:15:36 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/09 17:06:55 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "io.h"
+#include "ftio.h"
 #include "error.h"
 
 #include <errno.h>

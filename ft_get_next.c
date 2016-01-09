@@ -6,12 +6,13 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/10 12:59:28 by dlancar           #+#    #+#             */
-/*   Updated: 2014/05/09 13:15:59 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/09 17:05:04 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "ft_get_next.h"
+#include "ftio.h"
+#include "libft.h"
 #include <unistd.h>
 #include <stdlib.h>
 
