@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/25 09:48:45 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/09 14:12:16 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/09 16:54:27 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@ void	*ft_memchr(const void *s, int c, size_t n)
 {
 	unsigned char	*str;
 
-	if (!s || !n)
-		return (NULL);
 	str = (unsigned char*)s;
 	while (n--)
 	{
