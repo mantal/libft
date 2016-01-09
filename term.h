@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/13 16:33:48 by dlancar           #+#    #+#             */
-/*   Updated: 2015/10/14 11:00:00 by dlancar          ###   ########.fr       */
+/*   Updated: 2015/12/08 17:08:23 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@
 #  define CURSOR_DOWN "\033[1B"
 # endif
 
-# define CLEAR_LINE  "\r"
+# define CLEAR_LINE  "\033[K"
 
 #endif
