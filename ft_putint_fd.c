@@ -6,14 +6,13 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/25 09:48:45 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/12 12:08:00 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/09 13:56:31 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
-void	ft_putnbr_fd(int n, int fd)
+void	ft_putint_fd(int n, int fd)
 {
 	unsigned long int	exp;
 	unsigned int		temp;
@@ -22,11 +21,11 @@ void	ft_putnbr_fd(int n, int fd)
 	if (!(temp = n) && n < 0)
 	{
 		temp = -n;
-		write(fd, "-", 1);
+		ft_putchar_fd(fd, '-');
 	}
 	if (n == 0)
 	{
-		write(fd, "0", 1);
+		ft_putchar_fd(fd, '0');
 		return ;
 	}
 	exp = 1;
