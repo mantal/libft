@@ -53,7 +53,9 @@ typedef struct	s_array
 
 t_array			*array_new(size_t capacity, size_t size_change,
 						size_t size_type, t_flags flags);
-t_array	*array_init(t_array *arr, size_t capacity, size_t size_change, size_t size_type,
+t_array			*array_new_s(size_t size_type);
+t_array			*array_new_sp(size_t size_type);
+t_array			*array_init(t_array *arr, size_t capacity, size_t size_type,
 						t_flags flags);
 t_array			*array_cpy(const t_array *src);
 t_array			*array_add(t_array *arr, void *value);
@@ -106,8 +108,7 @@ void			ft_putendl(const char *s);
 void			ft_putendl_fd(const char *s, int fd);
 void			ft_putnbr(int n);
 void			ft_putnbr_fd(int n, int fd);
-int				ft_putuint_base(unsigned int n, unsigned int base);
-int				ft_putuint_base_l(unsigned int n, unsigned int base);
+void			ft_putubase_fd(unsigned long n, unsigned base, int fd);
 void			ft_putstr(const char *s);
 void			ft_putstr_fd(const char *s, int fd);
 void			ft_putfstr(const char *s1, const void *arg);
@@ -155,6 +156,7 @@ char			*ft_strnstr(const char *s1, const char *s2, size_t n);
 char			*ft_strrchr(const char *s, int c);
 char			*ft_strstr(const char *s1, const char *s2);
 t_bool			ft_strisdigit(const char *s);
+char			*ft_strmerge(const char **s);
 
 int				ft_get_next(const int fd, char **line, char c);
 
