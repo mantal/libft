@@ -6,9 +6,12 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/19 16:43:03 by dlancar           #+#    #+#             */
-/*   Updated: 2015/03/27 16:14:21 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/09 11:43:59 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "error.h"
+#include "net.h"
 
 #include <stdlib.h>
 #include <sys/socket.h>
@@ -16,12 +19,13 @@
 #include <netdb.h>
 #include <netinet/in.h>
 
-#include "error.h"
-#include "net.h"
-
 #ifdef _linux_
 # include <sys/resource.h>
 #endif
+
+int			(*g_default_accept)	(t_socket *, int) = socket_accept;
+int			(*g_default_read)() = NULL;
+int			(*g_default_write)() = NULL;
 
 typedef struct protoent	t_protoent;
 typedef struct rlimit	t_rlimit;
@@ -36,17 +40,17 @@ t_socket	*socket_create(void)
 	res = ft_malloc(sizeof(t_socket));
 	proto = getprotobyname("tcp");
 	res->fd = socket(PF_INET, SOCK_STREAM, proto->p_proto);
-	if (res->fd < 0 || getrlimit(RLIMIT_NOFILE, &rlimit) < 0)
+	if ((i = 0) || res->fd < 0 || getrlimit(RLIMIT_NOFILE, &rlimit) < 0)
 	{
-		(free(res), ft_error());
+		free(res);
+		ft_error();
 		return (NULL);
 	}
 	res->nfds = 0;
-	i = 0;
 	res->fds = ft_malloc(rlimit.rlim_cur * sizeof(t_fd));
 	res->fds_size = rlimit.rlim_cur;
-	while (++i < res->fds_size)
-		socket_clean_fd(&res->fds[i]);
+	while (i < res->fds_size)
+		socket_init_fd(&(res->fds[i++]));
 	res->fds[res->fd].type = SOC_SERVER;
 	res->fds[res->fd].on_read = g_default_accept;
 	res->fds[STDIN].type = SOC_LOCAL;

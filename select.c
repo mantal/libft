@@ -6,16 +6,16 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/19 16:42:43 by dlancar           #+#    #+#             */
-/*   Updated: 2015/10/19 13:40:18 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/09 11:43:27 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <error.h>
-#include <libft.h>
+#include "error.h"
+#include "libft.h"
+#include "net.h"
+
 #include <sys/select.h>
 #include <sys/resource.h>
-
-#include "net.h"
 
 static void	select_update(t_socket *soc, int r)
 {
