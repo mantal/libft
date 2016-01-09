@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/07 16:56:09 by dlancar           #+#    #+#             */
-/*   Updated: 2014/05/09 12:54:11 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/05/22 16:53:40 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,4 +42,3 @@ t_array		*array_init(t_array *arr, size_t capacity, size_t size_change,
 		ft_bzero(arr->tab, size_change * capacity);
 	return (arr);
 }
-
