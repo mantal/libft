@@ -30,7 +30,7 @@ SRC		= ft_bzero.c ft_memset.c ft_memcpy.c ft_memccpy.c ft_memmove.c 		\
 			ft_putnbr.c ft_putnbr_fd.c ft_putendl.c ft_putendl_fd.c			\
 			ft_putdouble.c ft_putdouble_fd.c ft_printf.c ft_putfstr.c		\
 			ft_vprintf.c ft_vprintf_fd.c ft_printf_fd.c ft_putint_base.c	\
-			ft_asprintf.c													\
+			ft_asprintf.c ft_puthex_fd.c									\
 																			\
 			ft_atoi.c ft_itoa.c												\
 																			\
