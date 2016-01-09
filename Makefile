@@ -49,7 +49,9 @@ SRC		= ft_bzero.c ft_memset.c ft_memcpy.c ft_memccpy.c ft_memmove.c 		\
 																			\
 			socket.c socket_select.c socket_utils.c socket_var.c
 																			\
-			cbuffer.c cbuffer_2.c
+			cbuffer.c cbuffer_2.c											\
+																			\
+			io.c
 
 OBJ		= $(SRC:.c=.o)
 CMP		= clang #llvm-gcc
