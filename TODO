@@ -1,0 +1,3 @@
+array_new - flag TRUE
+better ft_putint atoi itoa
+Harmonize name + move functions from libft.h to separate .h
