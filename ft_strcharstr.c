@@ -6,16 +6,12 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/28 15:08:44 by dlancar           #+#    #+#             */
-/*   Updated: 2015/10/12 16:35:34 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/09 16:13:01 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** Return the position of the first occurence of s1 in s2. Return NULL if s1
-** has no common character with s2.
-*/
 char	*ft_strcharstr(const char *s1, const char *s2)
 {
 	char	*temp;
