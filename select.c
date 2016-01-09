@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/19 16:42:43 by dlancar           #+#    #+#             */
-/*   Updated: 2015/10/13 16:47:45 by dlancar          ###   ########.fr       */
+/*   Updated: 2015/10/19 13:40:18 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,6 @@ void		socket_select(t_socket *soc)
 		if (soc->fds[i].type != SOC_FREE && i != STDOUT)
 		{
 			FD_SET(i, &(soc->fd_read));
-			if (ft_strlen(soc->fds[i].buff_write) > 0)
-				FD_SET(i, &soc->fd_write);
 			soc->nfds = i > soc->nfds ? i : soc->nfds;
 		}
 	}

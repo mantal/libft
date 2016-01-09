@@ -123,7 +123,7 @@ int			socket_accept(t_socket *soc, int cs)
 		ft_error();
 		return (-1);
 	}
-	socket_clean_fd(&soc->fds[res]);
+	socket_clean_fd(&(soc->fds[res]));
 	soc->fds[res].type = SOC_CLIENT;
 	return (res);
 }

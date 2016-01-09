@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/19 16:51:24 by dlancar           #+#    #+#             */
-/*   Updated: 2015/03/27 11:51:30 by dlancar          ###   ########.fr       */
+/*   Updated: 2015/10/19 13:39:23 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define NET_H
 
 # include <sys/socket.h>
+# include "cbuffer.h"
 
 # define SOC_FREE   0
 # define SOC_CLIENT 1
@@ -26,11 +27,9 @@
 
 typedef struct	s_fd
 {
-	int		type;
-	char	buff_read[SOC_BUFF_SIZE + 1];
-	char	buff_write[SOC_BUFF_SIZE + 1];
-	int		(*on_read)();
-	int		(*on_write)();
+	int			type;
+	int			(*on_read)();
+	int			(*on_write)();
 }				t_fd;
 
 typedef struct	s_socket
@@ -50,6 +49,7 @@ t_socket		*socket_bind(t_socket *soc, int port);
 t_socket		*socket_listen(t_socket *soc);
 void			socket_select(t_socket *soc);
 
+void			socket_init_fd(t_fd *fd);
 void			socket_clean_fd(t_fd *fd);
 
 int				socket_accept(t_socket *soc, int cs);
