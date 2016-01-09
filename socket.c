@@ -19,6 +19,10 @@
 #include "error.h"
 #include "net.h"
 
+#ifdef _linux_
+# include <sys/resource.h>
+#endif
+
 typedef struct protoent	t_protoent;
 typedef struct rlimit	t_rlimit;
 
