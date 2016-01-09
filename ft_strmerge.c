@@ -6,11 +6,12 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 16:12:37 by dlancar           #+#    #+#             */
-/*   Updated: 2015/12/16 17:22:46 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/09 11:22:12 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <libft.h>
+#include "libft.h"
+#include <string.h>
 
 static size_t	get_size(const char **s)
 {

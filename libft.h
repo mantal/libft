@@ -6,26 +6,35 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/29 09:41:14 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/08 17:15:33 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/09 11:21:07 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-# include <string.h>
 # include <stdarg.h>
+# include <stdbool.h>
+# include <stddef.h>
 
-# ifndef NULL
-#  define NULL ((void *)0)
+# define STDIN  STDIN_FILENO
+# define STDOUT STDOUT_FILENO
+# define STDERR STDERR_FILENO
+
+# ifndef STDIN_FILENO
+#  define STDIN_FILENO 0
 # endif
 
-# define STDIN  0
-# define STDOUT 1
-# define STDERR 2
+# ifndef STDOUT_FILENO
+#  define STDOUT_FILENO 1
+# endif
 
-# define TRUE  1
-# define FALSE 0
+# ifndef STDERR_FILENO
+#  define STDERR_FILENO 2
+# endif
+
+# define TRUE  true
+# define FALSE false
 
 # define NAF   3
 
@@ -36,7 +45,7 @@
 
 # define BUFF_SIZE 32
 
-typedef unsigned char	t_bool;
+typedef bool			t_bool;
 typedef unsigned int	t_flags;
 typedef unsigned int	t_uint;
 
@@ -100,7 +109,8 @@ void			ft_memdel(void **ap);
 void			*ft_memmove(void *s1, const void *s2, size_t n);
 void			*ft_memset(void *b, int c, size_t len);
 
-size_t			ft_get_size(int n);
+size_t			count_digit(unsigned int n);
+size_t			count_digit_base(unsigned int n, unsigned int base);
 
 void			ft_putchar(char c);
 void			ft_putchar_fd(char c, int fd);
@@ -152,7 +162,7 @@ t_array			*ft_strsplitstr(const char *s, const char *s1);
 char			*ft_strnstr(const char *s1, const char *s2, size_t n);
 char			*ft_strrchr(const char *s, int c);
 char			*ft_strstr(const char *s1, const char *s2);
-t_bool			ft_strisdigit(const char *s);
+bool			ft_strisdigit(const char *s);
 char			*ft_strmerge(const char **s);
 
 int				ft_get_next(const int fd, char **line, char c);
