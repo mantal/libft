@@ -27,3 +27,19 @@ t_array		*array_clear(t_array *arr, t_bool b)
 	arr->it = 0;
 	return (arr);
 }
+
+t_array		*array_init(t_array *arr, size_t capacity, size_t size_change,
+							size_t size_type, t_flags flags)
+{
+	arr->size = 0;
+	arr->capacity = capacity;
+	arr->size_change = size_change;
+	arr->size_type = size_type;
+	arr->it = 0;
+	arr->flags = flags;
+	arr->tab = (char *)ft_malloc(size_change * capacity);
+	if (flags & TRUE)
+		ft_bzero(arr->tab, size_change * capacity);
+	return (arr);
+}
+

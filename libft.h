@@ -53,6 +53,8 @@ typedef struct	s_array
 
 t_array			*array_new(size_t capacity, size_t size_change,
 						size_t size_type, t_flags flags);
+t_array	*array_init(t_array *arr, size_t capacity, size_t size_change, size_t size_type,
+						t_flags flags);
 t_array			*array_cpy(const t_array *src);
 t_array			*array_add(t_array *arr, void *value);
 t_array			*array_set(t_array *arr, void *value, unsigned int index);
