@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/05 19:28:46 by dlancar           #+#    #+#             */
-/*   Updated: 2015/12/08 15:39:59 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/09 14:15:13 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,22 +21,22 @@ void	ft_vprintf_fd(int fd, const char *str, va_list ap)
 		{
 			str++;
 			if (*str == '%')
-				ft_putchar_fd('%', fd);
+				ft_putchar_fd(fd, '%');
 			else if (*str == 'c')
-				ft_putchar_fd(va_arg(ap, int), fd);
+				ft_putchar_fd(fd, va_arg(ap, int));
 			else if (*str == 's')
-				ft_putstr_fd(va_arg(ap, char*), fd);
+				ft_putstr_fd(fd, va_arg(ap, char*));
 			else if (*str == 'd')
-				ft_putnbr_fd(va_arg(ap, int), fd);
+				ft_putint_fd(fd, va_arg(ap, int));
 			else if (*str == 'u')
-				ft_putubase_fd(va_arg(ap, unsigned long), 10, fd);
+				ft_putubase_fd(fd, va_arg(ap, unsigned long), 10);
 			else if (*str == 'f')
-				ft_putdouble_fd(va_arg(ap, double), fd);
+				ft_putdouble_fd(fd, va_arg(ap, double));
 			else if (*str == 'x' || *str == 'X' || *str == 'p')
-				ft_putubase_fd(va_arg(ap, unsigned long), 16, fd);
+				ft_putubase_fd(fd, va_arg(ap, unsigned long), 16);
 		}
 		else
-			ft_putchar_fd(*str, fd);
+			ft_putchar_fd(fd, *str);
 		str++;
 	}
 }

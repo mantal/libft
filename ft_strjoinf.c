@@ -13,6 +13,11 @@
 #include "libft.h"
 #include <stdlib.h>
 
+/*
+** Return a new string composed of the concanation of s1 and s2.
+** If flag = 1, s1 will be free at the end of the process, if flag = 2 s2 will
+** be free, if flag = 3 both string will be free.
+*/
 char	*ft_strjoinf(char *s1, char *s2, t_flags flag)
 {
 	char	*res;

@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
 void	*ft_memccpy(void *s1, const void *s2, int c, size_t n)
 {

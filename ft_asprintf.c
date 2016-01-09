@@ -6,14 +6,13 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/01 14:39:29 by dlancar           #+#    #+#             */
-/*   Updated: 2015/10/12 16:53:08 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/09 14:10:35 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdarg.h>
 #include <stdlib.h>
-#include <string.h>
 
 #include "ft_asprintf.c.part"
 

@@ -6,18 +6,14 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/25 13:55:46 by dlancar           #+#    #+#             */
-/*   Updated: 2015/04/08 14:50:56 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/09 14:11:28 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
-/*
-** TODO : remove defines and include <limits.h>
-*/
-#define INT_MIN -2147483648
-#define INT_MAX 2147483647
+#include <limits.h>
+#include <stdlib.h>
 
 static void		set(int *a, int *b, int a_val, int b_val)
 {

@@ -6,14 +6,19 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 11:17:03 by dlancar           #+#    #+#             */
-/*   Updated: 2014/01/11 13:19:17 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/09 14:13:18 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
 
-void	ft_putchar_fd(char c, int fd)
+#if defined(_WIN32) || defined(__WIN32__)
+# include <io.h>
+#else
+# include <unistd.h>
+#endif
+
+void	ft_putchar_fd(int fd, char c)
 {
 	write(fd, &c, 1);
 }

@@ -6,12 +6,12 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/16 14:08:02 by dlancar           #+#    #+#             */
-/*   Updated: 2015/10/19 12:37:53 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/09 14:09:35 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "cbuffer.h"
+#include <stdlib.h>
 
 char		cbuffer_cnext(t_cbuffer *buffer)
 {

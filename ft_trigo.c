@@ -6,12 +6,12 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/03 16:03:10 by dlancar           #+#    #+#             */
-/*   Updated: 2014/05/09 13:01:17 by dlancar          ###   ########.fr       */
+/*   Updated: 2015/01/26 14:52:27 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_math.h"
-#define  _USE_MATH_DEFINES
+#define _USE_MATH_DEFINES
 #include <math.h>
 
 extern double	g_sin[];

@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/28 11:50:42 by dlancar           #+#    #+#             */
-/*   Updated: 2014/05/09 12:56:29 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/09 14:13:30 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,5 @@
 
 void	ft_putdouble(double d)
 {
-	int		i;
-
-	i = 0;
-	ft_putnbr((int)d);
-	ft_putchar('.');
-	d -= (int)d;
-	while (i++ < 6)
-		d *= 10;
-	ft_putnbr(d);
+	ft_putdouble_fd(STDOUT, d);
 }

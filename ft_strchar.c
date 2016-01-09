@@ -11,8 +11,11 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
+/*
+** Return the position of the first occurence of s2 in s1. Return NULL if s1
+** has no common character with s2.
+*/
 char	*ft_strchar(const char *s1, const char *s2)
 {
 	char	*temp;

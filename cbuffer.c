@@ -6,12 +6,12 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/16 11:20:47 by dlancar           #+#    #+#             */
-/*   Updated: 2015/10/19 14:35:37 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/09 14:09:27 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "cbuffer.h"
+#include <stdlib.h>
 
 t_cbuffer	*cbuffer_new(t_uint capacity)
 {

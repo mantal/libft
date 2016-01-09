@@ -6,13 +6,13 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/27 15:27:06 by dlancar           #+#    #+#             */
-/*   Updated: 2015/10/12 16:53:59 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/09 14:11:00 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include "ft_math.h"
-#include <string.h>
+
 #include <stdlib.h>
 
 #define INT_MIN_S "-2147483648"
@@ -47,6 +47,10 @@ static size_t	get_size(const char *s)
 		i++;
 	return (i);
 }
+
+/*
+** TODO: CLEAN THIS SHIT
+*/
 
 int				ft_atoi(const char *str)
 {

@@ -6,7 +6,6 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/29 09:41:14 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/09 11:21:07 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -113,14 +112,14 @@ size_t			count_digit(unsigned int n);
 size_t			count_digit_base(unsigned int n, unsigned int base);
 
 void			ft_putchar(char c);
-void			ft_putchar_fd(char c, int fd);
-void			ft_putnbr(int n);
-void			ft_putnbr_fd(int n, int fd);
-void			ft_putubase_fd(unsigned long n, unsigned base, int fd);
+void			ft_putchar_fd(int fd, char c);
+void			ft_putint(int n);
+void			ft_putint_fd(int fd, int n);
+void			ft_putubase_fd(int fd, unsigned long n, unsigned base);
 void			ft_putstr(const char *s);
-void			ft_putstr_fd(const char *s, int fd);
+void			ft_putstr_fd(int fd, const char *s);
 void			ft_putdouble(double d);
-void			ft_putdouble_fd(double d, int fd);
+void			ft_putdouble_fd(int fd, double d);
 void			ft_printf(const char *s, ...);
 void			ft_printf_fd(int fd, const char *s, ...);
 int				ft_asprintf(char **s, const char *format, ...);

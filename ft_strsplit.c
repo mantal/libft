@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 t_array		*ft_strsplit(const char *s, char c)
 {
