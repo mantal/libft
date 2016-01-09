@@ -1,33 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_size.c                                      :+:      :+:    :+:   */
+/*   count_digit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/12/17 12:27:16 by dlancar           #+#    #+#             */
-/*   Updated: 2014/05/09 12:54:40 by dlancar          ###   ########.fr       */
+/*   Created: 2016/01/09 11:49:07 by dlancar           #+#    #+#             */
+/*   Updated: 2016/01/09 11:51:14 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
 
-size_t	ft_get_size(int n)
+size_t	count_digit(unsigned int n)
 {
-	unsigned int	res;
-	double			d;
+	return (count_digit_base(n, 10));
+}
+
+size_t	count_digit_base(unsigned int n, unsigned int base)
+{
+	unsigned int	res = 0;
 
 	res = 0;
-	d = (n > 0) ? (double)n : -((double)n);
-	if (n == 0)
-		return (1);
-	while ((long int)d > 0)
+	while (TRUE)
 	{
-		d /= 10;
 		res++;
+		n /= base;
+		if (!n)
+			break ;
 	}
-	if (n < 0)
-		res++;
 	return (res);
 }
