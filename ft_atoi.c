@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/27 15:27:06 by dlancar           #+#    #+#             */
-/*   Updated: 2014/05/16 18:01:49 by dlancar          ###   ########.fr       */
+/*   Updated: 2015/10/12 16:53:59 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,8 +71,8 @@ int				ft_atoi(const char *str)
 	size = get_size(s);
 	while (ft_isdigit((int)*s))
 	{
-		result += (*s - '0') * ft_pow(10, size - 1);
-		(s++, size--);
+		result += (*s - '0') * ft_pow(10, size-- - 1);
+		s++;
 	}
 	return (result * neg);
 }
