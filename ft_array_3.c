@@ -42,3 +42,8 @@ t_array		*array_init(t_array *arr, size_t capacity, size_t size_change,
 		ft_bzero(arr->tab, size_change * capacity);
 	return (arr);
 }
+
+t_array		*array_new_s(size_t size_type)
+{
+	return (array_new(1000, 1000, size_type, 0));
+}
