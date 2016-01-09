@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 16:15:49 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/09 16:16:04 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/09 16:52:52 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,12 +100,10 @@ int				ft_toupper(int c);
 
 void			ft_bzero(void *s, size_t n);
 void			*ft_malloc(size_t size);
-void			*ft_memalloc(size_t size);
 void			*ft_memccpy(void *s1, const void *s2, int c, size_t n);
 void			*ft_memchr(const void *s, int c, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 void			*ft_memcpy(void *s1, const void *s2, size_t n);
-void			ft_memdel(void **ap);
 void			*ft_memmove(void *s1, const void *s2, size_t n);
 void			*ft_memset(void *b, int c, size_t len);
 
@@ -132,10 +130,8 @@ char			*ft_strchar(const char *s1, const char *s2);
 char			*ft_strchr(const char *s, int c);
 char			*ft_strcharstr(const char *s1, const char *s2);
 size_t			ft_strclen(const char *s, char c);
-void			ft_strclr(char *s);
 int				ft_strcmp(const char *s1, const char *s2);
 char			*ft_strcpy(char *s1, const char *s2);
-void			ft_strdel(char **as);
 char			*ft_strdup(const char *s1);
 int				ft_strequ(char const *s1, char const *s2);
 void			ft_striter(char *s, void (*f)(char *));
