@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/03 17:53:06 by dlancar           #+#    #+#             */
-/*   Updated: 2014/01/03 19:44:15 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/05/09 13:02:38 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,4 +48,3 @@ double	ft_trunc(double d, t_uint p)
 	}
 	return (res);
 }
-

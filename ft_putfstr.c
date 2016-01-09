@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/29 13:16:27 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/06 11:51:06 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/05/09 13:01:51 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,3 @@ void	ft_putfstr(const char *s1, const void *arg)
 		s1++;
 	}
 }
-

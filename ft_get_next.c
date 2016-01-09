@@ -6,70 +6,15 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/10 12:59:28 by dlancar           #+#    #+#             */
-/*   Updated: 2014/03/09 17:07:45 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/05/09 13:15:59 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "ft_get_next.h"
 #include <unistd.h>
 #include <stdlib.h>
 
-typedef struct	s_entry
-{
-	struct s_entry	*next;
-	int				fd;
-	char			*buf;
-}				t_entry;
-
-static t_entry	*ft_new(const int fd);
-static int		ft_read(char **line, char **buf, char c, unsigned int max_s);
-static t_entry	*ft_search(t_entry **list, const int fd);
-static int		ft_free(t_entry *entry, const int fd);
-
-/*
-** Return 1 if something was read, 0 if the function has reach the end of
-** the file or -1 in case of error.
-** If c == -1, free the memory associated to fd.
-** TODO : Use static array instead of pointer in t_entry.
-*/
-int				ft_get_next(const int fd, char **line, char c)
-{
-	static t_entry	*list = NULL;
-	t_entry			*entry;
-	int				res;
-
-	entry = ft_search(&list, fd);
-	if (!entry || c == -1)
-		return (c == -1 ? ft_free(list, fd) : -1);
-	*line = ft_strdup("");
-	if (!*line)
-		return (-1);
-	if ((res = ft_read(line, &(entry->buf), c, BUFF_SIZE)) > 0)
-		return (1);
-	while ((res = read(fd, entry->buf, BUFF_SIZE)) > 0)
-	{
-		entry->buf[BUFF_SIZE] = '\0';
-		if (res < 0)
-			return (-1);
-		if ((res = ft_read(line, &(entry->buf), c, res) > 0))
-			return (1);
-		if (!res && !entry->buf)
-			return (ft_free(list, fd));
-		if (res < 0)
-			return (-1);
-	}
-	return (res = (res > 0) ? 1 : 0);
-}
-
-/*
-** Return -1 if buf dont containt any \n (+copy the content of buf in line and
-** and free/clear buf).
-** Return 0 if buf end with \n (+copy the content of buf in line and free/clear
-** buf).
-** Return 1 if buf containt more than one '\n' and/or dont end with a '\n'
-** (+copy the first line of buf in line and realloc/reorganize
-** buf without the copied content).
-*/
 static int		ft_read(char **line, char **buf, char c, unsigned int max_s)
 {
 	unsigned int	size;
@@ -159,4 +104,33 @@ static int		ft_free(t_entry *list, const int fd)
 		list = list->next;
 	}
 	return (1);
+}
+
+int				ft_get_next(const int fd, char **line, char c)
+{
+	static t_entry	*list = NULL;
+	t_entry			*entry;
+	int				res;
+
+	entry = ft_search(&list, fd);
+	if (!entry || c == -1)
+		return (c == -1 ? ft_free(list, fd) : -1);
+	*line = ft_strdup("");
+	if (!*line)
+		return (-1);
+	if ((res = ft_read(line, &(entry->buf), c, BUFF_SIZE)) > 0)
+		return (1);
+	while ((res = read(fd, entry->buf, BUFF_SIZE)) > 0)
+	{
+		entry->buf[BUFF_SIZE] = '\0';
+		if (res < 0)
+			return (-1);
+		if ((res = ft_read(line, &(entry->buf), c, res) > 0))
+			return (1);
+		if (!res && !entry->buf)
+			return (ft_free(list, fd));
+		if (res < 0)
+			return (-1);
+	}
+	return (res = (res > 0) ? 1 : 0);
 }

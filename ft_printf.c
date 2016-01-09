@@ -6,14 +6,14 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/28 11:39:58 by dlancar           #+#    #+#             */
-/*   Updated: 2013/12/30 15:05:56 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/05/09 12:55:54 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdarg.h>
 
-void	ft_printf(const char* str, ...)
+void	ft_printf(const char *str, ...)
 {
 	va_list		ap;
 

@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/03 16:03:10 by dlancar           #+#    #+#             */
-/*   Updated: 2014/01/05 19:49:05 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/05/09 13:01:17 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,12 +26,8 @@ double	ft_sin(double d)
 	d = ft_trunc(d, 2);
 	d *= 1000;
 	return (g_sin[(unsigned long long int)d]);
-
 }
 
-/*
-** WARNING: Cos table is NOT implemented yet.
-*/
 double	ft_cos(double d)
 {
 	d = d > 0 ? d : -d;
@@ -40,7 +36,6 @@ double	ft_cos(double d)
 	d = ft_trunc(d, 2);
 	d *= 1000;
 	return (g_cos[(unsigned long long int)d]);
-
 }
 
 double	ft_tan(double d)
@@ -52,4 +47,3 @@ double	ft_tan(double d)
 	d *= 1000;
 	return (g_tan[(unsigned long long int)d]);
 }
-

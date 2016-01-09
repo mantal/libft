@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/03 11:17:32 by dlancar           #+#    #+#             */
-/*   Updated: 2014/01/03 18:11:10 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/05/09 13:00:10 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,4 +29,3 @@ t_bool	vec3d_cmp(const t_vec3d *vec1, const t_vec3d *vec2)
 		return (FALSE);
 	return (TRUE);
 }
-

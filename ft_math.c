@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/12 16:59:08 by dlancar           #+#    #+#             */
-/*   Updated: 2014/01/11 18:48:06 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/05/09 12:55:28 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,6 @@ int		ft_pow(int a, unsigned int n)
 	return (res);
 }
 
-/*
-** Return the nearest perfect square to n.
-** The behaviour is undefinined when n approach to UINT_MAX
-*/
 t_uint	ft_sqrt(t_uint n)
 {
 	unsigned long int	res;
@@ -47,7 +43,6 @@ double	ft_sqrt_d(t_uint n)
 		return (0);
 	s = ft_sqrt(n);
 	res = (s * s) * ((s * s) + 6 * n) + (n * n);
-	res /= (4 * s) * ((s *s) + n);
+	res /= (4 * s) * ((s * s) + n);
 	return (res);
 }
-

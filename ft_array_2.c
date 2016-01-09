@@ -6,14 +6,14 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/20 17:16:54 by dlancar           #+#    #+#             */
-/*   Updated: 2014/02/04 15:36:50 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/05/09 12:53:48 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "error.h"
 #include "libft.h"
 
-t_array	*array_set(t_array *arr, void* value, unsigned int index)
+t_array	*array_set(t_array *arr, void *value, unsigned int index)
 {
 	if (arr->flags & PTR)
 		ft_memcpy((arr->tab + (index * arr->size_type)), &value,
@@ -40,10 +40,6 @@ void	*array_next(t_array *arr)
 	return (NULL);
 }
 
-/*
-** Return a new t_array which is a copy of src. Iterator is not copied.
-** Return NULL if an error occure.
-*/
 t_array	*array_cpy(const t_array *src)
 {
 	t_array	*res;
@@ -57,9 +53,6 @@ t_array	*array_cpy(const t_array *src)
 	return (res);
 }
 
-/*
-** Remove the content at index.
-*/
 t_array	*array_remove(t_array *arr, unsigned int index)
 {
 	unsigned int	i;
@@ -74,4 +67,3 @@ t_array	*array_remove(t_array *arr, unsigned int index)
 	}
 	return (arr);
 }
-

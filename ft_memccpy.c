@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/27 16:18:58 by dlancar           #+#    #+#             */
-/*   Updated: 2014/01/17 17:46:12 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/05/09 12:55:39 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,3 @@ void	*ft_memccpy(void *s1, const void *s2, int c, size_t n)
 	}
 	return (NULL);
 }
-

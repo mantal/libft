@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/17 18:07:57 by dlancar           #+#    #+#             */
-/*   Updated: 2014/05/16 15:35:30 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/05/09 12:54:57 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,6 @@ void	*ft_malloc(size_t size)
 
 	ptr = malloc(size);
 	if (!ptr)
-	{
-		ft_error();
-		return (NULL);
-	}
+		return (ft_error());
 	return (ptr);
 }
-

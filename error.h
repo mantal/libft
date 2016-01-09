@@ -24,9 +24,9 @@
 # define ERR_GET         3
 
 t_flags		error_opt(t_flags flags);
-int			ft_error(void);
-int			ft_error_msg(const char *msg, ...);
+void		*ft_error(void);
+void		*ft_error_msg(const char *msg, ...);
 int			ft_perror(void);
 
-#endif /* !ERROR_H */
+#endif
 

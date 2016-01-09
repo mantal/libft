@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/17 12:42:35 by dlancar           #+#    #+#             */
-/*   Updated: 2014/01/17 20:40:21 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/05/09 12:52:59 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,18 +14,6 @@
 #include "libft.h"
 #include <stdlib.h>
 
-/*
-** Return a pointer to a mallocated t_array.
-** capacity is the inital capacity of the array.
-** size_type is the number of byte of the data that the array will
-** contain (usually get with sizeof()).
-** If nul is passed to capacity, size_change or size_type, the behavior is
-** undefined.
-** Current flags : TRUE      -> memory will be initialised to nul.
-**                 PTR       -> enable the array to store pointer.
-**                 LOOP      -> make array_next loop (don't work).
-** Return NULL if an error occured.
-*/
 t_array	*array_new(size_t capacity, size_t size_change, size_t size_type,
 						t_flags flags)
 {
@@ -48,7 +36,7 @@ t_array	*array_new(size_t capacity, size_t size_change, size_t size_type,
 	return (res);
 }
 
-t_array	*array_add(t_array *arr, void* value)
+t_array	*array_add(t_array *arr, void *value)
 {
 	if (arr->capacity == arr->size)
 		array_resize(arr, FALSE);
@@ -62,10 +50,7 @@ t_array	*array_add(t_array *arr, void* value)
 	return (arr);
 }
 
-/*
-** Insert an element at index.
-*/
-t_array	*array_insert(t_array *arr, void* value, unsigned int index)
+t_array	*array_insert(t_array *arr, void *value, unsigned int index)
 {
 	void	*temp;
 
@@ -83,14 +68,6 @@ t_array	*array_insert(t_array *arr, void* value, unsigned int index)
 	return (arr);
 }
 
-/*
-** Increase the capacity of arr.
-** If auto_resize = TRUE, the new capacity will be calculated to feet a
-** load factor of LOAD_FACTOR.
-** Else, the new capacity will be increase by size_change.
-** Return NULL if an error occured.
-** TODO : Implemente auto resize.
-*/
 t_array	*array_resize(t_array *arr, t_bool auto_resize)
 {
 	void	*tab;
@@ -114,4 +91,3 @@ void	array_free(t_array **arr)
 	free(*arr);
 	*arr = NULL;
 }
-

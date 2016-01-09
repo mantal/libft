@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/18 17:05:55 by dlancar           #+#    #+#             */
-/*   Updated: 2014/01/11 13:22:08 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/05/09 12:58:09 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,6 @@ int			ft_putuint_base(unsigned int n, unsigned int base)
 	return (i);
 }
 
-/*
-** Put the n in the base base, if base > 10, lower letter will be use.
-*/
 int			ft_putuint_base_l(unsigned int n, unsigned int base)
 {
 	t_array	*res;
@@ -80,4 +77,3 @@ int			ft_putuint_base_l(unsigned int n, unsigned int base)
 	array_free(&res);
 	return (i);
 }
-

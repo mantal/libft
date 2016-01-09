@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/26 17:56:57 by dlancar           #+#    #+#             */
-/*   Updated: 2014/01/11 18:47:06 by dlancar          ###   ########.fr       */
+/*   Updated: 2014/05/09 13:02:50 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,6 @@ char	*get_env(const char *name)
 	return (NULL);
 }
 
-/*
-** If index < 0, the internal array will be free.
-*/
 char	*get_path(int index)
 {
 	static t_array	*path = NULL;
@@ -47,4 +44,3 @@ char	*get_path(int index)
 		return (NULL);
 	return (*(char **)array_get(path, index));
 }
-
