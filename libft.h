@@ -115,6 +115,7 @@ void			ft_putdouble(double d);
 void			ft_putdouble_fd(double d, int fd);
 void			ft_printf(const char *s, ...);
 void			ft_printf_fd(int fd, const char *s, ...);
+int				ft_asprintf(char **s, const char *format, ...);
 void			ft_vprintf(const char *s, va_list ap);
 void			ft_vprintf_fd(int fd, const char *s, va_list ap);
 
@@ -153,7 +154,6 @@ t_array			*ft_strsplitstr(const char *s, const char *s1);
 char			*ft_strnstr(const char *s1, const char *s2, size_t n);
 char			*ft_strrchr(const char *s, int c);
 char			*ft_strstr(const char *s1, const char *s2);
-int				ft_snprintf(char *s, size_t n, const char *format, ...);
 
 int				ft_get_next(const int fd, char **line, char c);
 
