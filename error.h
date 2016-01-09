@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/17 15:14:37 by dlancar           #+#    #+#             */
-/*   Updated: 2014/06/21 13:10:54 by dlancar          ###   ########.fr       */
+/*   Updated: 2015/03/19 17:58:54 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,4 +31,3 @@ int			ft_error_msg(const char *msg, ...);
 int			ft_perror(void);
 
 #endif
-
