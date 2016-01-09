@@ -154,6 +154,7 @@ t_array			*ft_strsplitstr(const char *s, const char *s1);
 char			*ft_strnstr(const char *s1, const char *s2, size_t n);
 char			*ft_strrchr(const char *s, int c);
 char			*ft_strstr(const char *s1, const char *s2);
+t_bool			ft_strisdigit(const char *s);
 
 int				ft_get_next(const int fd, char **line, char c);
 
