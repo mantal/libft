@@ -6,15 +6,15 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/08 13:30:58 by dlancar           #+#    #+#             */
-/*   Updated: 2015/12/08 14:36:16 by dlancar          ###   ########.fr       */
+/*   Updated: 2015/12/08 15:37:08 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_puthex_fd(unsigned long n, int fd)
+void	ft_putubase_fd(unsigned long n, unsigned int base, int fd)
 {
-	char	res[100];
+	char	res[42];
 	int		i;
 
 	i = 0;
@@ -22,8 +22,8 @@ void	ft_puthex_fd(unsigned long n, int fd)
 	ft_putstr_fd("0x", fd);
 	while (TRUE)
 	{
-		res[i] = n % 16 >= 10 ? 'a' - 10 + n % 16 : '0' + n % 16;
-		n /= 16;
+		res[i] = n % base >= 10 ? 'a' - 10 + n % base : '0' + n % base;
+		n /= base;
 		if (!n)
 			break ;
 		i++;
