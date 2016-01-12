@@ -5,29 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2013/11/27 09:41:47 by dlancar           #+#    #+#             */
-/*   Updated: 2013/11/27 14:13:53 by dlancar          ###   ########.fr       */
+/*   Created: 2013/11/28 15:08:44 by dlancar           #+#    #+#             */
+/*   Updated: 2016/01/12 15:51:21 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include "libft.h"
+#include "ftstring.h"
 
 char	*ft_strstr(const char *s1, const char *s2)
 {
-	unsigned int	i;
+	char	*temp;
 
-	if (!s2 || !*s2)
-		return ((char*)s1);
+	temp = (char *)s2;
 	while (*s1)
 	{
-		i = 0;
-		while (s1[i] == s2[i])
+		while (*s2)
 		{
-			i++;
-			if (!s2[i])
-				return ((char*)s1);
+			if (*s1 == *s2)
+				return ((char *)s2);
+			s2++;
 		}
+		s2 = temp;
 		s1++;
 	}
 	return (NULL);

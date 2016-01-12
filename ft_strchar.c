@@ -6,11 +6,11 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/28 09:31:47 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/09 16:12:43 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/12 15:22:34 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ftstring.h"
 
 char	*ft_strchar(const char *s1, const char *s2)
 {

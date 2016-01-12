@@ -6,12 +6,11 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/16 16:12:37 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/09 11:22:12 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/12 15:29:20 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <string.h>
+#include "ftstring.h"
 
 static size_t	get_size(const char **s)
 {
@@ -36,7 +35,7 @@ char			*ft_strmerge(const char **s)
 	j = 0;
 	while (s[i])
 	{
-		memcpy(res + j, s[i], ft_strlen(s[i]));
+		ft_memcpy(res + j, s[i], ft_strlen(s[i]));
 		j += ft_strlen(s[i]);
 		i++;
 	}

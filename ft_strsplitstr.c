@@ -6,12 +6,12 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/06 16:31:12 by dlancar           #+#    #+#             */
-/*   Updated: 2015/10/12 16:33:01 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/12 15:51:12 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ftstring.h"
 #include "libft.h"
-#include <stdlib.h>
 
 t_array		*ft_strsplitstr(const char *s, const char *s1)
 {

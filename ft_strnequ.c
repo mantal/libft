@@ -6,11 +6,11 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/28 09:31:47 by dlancar           #+#    #+#             */
-/*   Updated: 2013/11/28 09:35:28 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/12 15:30:32 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ftstring.h"
 
 int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {

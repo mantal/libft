@@ -6,12 +6,11 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/27 16:38:06 by dlancar           #+#    #+#             */
-/*   Updated: 2013/11/27 18:46:23 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/12 15:27:36 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <string.h>
+#include "ftstring.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {

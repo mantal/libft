@@ -6,17 +6,18 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/25 09:48:45 by dlancar           #+#    #+#             */
-/*   Updated: 2015/10/14 10:59:29 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/12 15:53:05 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ftstring.h"
 #include "libft.h"
 
-static int	is_useless(char c)
+static bool	is_useless(char c)
 {
 	if (c == ' ' || c == '\n' || c == '\t')
-		return (1);
-	return (0);
+		return (true);
+	return (false);
 }
 
 char		*ft_strtrim(const char *s)

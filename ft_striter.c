@@ -6,11 +6,11 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/21 14:30:32 by dlancar           #+#    #+#             */
-/*   Updated: 2014/01/11 13:16:12 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/12 15:24:53 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ftstring.h"
 
 void	ft_striter(char *s, void (*f)(char *))
 {

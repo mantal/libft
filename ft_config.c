@@ -6,10 +6,11 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/26 17:56:57 by dlancar           #+#    #+#             */
-/*   Updated: 2014/05/09 13:02:50 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/12 16:00:46 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ftstring.h"
 #include "libft.h"
 
 char	*get_env(const char *name)

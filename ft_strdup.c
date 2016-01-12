@@ -6,12 +6,15 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/27 16:38:06 by dlancar           #+#    #+#             */
-/*   Updated: 2014/01/17 19:42:44 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/12 15:21:45 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdlib.h>
+#include "ftstring.h"
+
+/*
+** TODO: Do the copy with memcpy
+*/
 
 char	*ft_strdup(const char *s1)
 {
@@ -22,7 +25,7 @@ char	*ft_strdup(const char *s1)
 	if (!s1)
 		return (NULL);
 	i = ft_strlen(s1);
-	s2 = (char *)ft_malloc(sizeof(char) * (i + 1));
+	s2 = ft_malloc(sizeof(char) * (i + 1));
 	if (!s2)
 		return (NULL);
 	j = 0;

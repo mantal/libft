@@ -6,12 +6,12 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/27 16:38:06 by dlancar           #+#    #+#             */
-/*   Updated: 2013/11/27 18:48:44 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/12 15:30:07 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <string.h>
+#include "ftstring.h"
 
 char	*ft_strncpy(char *s1, const char *s2, size_t n)
 {

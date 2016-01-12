@@ -6,10 +6,11 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/19 17:11:53 by dlancar           #+#    #+#             */
-/*   Updated: 2013/11/19 17:11:57 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/12 15:55:39 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ftstring.h"
 #include "libft.h"
 
 int		ft_isprint(int c)

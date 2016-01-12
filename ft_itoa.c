@@ -6,14 +6,18 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/25 13:55:46 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/09 14:11:28 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/12 15:59:50 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include "ftstring.h"
 #include "libft.h"
 
 #include <limits.h>
-#include <stdlib.h>
+
+/*
+** TODO: rewrite all this shit
+*/
 
 static void		set(int *a, int *b, int a_val, int b_val)
 {
