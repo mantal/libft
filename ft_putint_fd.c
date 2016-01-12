@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/25 09:48:45 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/12 15:01:25 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/12 15:05:39 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	ft_putint_fd(int fd, int n)
 	while (exp >= 1)
 	{
 		f = temp / exp;
-		ft_putchar_fd((long int)f + '0', fd);
+		ft_putchar_fd(fd, (long int)f + '0');
 		temp -= ((long int)f) * exp;
 		exp /= 10;
 	}
