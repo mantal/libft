@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/08 13:30:58 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/09 17:04:36 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/12 15:01:41 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	ft_putubase_fd(int fd, unsigned long n, unsigned int base)
 
 	i = 0;
 	ft_bzero(&res, sizeof(res));
-	while (TRUE)
+	while (true)
 	{
 		res[i] = n % base >= 10 ? 'a' - 10 + n % base : '0' + n % base;
 		n /= base;
