@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/17 12:42:35 by dlancar           #+#    #+#             */
-/*   Updated: 2015/10/15 17:20:34 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/18 16:48:13 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ t_array	*array_new(size_t capacity, size_t size_change, size_t size_type,
 	res->tab = ft_malloc(size_type * capacity);
 	if (!res->tab)
 		return (NULL);
-	if (flags & TRUE)
+	if (flags & 1)
 		ft_bzero(res->tab, size_change * capacity);
 	return (res);
 }
@@ -39,7 +39,7 @@ t_array	*array_new(size_t capacity, size_t size_change, size_t size_type,
 t_array	*array_add(t_array *arr, void *value)
 {
 	if (arr->capacity == arr->size)
-		array_resize(arr, FALSE);
+		array_resize(arr, false);
 	if (arr->flags & PTR)
 		ft_memcpy((arr->tab + (arr->size * arr->size_type)),
 				&value, arr->size_type);
@@ -64,7 +64,7 @@ t_array	*array_insert(t_array *arr, void *value, unsigned int index)
 	array_set(arr, value, index);
 	arr->size++;
 	if (arr->size == arr->capacity)
-		array_resize(arr, FALSE);
+		array_resize(arr, false);
 	return (arr);
 }
 
@@ -77,7 +77,7 @@ t_array	*array_resize(t_array *arr, t_bool auto_resize)
 	tab = (char *)ft_malloc(arr->size_type * arr->capacity);
 	if (!tab)
 		return (NULL);
-	if (arr->flags & TRUE)
+	if (arr->flags & 0)
 		ft_bzero(tab, arr->size_type * arr->capacity);
 	ft_memcpy(tab, arr->tab, arr->size * arr->size_type);
 	free(arr->tab);

@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/04 16:30:54 by dlancar           #+#    #+#             */
-/*   Updated: 2014/05/09 12:59:57 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/18 16:47:22 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ void	set_vec2d(t_vec2d *vec, double x, double y)
 t_bool	vec2d_cmp(const t_vec2d *vec1, const t_vec2d *vec2)
 {
 	if (vec1->x == vec2->y && vec1->y == vec2->y)
-		return (TRUE);
-	return (FALSE);
+		return (true);
+	return (false);
 }

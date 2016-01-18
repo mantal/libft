@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/16 11:20:47 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/09 14:09:27 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/18 16:50:21 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_cbuffer	*cbuffer_new(t_uint capacity)
 	res->start = 0;
 	res->end = 0;
 	res->it = res->start;
-	res->write = FALSE;
+	res->write = false;
 	return (res);
 }
 
@@ -36,7 +36,7 @@ t_cbuffer	*cbuffer_add(t_cbuffer *buffer, const char *data, t_uint data_size)
 {
 	t_uint		overflow;
 
-	buffer->write = TRUE;
+	buffer->write = true;
 	if (buffer->end + data_size <= buffer->capacity)
 	{
 		ft_memcpy(buffer->arr + buffer->end, data, data_size);
@@ -70,7 +70,7 @@ char		cbuffer_next(t_cbuffer *buffer)
 	char	res;
 
 	res = buffer->arr[buffer->it];
-	buffer->write = FALSE;
+	buffer->write = false;
 	buffer->it = (buffer->it + 1) % buffer->capacity;
 	return (res);
 }

@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 11:49:07 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/09 14:10:22 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/18 16:49:47 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ size_t	count_digit_base(unsigned int n, unsigned int base)
 	unsigned int	res;
 
 	res = 0;
-	while (TRUE)
+	while (true)
 	{
 		res++;
 		n /= base;

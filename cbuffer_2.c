@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/16 14:08:02 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/09 14:09:35 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/18 16:50:37 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ t_cbuffer	*cbuffer_clear(t_cbuffer *buffer)
 	buffer->start = 0;
 	buffer->end = 0;
 	buffer->it = buffer->start;
-	buffer->write = FALSE;
+	buffer->write = false;
 	return (buffer);
 }
 
