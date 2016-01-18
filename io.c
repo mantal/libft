@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 14:35:16 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/09 17:06:55 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/18 13:44:35 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,11 @@ char			*io_map_file(int fd, int prot)
 		return (NULL);
 	}
 	res = mmap(NULL, stats.st_size, prot, MAP_FILE | MAP_SHARED, fd, 0);
+	if (res == MAP_FAILED)
+	{
+		ft_error();
+		return (NULL);
+	}
 	array_add(g_iomap, (t_iomap[]) { { res, stats.st_size } });
 	return (res);
 }
