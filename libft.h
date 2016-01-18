@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 16:15:49 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/12 15:13:29 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/18 16:45:29 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,9 +16,6 @@
 # include <stdarg.h>
 # include <stdbool.h>
 # include <stddef.h>
-
-# define TRUE  true
-# define FALSE false
 
 # define NAF   3
 
