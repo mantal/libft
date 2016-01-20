@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/19 16:43:03 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/09 17:05:48 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/20 18:06:09 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 #include <netdb.h>
 #include <netinet/in.h>
 
-#ifdef _linux_
+#ifdef __linux__
 # include <sys/resource.h>
 #endif
 
