@@ -6,13 +6,14 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 16:56:18 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/09 17:07:19 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/21 14:49:09 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FTIO_H
 # define FTIO_H
 
+# include <stdbool.h>
 # include <stdarg.h>
 # include <stddef.h>
 
@@ -67,5 +68,7 @@ int				ft_close(int fd);
 
 char			*io_map_file(int fd, int prot);
 int				io_unmap_file(char *p);
+
+extern bool		g_malloc_use;
 
 #endif

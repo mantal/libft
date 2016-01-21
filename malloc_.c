@@ -1,34 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_malloc.c                                        :+:      :+:    :+:   */
+/*   malloc_.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/01/17 18:07:57 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/21 14:48:43 by dlancar          ###   ########.fr       */
+/*   Created: 2015/11/24 13:56:43 by dlancar           #+#    #+#             */
+/*   Updated: 2016/01/21 14:45:47 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "error.h"
-#include "libft.h"
 #include "malloc_.h"
-#include <stdlib.h>
 
-/*
-** if g_malloc_use == true use system malloc, else use our.
-*/
-bool	g_malloc_use = true;
+#include <unistd.h>
+#include <sys/mman.h>
 
-void	*ft_malloc(size_t size)
+void	*alloc(size_t size)
 {
-	void	*ptr;
+	unsigned long	*res;
 
-	ptr = g_malloc_use ? malloc(size) : malloc_(size);
-	if (!ptr)
+	size += sizeof(void *);
+	size += getpagesize() - (size % getpagesize());
+	res = mmap(NULL, size,
+			PROT_WRITE | PROT_READ, MAP_SHARED | MAP_ANON, -1, 0);
+	if (res == MAP_FAILED)
 	{
 		ft_error();
 		return (NULL);
 	}
-	return (ptr);
+	res[0] = size;
+	return (res + sizeof(void *));
+}
+
+void	*malloc_(size_t size)
+{
+	if (size == 0)
+		return (NULL);
+	if (g_malloc_memory == NULL)
+		g_malloc_memory = array_new_s(sizeof(t_chunk));
+	return (chunk_find(size));
 }
