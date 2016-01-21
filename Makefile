@@ -6,7 +6,7 @@
 #    By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+         #
 #                                                +#+#+#+#+#+   +#+             #
 #    Created: 2013/11/29 09:40:24 by dlancar           #+#    #+#              #
-#    Updated: 2016/01/21 15:13:08 by dlancar          ###   ########.fr        #
+#    Updated: 2016/01/21 15:35:01 by dlancar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,7 @@ SRC		= ft_bzero.c ft_memset.c ft_memcpy.c ft_memccpy.c ft_memmove.c 		\
 																			\
 			cbuffer.c cbuffer_2.c											\
 																			\
-			io.c malloc_.c realloc_.c free_.c
+			io.c malloc_.c realloc_.c free_.c mem.c
 
 OBJ		= $(SRC:.c=.o)
 CMP		= clang #llvm-gcc
