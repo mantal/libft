@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 15:40:29 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/21 15:15:13 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/21 15:36:38 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ static t_chunk	*chunk_create(size_t size)
 
 #define M(n) (n == SMALL_CHUNK ? "TINY" : n == MEDIUM_CHUNK ? "SMALL" : "LARGE")
 
-void			show_alloc_mem(void)
+void			malloc_dump_chunk(void)
 {
 	t_chunk	c;
 	t_mem	m;
