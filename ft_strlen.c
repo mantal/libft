@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/27 09:41:47 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/12 15:27:45 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/28 17:28:52 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ size_t	ft_strlen(const char *s)
 	size_t	i;
 
 	i = 0;
-	if (!s)
-		return (0);
 	while (s[i])
 		i++;
 	return (i);
