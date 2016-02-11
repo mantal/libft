@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 15:40:29 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/21 15:36:38 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/01/21 16:03:51 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ static t_chunk	*chunk_create(size_t size)
 		c.start = alloc(SMALL_CHUNK);
 		c.size = SMALL_CHUNK;
 	}
-	c.mem = array_new_s(sizeof(t_mem));
+	c.mem = new_(sizeof(t_mem));
 	array_add(g_malloc_memory, &c);
 	return ((t_chunk *)array_get(g_malloc_memory, g_malloc_memory->size - 1));
 }
