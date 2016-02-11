@@ -55,7 +55,7 @@ SRC		= ft_bzero.c ft_memset.c ft_memcpy.c ft_memccpy.c ft_memmove.c 		\
 
 OBJ		= $(SRC:.c=.o)
 CMP		= clang #llvm-gcc
-FLAGS	= -Wall -Werror -Wextra -O0 -g -Wmissing-prototypes
+FLAGS	= -Wall -Werror -Wextra -O0 -g -Wmissing-prototypes -std=c11
 
 
 all: $(NAME)
