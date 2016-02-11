@@ -91,7 +91,7 @@ t_socket	*socket_connect(t_socket *soc, const char *host, int port)
 	}
 	ft_memset(&addr, 0, sizeof(struct sockaddr_in));
 	addr.sin_family = AF_INET;
-	ft_memcpy(server->h_addr, &addr.sin_addr.s_addr, server->h_length);
+	ft_memcpy(server->h_addr_list[0], &addr.sin_addr.s_addr, server->h_length);
 	addr.sin_port = htons(port);
 	if (connect(soc->fd, (const struct sockaddr*)&addr,
 				sizeof(struct sockaddr_in)) < 0)

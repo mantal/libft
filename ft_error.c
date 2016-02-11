@@ -18,6 +18,10 @@
 #include <stdlib.h>
 #include <stdarg.h>
 
+#ifdef __linux__
+extern const char	*const sys_errlist[];
+#endif
+
 t_flags		error_opt(t_flags flags)
 {
 	static t_flags	err_flags = ERR_DISP_AUTO | ERR_FATAL;

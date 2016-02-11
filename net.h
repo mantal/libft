@@ -13,8 +13,12 @@
 #ifndef NET_H
 # define NET_H
 
-# include <sys/socket.h>
 # include "cbuffer.h"
+
+# include <sys/socket.h>
+# ifdef __linux__
+#  include <sys/select.h>
+# endif
 
 # define SOC_FREE   0
 # define SOC_CLIENT 1

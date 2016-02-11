@@ -15,6 +15,10 @@
 
 # include "libft.h"
 
+# ifndef M_PI
+#  define M_PI 3.14159265358979323846264338327950288419716939937510
+# endif
+
 # define ABS(X)     (((X) < 0) ? (-1 * (X)) : (X))
 # define FMOD(N, D) ((N) - ((int)((N) / (D))) * (D))
 

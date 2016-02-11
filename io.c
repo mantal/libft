@@ -75,7 +75,7 @@ char			*io_map_file(int fd, int prot)
 		ft_error();
 		return (NULL);
 	}
-	res = mmap(NULL, stats.st_size, prot, MAP_FILE | MAP_SHARED, fd, 0);
+	res = mmap(NULL, stats.st_size, prot, MAP_SHARED, fd, 0);
 	if (res == MAP_FAILED)
 	{
 		ft_error();
