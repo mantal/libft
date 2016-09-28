@@ -10,10 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
 #include "ft_math.h"
-
-#include <stdlib.h>
+#include "libft.h"
 
 #define INT_MIN_S "-2147483648"
 #define INT_MAX_S "2147483647"
@@ -22,7 +20,7 @@ static char		*skip_white_space(const char *s)
 {
 	char	*str;
 
-	str = (char*)s;
+	str = (char *)s;
 	while (str && ft_isspace(*str))
 		str++;
 	return (str);
@@ -32,7 +30,7 @@ static char		*skip_nul(const char *s)
 {
 	char	*str;
 
-	str = (char*)s;
+	str = (char *)s;
 	while (*str == '0')
 		str++;
 	return (str);
