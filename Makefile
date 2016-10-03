@@ -6,7 +6,7 @@
 #    By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+         #
 #                                                +#+#+#+#+#+   +#+             #
 #    Created: 2013/11/29 09:40:24 by dlancar           #+#    #+#              #
-#    Updated: 2016/01/21 15:35:01 by dlancar          ###   ########.fr        #
+#    Updated: 2016/10/03 16:15:33 by dlancar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,7 +35,7 @@ SRC		= ft_bzero.c ft_memset.c ft_memcpy.c ft_memccpy.c ft_memmove.c 		\
 			ft_atoi.c ft_itoa.c												\
 																			\
 			ft_math.c ft_vec3.c ft_vec3d.c ft_math_cst.c ft_double.c		\
-			ft_trigo.c ft_vec2d.c											\
+			ft_vec2d.c														\
 																			\
 			ft_get_next.c													\
 																			\
@@ -54,7 +54,7 @@ SRC		= ft_bzero.c ft_memset.c ft_memcpy.c ft_memccpy.c ft_memmove.c 		\
 			io.c malloc_.c realloc_.c free_.c mem.c
 
 OBJ		= $(SRC:.c=.o)
-CMP		= clang #llvm-gcc
+CMP		= clang
 FLAGS	= -Wall -Werror -Wextra -O0 -g -Wmissing-prototypes -std=c11
 
 
@@ -65,7 +65,7 @@ $(NAME): $(OBJ)
 	@ranlib $(NAME)
 
 %.o: %.c
-	@$(CMP) -I. -o $@ -c $? $(FLAGS)
+	@$(CMP) -o $@ -c $? $(FLAGS)
 
 .PHONY: clean fclean re
 
