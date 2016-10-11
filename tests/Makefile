@@ -1,6 +1,6 @@
 
 LFLAGS = -L.. -I.. -lft
-FLAGS  = -Wall -Wextra -O0 -g
+FLAGS  = -Wall -Wextra -O0 -g3
 
 .PHONY: all fclean clean io count_digit
 

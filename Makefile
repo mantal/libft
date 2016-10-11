@@ -6,7 +6,7 @@
 #    By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+         #
 #                                                +#+#+#+#+#+   +#+             #
 #    Created: 2013/11/29 09:40:24 by dlancar           #+#    #+#              #
-#    Updated: 2016/10/03 16:15:33 by dlancar          ###   ########.fr        #
+#    Updated: 2016/10/10 17:18:40 by dlancar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -55,7 +55,7 @@ SRC		= ft_bzero.c ft_memset.c ft_memcpy.c ft_memccpy.c ft_memmove.c 		\
 
 OBJ		= $(SRC:.c=.o)
 CMP		= clang
-FLAGS	= -Wall -Werror -Wextra -O0 -g -Wmissing-prototypes -std=c11
+FLAGS	= -Wall -Wextra -O0 -g3 -Wmissing-prototypes -std=c11
 
 
 all: $(NAME)
