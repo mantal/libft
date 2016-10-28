@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/20 17:16:54 by dlancar           #+#    #+#             */
-/*   Updated: 2014/05/09 12:53:48 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/10/24 17:26:50 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ t_array	*array_set(t_array *arr, void *value, unsigned int index)
 	return (arr);
 }
 
-void	*array_get(t_array *arr, unsigned int index)
+void	*array_get(const t_array *arr, unsigned int index)
 {
 	return (arr->tab + (arr->size_type * index));
 }
