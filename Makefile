@@ -34,7 +34,7 @@ SRC		= ft_bzero.c ft_memset.c ft_memcpy.c ft_memccpy.c ft_memmove.c 		\
 																			\
 			ft_atoi.c ft_itoa.c												\
 																			\
-			ft_math.c ft_vec3.c ft_vec3d.c ft_math_cst.c ft_double.c		\
+			ft_math.c ft_vec3.c ft_vec3d.c ft_double.c						\
 			ft_vec2d.c														\
 																			\
 			ft_get_next.c													\
