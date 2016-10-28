@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/25 13:55:46 by dlancar           #+#    #+#             */
-/*   Updated: 2016/10/11 16:16:38 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/10/24 17:25:33 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,9 @@ char			*ft_itoa(int32_t n)
 	while (exp > 0)
 	{
 		tmp = number / (double)exp;
-		array_add(&res, (char []) { '0' + tmp });
+		array_add(&res, (char[]) { '0' + tmp });
 		number -= tmp * exp;
 		exp /= 10;
-	}	
-	
+	}
 	return (res.tab);
 }
