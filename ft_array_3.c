@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/07 16:56:09 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/18 16:49:36 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/10/10 17:39:15 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,11 +34,12 @@ t_array		*array_init(t_array *arr, size_t capacity,
 	arr->size = 0;
 	arr->capacity = capacity;
 	arr->size_type = size_type;
+	arr->size_change = 100;
 	arr->it = 0;
 	arr->flags = flags;
-	arr->tab = (char *)ft_malloc(arr->size_change * capacity);
+	arr->tab = ft_malloc(arr->size_type * capacity);
 	if (flags & 1)
-		ft_bzero(arr->tab, arr->size_change * capacity);
+		ft_bzero(arr->tab, arr->size_type * capacity);
 	return (arr);
 }
 
