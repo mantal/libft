@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/12 15:13:48 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/12 16:25:50 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/10/26 16:14:46 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,8 @@ size_t			ft_strlcat(char *dst, const char *src, size_t size);
 
 char			*ft_strmap(char const *s, char (*f)(char));
 char			*ft_strmapi(char const *s, char (*f)(unsigned int, char));
+
+void			ft_strrpl(char *s, char c, char c2);
 
 char			*ft_strsub(const char *s, unsigned int start, size_t len);
 char			*ft_strtrim(const char *s);
