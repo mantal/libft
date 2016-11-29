@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/20 17:16:54 by dlancar           #+#    #+#             */
-/*   Updated: 2016/10/24 17:26:50 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/11/29 16:28:14 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ t_array	*array_cpy(const t_array *src)
 	if (!res)
 		return (NULL);
 	res->size = src->size;
-	ft_memcpy(res->tab, src->tab, src->size * src->size_change);
+	ft_memcpy(res->tab, src->tab, src->size * src->size_type);
 	return (res);
 }
 
