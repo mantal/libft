@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 16:56:18 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/21 14:49:09 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/12/01 17:35:35 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,22 @@ void			ft_vprintf_fd(int fd, const char *s, va_list ap);
 int				ft_asprintf(char **s, const char *format, ...);
 
 int				ft_get_next(const int fd, char **line, char c);
+
+#define FTIO_NONE    0
+#define FTIO_ERROR   1
+#define FTIO_WARNING 2
+#define FTIO_INFO    3
+#define FTIO_VERBOSE 4
+#define FTIO_DEBUG   5
+
+bool			debug(const char *s, ...);
+bool			verbose(const char *s, ...);
+bool			info(const char *s, ...);
+bool			warning(const char *s, ...);
+bool			error(const char *s, ...);
+
+extern int		g_ftio_logsfd;
+extern int		g_ftio_verbose_level;
 
 typedef struct	s_iomap
 {
