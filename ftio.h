@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 16:56:18 by dlancar           #+#    #+#             */
-/*   Updated: 2016/12/01 17:35:35 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/12/08 15:04:11 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,12 +57,12 @@ int				ft_asprintf(char **s, const char *format, ...);
 
 int				ft_get_next(const int fd, char **line, char c);
 
-#define FTIO_NONE    0
-#define FTIO_ERROR   1
-#define FTIO_WARNING 2
-#define FTIO_INFO    3
-#define FTIO_VERBOSE 4
-#define FTIO_DEBUG   5
+# define FTIO_NONE    0
+# define FTIO_ERROR   1
+# define FTIO_WARNING 2
+# define FTIO_INFO    3
+# define FTIO_VERBOSE 4
+# define FTIO_DEBUG   5
 
 bool			debug(const char *s, ...);
 bool			verbose(const char *s, ...);
