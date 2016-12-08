@@ -6,14 +6,14 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/16 11:20:47 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/18 16:50:21 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/12/08 15:15:37 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cbuffer.h"
 #include <stdlib.h>
 
-t_cbuffer	*cbuffer_new(t_uint capacity)
+t_cbuffer	*cbuffer_new(unsigned int capacity)
 {
 	t_cbuffer	*res;
 
@@ -32,9 +32,10 @@ t_cbuffer	*cbuffer_new(t_uint capacity)
 	return (res);
 }
 
-t_cbuffer	*cbuffer_add(t_cbuffer *buffer, const char *data, t_uint data_size)
+t_cbuffer	*cbuffer_add(t_cbuffer *buffer, const char *data,
+				unsigned int data_size)
 {
-	t_uint		overflow;
+	unsigned int		overflow;
 
 	buffer->write = true;
 	if (buffer->end + data_size <= buffer->capacity)
@@ -54,7 +55,7 @@ t_cbuffer	*cbuffer_add(t_cbuffer *buffer, const char *data, t_uint data_size)
 	return (buffer);
 }
 
-t_bool		cbuffer_has_next(const t_cbuffer *buffer)
+bool		cbuffer_has_next(const t_cbuffer *buffer)
 {
 	return ((buffer->it + 1) % buffer->capacity != buffer->end
 			|| buffer->write);

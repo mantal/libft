@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/12 16:59:15 by dlancar           #+#    #+#             */
-/*   Updated: 2015/01/26 15:08:44 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/12/08 14:52:07 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,10 +49,10 @@ typedef struct	s_vec2d
 }				t_vec2d;
 
 int				ft_pow(int a, unsigned int n);
-t_uint			ft_sqrt(t_uint n);
-double			ft_sqrt_d(t_uint n);
+unsigned int	ft_sqrt(unsigned int n);
+double			ft_sqrt_d(unsigned int n);
 
-double			ft_trunc(double d, t_uint p);
+double			ft_trunc(double d, unsigned int p);
 int				ft_round(double d);
 
 double			ft_sin(double d);
@@ -62,8 +62,8 @@ double			ft_tan(double d);
 void			set_vec2d(t_vec2d *vec, double x, double y);
 void			set_vec3(t_vec3 *vec, int x, int y, int z);
 void			set_vec3d(t_vec3d *vec, double x, double y, double z);
-t_bool			vec2d_cmp(const t_vec2d *vec1, const t_vec2d *vec2);
-t_bool			vec3_cmp(const t_vec3 *vec1, const t_vec3 *vec2);
-t_bool			vec3d_cmp(const t_vec3d *vec1, const t_vec3d *vec2);
+bool			vec2d_cmp(const t_vec2d *vec1, const t_vec2d *vec2);
+bool			vec3_cmp(const t_vec3 *vec1, const t_vec3 *vec2);
+bool			vec3d_cmp(const t_vec3d *vec1, const t_vec3d *vec2);
 
 #endif

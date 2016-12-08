@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/26 15:40:29 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/21 16:03:51 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/12/08 15:02:27 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,9 +66,9 @@ static t_chunk	*chunk_create(size_t size)
 
 void			malloc_dump_chunk(void)
 {
-	t_chunk	c;
-	t_mem	m;
-	t_uint	i;
+	t_chunk			c;
+	t_mem			m;
+	unsigned int	i;
 
 	if (!g_malloc_memory)
 		return ;

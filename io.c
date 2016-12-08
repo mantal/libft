@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/12/11 14:35:16 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/18 13:44:35 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/12/08 15:03:45 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ static t_array	*g_iomap = NULL;
 
 static int		get_index(void *p)
 {
-	t_uint	i;
-	t_iomap	im;
+	unsigned int	i;
+	t_iomap			im;
 
 	i = 0;
 	while (i < g_iomap->size)

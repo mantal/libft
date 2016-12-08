@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/03 17:53:06 by dlancar           #+#    #+#             */
-/*   Updated: 2014/05/09 13:02:38 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/12/08 15:18:11 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,11 @@ int		ft_round(double d)
 	return ((long int)d);
 }
 
-double	ft_trunc(double d, t_uint p)
+double	ft_trunc(double d, unsigned int p)
 {
 	double			temp;
 	double			res;
-	t_uint			i;
+	unsigned int	i;
 
 	i = 0;
 	res = (long long int)d;

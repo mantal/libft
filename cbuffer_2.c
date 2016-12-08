@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/16 14:08:02 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/18 16:50:37 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/12/08 14:59:18 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char		cbuffer_get(const t_cbuffer *buffer)
 	return (buffer->arr[buffer->it]);
 }
 
-t_bool		cbuffer_it_is_last(const t_cbuffer *buffer)
+bool		cbuffer_it_is_last(const t_cbuffer *buffer)
 {
 	return (buffer->it == buffer->end && !buffer->write);
 }

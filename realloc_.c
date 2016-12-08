@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 13:56:49 by dlancar           #+#    #+#             */
-/*   Updated: 2016/12/07 17:16:29 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/12/08 15:02:53 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,7 @@ static t_chunk	*find__(void *p, size_t *pos)
 	return (NULL);
 }
 
-static t_bool	can_realloc(t_chunk *c, t_mem *m, size_t pos, size_t size)
+static bool		can_realloc(t_chunk *c, t_mem *m, size_t pos, size_t size)
 {
 	t_mem	*n;
 

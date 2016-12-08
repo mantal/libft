@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/03 11:17:32 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/18 16:47:04 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/12/08 14:53:24 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	set_vec3d(t_vec3d *vec, double x, double y, double z)
 	vec->z = z;
 }
 
-t_bool	vec3d_cmp(const t_vec3d *vec1, const t_vec3d *vec2)
+bool	vec3d_cmp(const t_vec3d *vec1, const t_vec3d *vec2)
 {
 	if (vec1->x != vec2->x)
 		return (false);

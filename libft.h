@@ -23,9 +23,7 @@
 
 # define BUFF_SIZE 32
 
-typedef bool			t_bool;
 typedef unsigned int	t_flags;
-typedef unsigned int	t_uint;
 
 typedef struct	s_array
 {
