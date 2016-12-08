@@ -1,4 +1,4 @@
-#include <io.h>
+#include <ftio.h>
 #include <libft.h>
 #include <stdlib.h>
 #include <string.h>
