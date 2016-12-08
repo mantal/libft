@@ -17,8 +17,6 @@
 # include <stdbool.h>
 # include <stddef.h>
 
-# define NAF   3
-
 # define PTR  2
 
 # define BUFF_SIZE 32

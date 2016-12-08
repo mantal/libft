@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/17 18:07:57 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/21 14:48:43 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/12/02 17:49:33 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 #include <stdlib.h>
 
 /*
-** if g_malloc_use == true use system malloc, else use our.
+** if g_malloc_use == true use system malloc, else use ours.
 */
 bool	g_malloc_use = true;
 

@@ -6,16 +6,14 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/27 15:27:06 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/09 14:11:00 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/12/08 15:17:58 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_math.h"
 #include "libft.h"
 
-#define INT_MIN_S "-2147483648"
-#define INT_MAX_S "2147483647"
-
+//test
 static char		*skip_white_space(const char *s)
 {
 	char	*str;

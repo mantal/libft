@@ -6,7 +6,7 @@
 #    By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+         #
 #                                                +#+#+#+#+#+   +#+             #
 #    Created: 2013/11/29 09:40:24 by dlancar           #+#    #+#              #
-#    Updated: 2016/12/01 17:33:35 by dlancar          ###   ########.fr        #
+#    Updated: 2016/12/02 18:15:05 by dlancar          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,8 +34,7 @@ SRC		= ft_bzero.c ft_memset.c ft_memcpy.c ft_memccpy.c ft_memmove.c 		\
 																			\
 			ft_atoi.c ft_itoa.c												\
 																			\
-			ft_math.c ft_vec3.c ft_vec3d.c ft_double.c						\
-			ft_vec2d.c														\
+			ft_math.c ft_vec3.c ft_vec3d.c ft_double.c ft_vec2d.c			\
 																			\
 			ft_get_next.c													\
 																			\
