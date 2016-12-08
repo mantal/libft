@@ -69,7 +69,7 @@ char			*io_map_file(int fd, int prot)
 	char		*res;
 
 	if (!g_iomap)
-		g_iomap = array_new_s(sizeof(t_iomap));
+		g_iomap = array_new(sizeof(t_iomap), 0);
 	if (fstat(fd, &stats) < 0)
 	{
 		ft_error();

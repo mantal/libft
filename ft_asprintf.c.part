@@ -7,7 +7,7 @@ int				ft_asprintf(char **s, const char *format, ...)
 	t_array		*res;
 	int			i;
 
-	if (!(res = array_new(64, 64, sizeof(char), 0)))
+	if (!(res = array_new(sizeof(char), 0)))
 		return (-1);
 	(va_start(ap, format), i = -1);
 	while (format[++i])
@@ -23,7 +23,7 @@ int				ft_asprintf(char **s, const char *format, ...)
 				add_int(res, va_arg(ap, int));
 		}
 		else
-			array_add(res, &((char *)format)[i]);
+			array_add(res, &(format)[i]);
 	}
 	(array_add(res, "\0"), va_end(ap), *s = res->tab);
 	(ft_memcpy(&i, &res->size, sizeof(i)), free(res));

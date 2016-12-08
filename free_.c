@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 13:56:34 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/21 14:47:14 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/12/07 17:16:48 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void			free_(void *p)
 
 	if (!p)
 		return ;
-	g_malloc_memory = g_malloc_memory ? GMEM : array_new_s(sizeof(t_chunk));
+	g_malloc_memory = g_malloc_memory ? GMEM : array_new(sizeof(t_chunk), 0);
 	while ((c = (t_chunk *)array_next(g_malloc_memory)))
 	{
 		if ((char *)p < c->start || (char *)p > c->start + c->size)

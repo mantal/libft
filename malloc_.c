@@ -33,7 +33,7 @@ t_array	*new_(size_t size_type)
 	}
 	res->size = 0;
 	res->capacity = 1024;
-	res->size_change = 1024;
+	res->capacity_change = 1024;
 	res->it = 0;
 	res->flags = 0;
 	res->tab = alloc(res->capacity * size_type);

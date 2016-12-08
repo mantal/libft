@@ -6,40 +6,37 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/17 12:42:35 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/18 16:48:13 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/12/08 15:17:39 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "error.h"
 #include "libft.h"
+#include <assert.h>
 #include <stdlib.h>
 
-t_array	*array_new(size_t capacity, size_t size_change, size_t size_type,
-						t_flags flags)
+t_array	*array_new(size_t size_type, t_flags flags)
 {
 	t_array	*res;
 
-	res = (t_array *)ft_malloc(sizeof(t_array));
+	res = ft_malloc(sizeof(t_array));
 	if (!res)
 		return (NULL);
 	res->size = 0;
-	res->capacity = capacity;
-	res->size_change = size_change;
+	res->capacity = 100;
+	res->capacity_change = 0;
 	res->size_type = size_type;
 	res->it = 0;
 	res->flags = flags;
-	res->tab = ft_malloc(size_type * capacity);
+	res->tab = ft_malloc(size_type * res->capacity);
 	if (!res->tab)
 		return (NULL);
-	if (flags & 1)
-		ft_bzero(res->tab, size_change * capacity);
 	return (res);
 }
 
-t_array	*array_add(t_array *arr, void *value)
+t_array	*array_add(t_array *arr, const void *value)
 {
 	if (arr->capacity == arr->size)
-		array_resize(arr, false);
+		array_resize(arr);
 	if (arr->flags & PTR)
 		ft_memcpy((arr->tab + (arr->size * arr->size_type)),
 				&value, arr->size_type);
@@ -50,10 +47,11 @@ t_array	*array_add(t_array *arr, void *value)
 	return (arr);
 }
 
-t_array	*array_insert(t_array *arr, void *value, unsigned int index)
+t_array	*array_insert(t_array *arr, void *value, size_t index)
 {
 	void	*temp;
 
+	assert(index < arr->size);
 	temp = ft_malloc((arr->size - index) * arr->size_type);
 	if (!temp)
 		return (NULL);
@@ -64,30 +62,28 @@ t_array	*array_insert(t_array *arr, void *value, unsigned int index)
 	array_set(arr, value, index);
 	arr->size++;
 	if (arr->size == arr->capacity)
-		array_resize(arr, false);
+		array_resize(arr);
 	return (arr);
 }
 
-t_array	*array_resize(t_array *arr, t_bool auto_resize)
+//todo rename to array_resize_auto
+t_array	*array_resize(t_array *arr)
 {
-	void	*tab;
+	void	*iarr;
 
-	(void)auto_resize;
-	arr->capacity += arr->size_change;
-	tab = (char *)ft_malloc(arr->size_type * arr->capacity);
-	if (!tab)
+	arr->capacity = arr->capacity_change != 0 ?
+		arr->capacity + arr->capacity_change : arr->capacity * 2;
+	iarr = ft_malloc(arr->size_type * arr->capacity);
+	if (!iarr)
 		return (NULL);
-	if (arr->flags & 0)
-		ft_bzero(tab, arr->size_type * arr->capacity);
-	ft_memcpy(tab, arr->tab, arr->size * arr->size_type);
+	ft_memcpy(iarr, arr->tab, arr->size * arr->size_type);
 	free(arr->tab);
-	arr->tab = tab;
+	arr->tab = iarr;
 	return (arr);
 }
 
-void	array_free(t_array **arr)
+void	array_free(t_array *arr)
 {
-	free((*arr)->tab);
-	free(*arr);
-	*arr = NULL;
+	free(arr->tab);
+	free(arr);
 }

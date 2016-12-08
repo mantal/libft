@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 16:15:49 by dlancar           #+#    #+#             */
-/*   Updated: 2016/10/24 17:27:03 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/12/08 14:51:03 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,6 @@
 # define NAF   3
 
 # define PTR  2
-# define LOOP 4
-
-# define LOAD_FACTOR 0.75
 
 # define BUFF_SIZE 32
 
@@ -35,37 +32,24 @@ typedef struct	s_array
 	void			*tab;
 	size_t			size;
 	size_t			capacity;
-	size_t			size_change;
+	size_t			capacity_change;
 	size_t			size_type;
 	unsigned int	it;
 	t_flags			flags;
 }				t_array;
 
-t_array			*array_new(size_t capacity, size_t size_change,
-						size_t size_type, t_flags flags);
-t_array			*array_new_s(size_t size_type);
-t_array			*array_new_sp(size_t size_type);
-t_array			*array_init(t_array *arr, size_t capacity, size_t size_type,
-						t_flags flags);
+t_array			*array_new(size_t size_type, t_flags flags);
+t_array			*array_init(t_array *arr, size_t size_type, t_flags flags);
 t_array			*array_cpy(const t_array *src);
-t_array			*array_add(t_array *arr, void *value);
-t_array			*array_set(t_array *arr, void *value, unsigned int index);
-t_array			*array_insert(t_array *arr, void *value, unsigned int index);
-t_array			*array_remove(t_array *arr, unsigned int index);
-t_array			*array_clear(t_array *arr, t_bool b);
-t_array			*array_resize(t_array *arr, t_bool auto_resize);
-void			*array_get(const t_array *arr, unsigned int index);
+t_array			*array_add(t_array *arr, const void *value);
+t_array			*array_set(t_array *arr, void *value, size_t index);
+t_array			*array_insert(t_array *arr, void *value, size_t index);
+t_array			*array_remove(t_array *arr, size_t index);
+t_array			*array_clear(t_array *arr);
+t_array			*array_resize(t_array *arr);
+void			*array_get(const t_array *arr, size_t index);
 void			*array_next(t_array *arr);
-void			array_free(t_array **arr);
-
-# define A_G(arr, index) array_get(arr, index)
-# define A_N(arr) array_next(arr)
-
-# define A_GI(arr, index)  (*(int *)array_get(arr, index))
-# define A_GUI(arr, index) (*(unsigned int *)array_get(arr, index))
-
-# define A_C(arr, index)  (*(char *)A_G(arr, index))
-# define A_S(arr, index)  (*(char **)A_G(arr, index))
+void			array_free(t_array *arr);
 
 int				ft_atoi(const char *str);
 char			*ft_itoa(int n);

@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 13:56:49 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/21 14:48:13 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/12/07 17:16:29 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ static t_chunk	*find__(void *p, size_t *pos)
 	t_mem			*m;
 
 	i = 0;
-	g_malloc_memory = GMEM ? GMEM : array_new_s(sizeof(t_chunk));
+	g_malloc_memory = GMEM ? GMEM : array_new(sizeof(t_chunk), 0);
 	while (i < g_malloc_memory->size)
 	{
 		c = (t_chunk *)array_get(g_malloc_memory, i);

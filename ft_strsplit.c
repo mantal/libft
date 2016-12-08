@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/22 09:20:49 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/12 15:46:10 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/12/08 14:49:13 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ t_array		*ft_strsplit(const char *s, char c)
 	t_array	*res;
 	char	*temp;
 
-	res = array_new(100, 10, sizeof(char *), PTR);
+	res = array_new(sizeof(char *), PTR);
 	while (*s)
 	{
 		while (*s == c)
@@ -28,7 +28,7 @@ t_array		*ft_strsplit(const char *s, char c)
 		temp = ft_strndup(s, ft_strclen(s, c));
 		if (!temp)
 		{
-			array_free(&res);
+			array_free(res);
 			return (NULL);
 		}
 		array_add(res, temp);

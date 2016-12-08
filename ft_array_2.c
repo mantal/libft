@@ -6,14 +6,15 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/20 17:16:54 by dlancar           #+#    #+#             */
-/*   Updated: 2016/11/29 16:28:14 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/12/08 14:54:14 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "error.h"
 #include "libft.h"
+#include <assert.h>
 
-t_array	*array_set(t_array *arr, void *value, unsigned int index)
+t_array	*array_set(t_array *arr, void *value, size_t index)
 {
 	if (arr->flags & PTR)
 		ft_memcpy((arr->tab + (index * arr->size_type)), &value,
@@ -23,15 +24,14 @@ t_array	*array_set(t_array *arr, void *value, unsigned int index)
 	return (arr);
 }
 
-void	*array_get(const t_array *arr, unsigned int index)
+void	*array_get(const t_array *arr, size_t index)
 {
+	assert(index < arr->size);
 	return (arr->tab + (arr->size_type * index));
 }
 
 void	*array_next(t_array *arr)
 {
-	if ((arr->flags & LOOP) && arr->it >= arr->size)
-		arr->it = 0;
 	if (arr->it < arr->size)
 	{
 		arr->it++;
@@ -44,8 +44,7 @@ t_array	*array_cpy(const t_array *src)
 {
 	t_array	*res;
 
-	res = array_new(src->capacity, src->size_change, src->size_type,
-					src->flags);
+	res = array_new(src->size_type, src->flags);
 	if (!res)
 		return (NULL);
 	res->size = src->size;
@@ -53,7 +52,7 @@ t_array	*array_cpy(const t_array *src)
 	return (res);
 }
 
-t_array	*array_remove(t_array *arr, unsigned int index)
+t_array	*array_remove(t_array *arr, size_t index)
 {
 	unsigned int	i;
 

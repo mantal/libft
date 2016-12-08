@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/01 14:39:29 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/09 17:04:07 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/12/02 18:09:51 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static void		add_string(t_array *arr, const char *s)
 {
 	while (*s)
 	{
-		array_add(arr, (char *)s);
+		array_add(arr, s);
 		s++;
 	}
 }

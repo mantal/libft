@@ -6,49 +6,31 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/07 16:56:09 by dlancar           #+#    #+#             */
-/*   Updated: 2016/10/10 17:39:15 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/12/07 18:16:34 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-t_array		*array_clear(t_array *arr, t_bool b)
+t_array		*array_clear(t_array *arr)
 {
-	arr->it = 0;
-	while (arr->it < arr->size)
-	{
-		if (b)
-			free(array_get(arr, arr->it));
-		arr->it++;
-	}
 	ft_bzero(arr->tab, arr->size * arr->size_type);
 	arr->size = 0;
 	arr->it = 0;
 	return (arr);
 }
 
-t_array		*array_init(t_array *arr, size_t capacity,
-							size_t size_type, t_flags flags)
+t_array		*array_init(t_array *arr, size_t size_type, t_flags flags)
 {
+	arr->capacity = 1000;
+	arr->capacity_change = 0;
 	arr->size = 0;
-	arr->capacity = capacity;
 	arr->size_type = size_type;
-	arr->size_change = 100;
 	arr->it = 0;
 	arr->flags = flags;
-	arr->tab = ft_malloc(arr->size_type * capacity);
+	arr->tab = ft_malloc(arr->size_type * arr->capacity);
 	if (flags & 1)
-		ft_bzero(arr->tab, arr->size_type * capacity);
+		ft_bzero(arr->tab, arr->size_type * arr->capacity);
 	return (arr);
-}
-
-t_array		*array_new_s(size_t size_type)
-{
-	return (array_new(1000, 1000, size_type, 0));
-}
-
-t_array		*array_new_sp(size_t size_type)
-{
-	return (array_new(1000, 1000, size_type, PTR));
 }

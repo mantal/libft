@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/25 13:55:46 by dlancar           #+#    #+#             */
-/*   Updated: 2016/10/24 17:25:33 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/12/07 17:17:14 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ char			*ft_itoa(int32_t n)
 	int64_t	tmp;
 	int64_t	number;
 
-	array_init(&res, 11, sizeof(char), 1);
+	array_init(&res, sizeof(char), 1);
 	number = n;
 	if (number < 0)
 	{

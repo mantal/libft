@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/26 17:56:57 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/12 16:00:46 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/12/08 14:31:55 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ char	*get_path(int index)
 		path = ft_strsplit(get_env("PATH"), ':');
 	if (index < 0)
 	{
-		array_free(&path);
+		array_free(path);
 		return (NULL);
 	}
 	if ((unsigned int)index >= path->size)
