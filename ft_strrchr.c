@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/27 16:38:06 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/12 15:45:59 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/12/02 18:11:40 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	*target;
+	const char	*target;
 
 	target = NULL;
 	if (!s)
@@ -22,10 +22,10 @@ char	*ft_strrchr(const char *s, int c)
 	while (*s)
 	{
 		if (*s == c)
-			target = (char*)s;
+			target = s;
 		s++;
 	}
 	if (!c)
-		target = (char*)s;
+		target = s;
 	return (target);
 }

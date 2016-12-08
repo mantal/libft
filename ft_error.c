@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/22 19:04:53 by dlancar           #+#    #+#             */
-/*   Updated: 2016/10/28 15:27:01 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/12/08 15:35:41 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@
 #include <stdarg.h>
 
 #ifdef __linux__
-# define NORMINETTEPUTAIN extern const char	*const sys_errlist[]
+# define NORMINETTEPUTAIN extern const char	*const sys_errlist[];
 #else
 # define NORMINETTEPUTAIN
 #endif
 
-NORMINETTEPUTAIN;
+NORMINETTEPUTAIN
 
 t_flags		error_opt(t_flags flags)
 {

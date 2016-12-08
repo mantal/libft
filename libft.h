@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 16:15:49 by dlancar           #+#    #+#             */
-/*   Updated: 2016/12/08 14:51:03 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/12/08 15:33:10 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,11 @@ int				ft_isprint(int c);
 int				ft_isspace(int c);
 int				ft_tolower(int c);
 int				ft_toupper(int c);
+
+/*
+** if g_malloc_use == true use system malloc, else use ours.
+*/
+extern bool		g_malloc_use;
 
 void			ft_bzero(void *s, size_t n);
 void			*ft_malloc(size_t size);

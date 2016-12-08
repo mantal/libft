@@ -55,8 +55,8 @@ SRC		= ft_bzero.c ft_memset.c ft_memcpy.c ft_memccpy.c ft_memmove.c 		\
 			args.c
 
 OBJ		= $(SRC:.c=.o)
-CMP		= clang
-FLAGS	= -Wall -Wextra -O0 -g3 -Wmissing-prototypes -std=c11
+CFLAGS	= -Wall -Wextra -Weverything -std=c11 -g3 -O0 \
+		  -Wno-padded -Wno-pointer-arith -Wno-float-equal -Wno-shorten-64-to-32 -Wno-conversion -Wno-incompatible-pointer-types-discards-qualifiers
 
 
 all: $(NAME)
@@ -66,7 +66,7 @@ $(NAME): $(OBJ)
 	@ranlib $(NAME)
 
 %.o: %.c
-	@$(CMP) -o $@ -c $? $(FLAGS)
+	@$(CC) -o $@ -c $? $(CFLAGS)
 
 .PHONY: clean fclean re
 

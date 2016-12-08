@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/27 16:52:21 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/12 15:45:51 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/12/08 15:34:15 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 	if (!s1)
 		return (NULL);
 	if (!s2 || !*s2)
-		return ((char*)s1);
+		return (s1);
 	while (*s1 && n)
 	{
 		n--;
@@ -28,7 +28,7 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 		{
 			i++;
 			if (!s2[i])
-				return ((char*)s1);
+				return (s1);
 		}
 		s1++;
 	}

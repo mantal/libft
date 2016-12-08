@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/27 15:27:06 by dlancar           #+#    #+#             */
-/*   Updated: 2016/12/08 15:17:58 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/12/08 15:34:41 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static char		*skip_white_space(const char *s)
 {
 	char	*str;
 
-	str = (char *)s;
+	str = s;
 	while (str && ft_isspace(*str))
 		str++;
 	return (str);
@@ -28,7 +28,7 @@ static char		*skip_nul(const char *s)
 {
 	char	*str;
 
-	str = (char *)s;
+	str = s;
 	while (*str == '0')
 		str++;
 	return (str);

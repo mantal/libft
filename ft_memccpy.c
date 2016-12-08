@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/27 16:18:58 by dlancar           #+#    #+#             */
-/*   Updated: 2014/05/09 12:55:39 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/12/02 17:47:38 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,8 @@ void	*ft_memccpy(void *s1, const void *s2, int c, size_t n)
 	unsigned char	*src;
 	unsigned char	x;
 
-	dst = (unsigned char*)s1;
-	src = (unsigned char*)s2;
+	dst = (unsigned char *)s1;
+	src = (const unsigned char *)s2;
 	x = (unsigned char)c;
 	i = 0;
 	while (i < n)

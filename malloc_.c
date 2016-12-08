@@ -6,14 +6,18 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/11/24 13:56:43 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/21 16:02:32 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/12/07 17:11:00 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 /*
 ** MAP_ANONYMOUS is a gnu extention
 */
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wreserved-id-macro"
+#pragma clang diagnostic ignored "-Wunused-macros"
 #define _GNU_SOURCE
+#pragma clang diagnostic pop
 
 #include "error.h"
 #include "malloc_.h"
