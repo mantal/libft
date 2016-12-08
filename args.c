@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/05 14:46:35 by dlancar           #+#    #+#             */
-/*   Updated: 2016/12/01 17:13:30 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/12/01 18:16:21 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static const t_option	*get_option(const t_option *options, const char *option)
 	return (NULL);
 }
 
-bool					options(const t_option *options, int argc,
+int						options(const t_option *options, int argc,
 		const char **argv)
 {
 	const t_option	*opt;
@@ -49,22 +49,22 @@ bool					options(const t_option *options, int argc,
 	while (i < argc)
 	{
 		if (argv[i][0] != '-' || (argv[i][0] == '-' && argv[i][1] == '-'))
-			return (true);
+			return (i);
 		opt = get_option(options, &argv[i][1]);
 		if (opt == NULL)
 		{
 			ft_printf_fd(STDERR_FILENO, "Unknow option: %s\n", argv[i]);
-			return (false);
+			return (-1);
 		}
 		if (i + opt->args_n >= argc
 				|| (opt->validate && opt->validate(&argv[i]) == false))
 		{
 			ft_printf_fd(2, "%s\n", opt->usage ? opt->usage : "Invalid option");
-			return (false);
+			return (-1);
 		}
 		if (opt->callback)
 			opt->callback(&argv[i]);
 		i += 1 + opt->args_n;
 	}
-	return (true);
+	return (i);
 }
