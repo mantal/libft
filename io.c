@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "ftio.h"
-#include "error.h"
+#include "fterror.h"
 
 #include <errno.h>
 #include <fcntl.h>

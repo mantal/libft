@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "error.h"
+#include "fterror.h"
 #include "ftio.h"
 #include "net.h"
 

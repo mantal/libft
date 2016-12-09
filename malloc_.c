@@ -19,7 +19,7 @@
 #define _GNU_SOURCE
 #pragma clang diagnostic pop
 
-#include "error.h"
+#include "fterror.h"
 #include "malloc_.h"
 
 #include <unistd.h>

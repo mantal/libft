@@ -40,7 +40,7 @@ SRC		= ft_bzero.c ft_memset.c ft_memcpy.c ft_memccpy.c ft_memmove.c 		\
 																			\
 			ft_array.c ft_array_2.c	ft_array_3.c							\
 																			\
-			ft_error.c														\
+			error.c															\
 																			\
 			count_digit.c													\
 																			\

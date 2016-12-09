@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "error.h"
+#include "fterror.h"
 #include "libft.h"
 #include "malloc_.h"
 #include <stdlib.h>
