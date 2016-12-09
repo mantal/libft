@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/17 12:42:35 by dlancar           #+#    #+#             */
-/*   Updated: 2016/12/08 15:17:39 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/12/09 17:47:22 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,6 @@ t_array	*array_insert(t_array *arr, void *value, size_t index)
 	return (arr);
 }
 
-//todo rename to array_resize_auto
 t_array	*array_resize(t_array *arr)
 {
 	void	*iarr;

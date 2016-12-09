@@ -6,22 +6,18 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/27 15:27:06 by dlancar           #+#    #+#             */
-/*   Updated: 2016/12/08 15:34:41 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/12/09 17:47:44 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_math.h"
 #include "libft.h"
 
-//test
 static char		*skip_white_space(const char *s)
 {
-	char	*str;
-
-	str = s;
-	while (str && ft_isspace(*str))
-		str++;
-	return (str);
+	while (s && ft_isspace(*s))
+		s++;
+	return (s);
 }
 
 static char		*skip_nul(const char *s)
