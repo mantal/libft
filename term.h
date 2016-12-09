@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/13 16:33:48 by dlancar           #+#    #+#             */
-/*   Updated: 2016/10/24 16:16:32 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/12/09 17:40:23 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,16 @@
 #  define CURSOR_UP   "\033[F"
 #  define CURSOR_DOWN "\033[E"
 # else
-#  define CURSOR_UP   "\033[1A"
-#  define CURSOR_DOWN "\033[1B"
+#  define CURSOR_UP   "\x1B[1A"
+#  define CURSOR_DOWN "\x1B[1B"
 # endif
 
 # define CURSOR_SET(x, y) (ft_printf("\e[%d,%dH", (x), (y)))
 
-# define CURSOR_HOME "\e[H"
+# define CURSOR_HOME "\x1B[H"
 
-# define CLEAR_LINE  "\033[K"
-# define CLEAR       "\e[2J\e[H"
+# define CLEAR_LINE  "\x1B[K"
+# define CLEAR       "\x1B[2J\x1B[H"
 
 # define KNRM    "\x1B[0m"
 # define RED     "\x1B[31m"
@@ -42,6 +42,6 @@
 # define CYAN    "\x1B[36m"
 # define WHITE   "\x1B[37m"
 
-# define RESET   "\033[0m"
+# define RESET   "\x1B[0m"
 
 #endif
