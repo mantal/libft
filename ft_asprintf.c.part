@@ -19,7 +19,7 @@ int				ft_asprintf(char **s, const char *format, ...)
 				array_add(res, (int[]){va_arg(ap, int)});
 			else if (format[i] == 's')
 				add_string(res, va_arg(ap, char *));
-			else if (format[i] == 'd')
+			else if (format[i] == 'd' || format[i] == 'i')
 				add_int(res, va_arg(ap, int));
 		}
 		else
