@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/07 16:56:09 by dlancar           #+#    #+#             */
-/*   Updated: 2016/12/07 18:16:34 by dlancar          ###   ########.fr       */
+/*   Updated: 2016/12/22 18:25:15 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,4 +33,14 @@ t_array		*array_init(t_array *arr, size_t size_type, t_flags flags)
 	if (flags & 1)
 		ft_bzero(arr->tab, arr->size_type * arr->capacity);
 	return (arr);
+}
+
+void		*array_prev(t_array *arr)
+{
+	if (arr->it > 0)
+	{
+		arr->it--;
+		return (arr->tab + (arr->size_type * (arr->it)));
+	}
+	return (NULL);
 }
