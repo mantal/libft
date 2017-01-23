@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/27 16:38:06 by dlancar           #+#    #+#             */
-/*   Updated: 2016/12/02 18:00:29 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/01/23 12:54:11 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	if (!s)
-		return (NULL);
-	while (*s != c)
-	{
-		if (!*s)
-			return (NULL);
+	while (*s && *s != c)
 		s++;
-	}
-	return (s);
+	return (*s == c ? s : NULL);
 }
