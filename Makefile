@@ -36,7 +36,7 @@ SRC		= ft_bzero.c ft_memset.c ft_memcpy.c ft_memccpy.c ft_memmove.c 		\
 																			\
 			ft_math.c ft_vec3.c ft_vec3d.c ft_double.c ft_vec2d.c			\
 																			\
-			ft_get_next.c													\
+			ft_get_next.c get_next.c										\
 																			\
 			ft_array.c ft_array_2.c	ft_array_3.c							\
 																			\

@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 16:56:18 by dlancar           #+#    #+#             */
-/*   Updated: 2016/12/08 15:04:11 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/01/23 18:26:01 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void			ft_vprintf_fd(int fd, const char *s, va_list ap);
 int				ft_asprintf(char **s, const char *format, ...);
 
 int				ft_get_next(const int fd, char **line, char c);
+int				get_next(const int fd, char **line, char c);
 
 # define FTIO_NONE    0
 # define FTIO_ERROR   1
@@ -86,5 +87,18 @@ char			*io_map_file(int fd, int prot);
 int				io_unmap_file(char *p);
 
 extern bool		g_malloc_use;
+
+/*
+** TODO
+*/
+
+# define GT_BUFF_SIZE 100
+
+typedef struct	s_sarray
+{
+	char			arr[GT_BUFF_SIZE];
+	unsigned int	it;
+	unsigned int	capacity;
+}				t_sarray;
 
 #endif
