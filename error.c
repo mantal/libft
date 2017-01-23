@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/22 19:04:53 by dlancar           #+#    #+#             */
-/*   Updated: 2016/12/20 18:23:10 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/01/23 18:26:33 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ int			ft_error(void)
 int			ft_error_msg(const char *msg, ...)
 {
 	va_list		ap;
-	
+
 	va_start(ap, msg);
 	ft_vprintf(msg, ap);
 	va_end(ap);
