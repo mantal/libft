@@ -6,23 +6,23 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/27 15:27:06 by dlancar           #+#    #+#             */
-/*   Updated: 2016/12/09 17:47:44 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/01/27 13:02:47 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_math.h"
 #include "libft.h"
 
-static char		*skip_white_space(const char *s)
+static const char	*skip_white_space(const char *s)
 {
 	while (s && ft_isspace(*s))
 		s++;
 	return (s);
 }
 
-static char		*skip_nul(const char *s)
+static const char	*skip_nul(const char *s)
 {
-	char	*str;
+	const char	*str;
 
 	str = s;
 	while (*str == '0')
@@ -30,7 +30,7 @@ static char		*skip_nul(const char *s)
 	return (str);
 }
 
-static size_t	get_size(const char *s)
+static size_t		get_size(const char *s)
 {
 	size_t	i;
 
@@ -44,12 +44,12 @@ static size_t	get_size(const char *s)
 ** TODO: CLEAN THIS SHIT
 */
 
-int				ft_atoi(const char *str)
+int					ft_atoi(const char *str)
 {
 	long long	result;
 	int			neg;
 	size_t		size;
-	char		*s;
+	const char	*s;
 
 	neg = 1;
 	result = 0;

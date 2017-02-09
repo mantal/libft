@@ -6,13 +6,13 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/27 16:38:06 by dlancar           #+#    #+#             */
-/*   Updated: 2017/01/23 12:54:11 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/01/27 13:05:35 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ftstring.h"
 
-char	*ft_strchr(const char *s, int c)
+const char	*ft_strchr(const char *s, int c)
 {
 	while (*s && *s != c)
 		s++;

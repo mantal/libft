@@ -6,15 +6,15 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/28 09:31:47 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/12 15:22:34 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/01/27 13:09:16 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ftstring.h"
 
-char	*ft_strchar(const char *s1, const char *s2)
+const char	*ft_strchar(const char *s1, const char *s2)
 {
-	char	*temp;
+	const char	*temp;
 
 	while (*s2)
 	{

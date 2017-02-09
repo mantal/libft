@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/12 15:13:48 by dlancar           #+#    #+#             */
-/*   Updated: 2017/01/23 12:59:15 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/01/27 13:07:16 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@
 
 char			*ft_strcat(char *s1, const char *s2);
 
-char			*ft_strchr(const char *s, int c);
-char			*ft_strnchr(const char *s, int c, size_t n);
-char			*ft_strrchr(const char *s, int c);
-char			*ft_strstr(const char *s1, const char *s2);
-char			*ft_strnstr(const char *s1, const char *s2, size_t n);
-char			*ft_strcharstr(const char *s1, const char *s2);
-char			*ft_strchar(const char *s1, const char *s2);
+const char		*ft_strchr(const char *s, int c);
+const char		*ft_strnchr(const char *s, int c, size_t n);
+const char		*ft_strrchr(const char *s, int c);
+const char		*ft_strstr(const char *s1, const char *s2);
+const char		*ft_strnstr(const char *s1, const char *s2, size_t n);
+const char		*ft_strcharstr(const char *s1, const char *s2);
+const char		*ft_strchar(const char *s1, const char *s2);
 
 size_t			ft_strclen(const char *s, char c);
 size_t			ft_strlen(const char *s);
@@ -62,7 +62,7 @@ char			*ft_strtrim(const char *s);
 t_array			*ft_strsplit(const char *s, char c);
 t_array			*ft_strsplitstr(const char *s, const char *s1);
 
-char			*ft_strnstr(const char *s1, const char *s2, size_t n);
+const char		*ft_strnstr(const char *s1, const char *s2, size_t n);
 
 char			*ft_strmerge(const char **s);
 

@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 16:15:49 by dlancar           #+#    #+#             */
-/*   Updated: 2016/12/22 17:57:53 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/01/27 13:05:12 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ extern bool		g_malloc_use;
 void			ft_bzero(void *s, size_t n);
 void			*ft_malloc(size_t size);
 void			*ft_memccpy(void *s1, const void *s2, int c, size_t n);
-void			*ft_memchr(const void *s, int c, size_t n);
+const void		*ft_memchr(const void *s, int c, size_t n);
 int				ft_memcmp(const void *s1, const void *s2, size_t n);
 void			*ft_memcpy(void *s1, const void *s2, size_t n);
 void			*ft_memmove(void *s1, const void *s2, size_t n);

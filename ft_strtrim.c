@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/25 09:48:45 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/12 15:53:05 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/01/27 13:08:49 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ static bool	is_useless(char c)
 
 char		*ft_strtrim(const char *s)
 {
-	char		*temp;
+	const char		*temp;
 
 	while (is_useless(*s))
 		s++;

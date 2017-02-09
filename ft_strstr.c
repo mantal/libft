@@ -6,13 +6,13 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/28 15:08:44 by dlancar           #+#    #+#             */
-/*   Updated: 2016/12/08 15:33:54 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/01/27 13:07:44 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ftstring.h"
 
-char	*ft_strstr(const char *s1, const char *s2)
+const char	*ft_strstr(const char *s1, const char *s2)
 {
 	const char	*temp;
 
