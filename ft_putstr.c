@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/27 16:38:06 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/09 17:08:16 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/02/09 13:08:40 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,5 +14,5 @@
 
 void	ft_putstr(const char *s)
 {
-	ft_putstr_fd(STDOUT, s);
+	ft_putstr_fd(STDOUT_FILENO, s);
 }

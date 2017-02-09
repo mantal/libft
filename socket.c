@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/19 16:43:03 by dlancar           #+#    #+#             */
-/*   Updated: 2016/01/20 18:06:09 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/02/09 13:10:07 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ t_socket	*socket_create(void)
 		socket_init_fd(&(res->fds[i++]));
 	res->fds[res->fd].type = SOC_SERVER;
 	res->fds[res->fd].on_read = g_default_accept;
-	res->fds[STDIN].type = SOC_LOCAL;
-	res->fds[STDOUT].type = SOC_LOCAL;
-	res->fds[STDERR].type = SOC_LOCAL;
+	res->fds[STDIN_FILENO].type = SOC_LOCAL;
+	res->fds[STDOUT_FILENO].type = SOC_LOCAL;
+	res->fds[STDERR_FILENO].type = SOC_LOCAL;
 	return (res);
 }
 

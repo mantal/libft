@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 16:56:18 by dlancar           #+#    #+#             */
-/*   Updated: 2017/01/23 18:26:01 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/02/09 13:08:26 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,7 @@
 # include <stdbool.h>
 # include <stdarg.h>
 # include <stddef.h>
-
-# define STDIN  STDIN_FILENO
-# define STDOUT STDOUT_FILENO
-# define STDERR STDERR_FILENO
+# include <unistd.h>
 
 # ifndef STDIN_FILENO
 #  define STDIN_FILENO 0
