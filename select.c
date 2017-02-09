@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/19 16:42:43 by dlancar           #+#    #+#             */
-/*   Updated: 2017/02/09 13:06:03 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/02/09 14:14:43 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,18 +42,20 @@ void		socket_select(t_socket *soc)
 
 	FD_ZERO(&(soc->fd_read));
 	FD_ZERO(&(soc->fd_write));
-	i = -1;
+	i = 0;
 	soc->nfds = 0;
-	while (++i < soc->fds_size)
+	while (i < soc->fds_size)
 	{
 		if (soc->fds[i].type != SOC_FREE && i != STDOUT_FILENO)
 		{
 			FD_SET(i, &(soc->fd_read));
 			soc->nfds = i > soc->nfds ? i : soc->nfds;
 		}
+		i++;
 	}
 	r = select(soc->nfds + 1, &soc->fd_read, &soc->fd_write, NULL, NULL);
-	if (r < 0)
-		;
-	select_update(soc, r);
+	if (r == -1)
+		ft_error();
+	else
+		select_update(soc, r);
 }
