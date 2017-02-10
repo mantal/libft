@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 16:15:49 by dlancar           #+#    #+#             */
-/*   Updated: 2017/01/27 13:05:12 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/02/10 19:11:52 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,16 @@ void			*array_get(const t_array *arr, size_t index);
 void			*array_prev(t_array *arr);
 void			*array_next(t_array *arr);
 void			array_free(t_array *arr);
+
+
+typedef struct	s_pair
+{
+	void	*a;
+	void	*b;
+}				t_pair;
+
+t_pair			*pair_new(void *a, void *b);
+t_pair			*pair_set(t_pair *pair, void *a, void *b);
 
 int				ft_atoi(const char *str);
 char			*ft_itoa(int n);
