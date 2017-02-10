@@ -48,6 +48,18 @@ void			*array_prev(t_array *arr);
 void			*array_next(t_array *arr);
 void			array_free(t_array *arr);
 
+typedef struct	s_map
+{
+	t_array	arr;
+}				t_map;
+
+t_map			*map_new(void);
+t_map			*map_init(t_map *map);
+t_map			*map_set(t_map *map, const char *key, void *value);
+t_map			*map_insert(t_map *map, const char *key, void *value);
+t_map			*map_remove(t_map *map, const char *key);
+void			*map_get(t_map *map, const char *key);
+void			map_free(t_map *map);
 
 typedef struct	s_pair
 {
