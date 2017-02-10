@@ -52,7 +52,9 @@ SRC		= ft_bzero.c ft_memset.c ft_memcpy.c ft_memccpy.c ft_memmove.c 		\
 																			\
 			io.c malloc_.c realloc_.c free_.c mem.c							\
 																			\
-			args.c
+			args.c															\
+																			\
+			command.c
 
 OBJ		= $(SRC:.c=.o)
 CFLAGS	= -Wall -Wextra -Weverything -std=c11 -g3 -O0 \
