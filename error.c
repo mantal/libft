@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/22 19:04:53 by dlancar           #+#    #+#             */
-/*   Updated: 2017/02/09 13:09:41 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/02/13 12:56:33 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,9 @@ int			ft_perror(void)
 		errno = 0;
 	ft_printf_fd(STDERR_FILENO, "Error : %s.\n", sys_errlist[errno]);
 	return (0);
+}
+
+const char	*ft_strerror(int errnum)
+{
+	return (sys_errlist[errnum]);
 }
