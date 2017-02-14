@@ -6,11 +6,11 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/14 12:07:51 by dlancar           #+#    #+#             */
-/*   Updated: 2017/02/09 19:07:00 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/02/14 16:23:24 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "command.h"
+#include "ftcommand.h"
 #include "libft.h"
 #include "ftstring.h"
 #include "ftio.h"
