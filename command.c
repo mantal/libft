@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/14 12:07:51 by dlancar           #+#    #+#             */
-/*   Updated: 2017/02/17 15:44:39 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/02/17 16:13:45 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ int				command_execute(const t_command *commands, const char *cmd,
 	const t_command	*command;
 
 	args = ft_strsplit(cmd, ' ');
+	if (!args || args->size == 0)
+		return (-1);
 	command = command_get(commands, *(char **)array_get(args, 0));
 	if (command == NULL)
 		return (-1);
