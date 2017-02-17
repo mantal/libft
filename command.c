@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/14 12:07:51 by dlancar           #+#    #+#             */
-/*   Updated: 2017/02/14 16:23:24 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/02/17 15:44:39 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int				command_execute(const t_command *commands, const char *cmd,
 	if (command == NULL)
 		return (-1);
 	if ((int)args->size - 1 < command->args_min
-		|| (int)args->size - 1 > command->args_max)
+		|| ((int)args->size - 1 > command->args_max && command->args_max >= 0))
 	{
 		command_print_usage(command);
 		return (-1);
