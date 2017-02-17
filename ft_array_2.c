@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/20 17:16:54 by dlancar           #+#    #+#             */
-/*   Updated: 2016/12/08 14:54:14 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/02/17 12:50:53 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,7 @@
 
 t_array	*array_set(t_array *arr, void *value, size_t index)
 {
-	if (arr->flags & PTR)
-		ft_memcpy((arr->tab + (index * arr->size_type)), &value,
-					arr->size_type);
-	else
-		ft_memcpy((arr->tab + (index * arr->size_type)), value, arr->size_type);
+	ft_memcpy((arr->tab + (index * arr->size_type)), value, arr->size_type);
 	return (arr);
 }
 

@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 16:15:49 by dlancar           #+#    #+#             */
-/*   Updated: 2017/02/10 19:11:52 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/02/17 12:51:13 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 # include <stdarg.h>
 # include <stdbool.h>
 # include <stddef.h>
-
-# define PTR  2
 
 # define BUFF_SIZE 32
 

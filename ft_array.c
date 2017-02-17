@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/17 12:42:35 by dlancar           #+#    #+#             */
-/*   Updated: 2016/12/09 17:47:22 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/02/17 12:54:15 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,12 +37,8 @@ t_array	*array_add(t_array *arr, const void *value)
 {
 	if (arr->capacity == arr->size)
 		array_resize(arr);
-	if (arr->flags & PTR)
-		ft_memcpy((arr->tab + (arr->size * arr->size_type)),
-				&value, arr->size_type);
-	else
-		ft_memcpy((arr->tab + (arr->size * arr->size_type)),
-				value, arr->size_type);
+	ft_memcpy((arr->tab + (arr->size * arr->size_type)),
+			value, arr->size_type);
 	arr->size++;
 	return (arr);
 }
