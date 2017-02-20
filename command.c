@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/10/14 12:07:51 by dlancar           #+#    #+#             */
-/*   Updated: 2017/02/17 16:13:45 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/02/20 16:01:55 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int				command_execute(const t_command *commands, const char *cmd,
 {
 	t_array			*args;
 	const t_command	*command;
+	int				r;
 
 	args = ft_strsplit(cmd, ' ');
 	if (!args || args->size == 0)
@@ -52,5 +53,7 @@ int				command_execute(const t_command *commands, const char *cmd,
 		command_print_usage(command);
 		return (-1);
 	}
-	return (command->exec(args, data));
+	r = command->exec(args, data);
+	array_free(args);
+	return (r);
 }
