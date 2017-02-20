@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/07 16:56:09 by dlancar           #+#    #+#             */
-/*   Updated: 2016/12/22 18:25:15 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/02/20 17:18:18 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 t_array		*array_clear(t_array *arr)
 {
+	if (arr->flags & ARR_FREE_ON_CLEAR)
+		array_free_content(arr);
 	ft_bzero(arr->tab, arr->size * arr->size_type);
 	arr->size = 0;
 	arr->it = 0;
@@ -43,4 +45,19 @@ void		*array_prev(t_array *arr)
 		return (arr->tab + (arr->size_type * (arr->it)));
 	}
 	return (NULL);
+}
+
+t_array		*array_free_content(t_array *arr)
+{
+	void	*tmp;
+
+	arr->it = 0;
+	while (arr->it < arr->size)
+	{
+		tmp = array_get(arr, arr->it);
+		if (tmp)
+			free(*(char **)tmp);
+		arr->it++;
+	}
+	return (arr);
 }

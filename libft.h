@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 16:15:49 by dlancar           #+#    #+#             */
-/*   Updated: 2017/02/17 12:51:13 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/02/20 17:01:59 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,9 @@
 # define BUFF_SIZE 32
 
 typedef unsigned int	t_flags;
+
+# define ARR_FREE_CONTENT  2
+# define ARR_FREE_ON_CLEAR 4
 
 typedef struct	s_array
 {
@@ -44,6 +47,7 @@ t_array			*array_resize(t_array *arr);
 void			*array_get(const t_array *arr, size_t index);
 void			*array_prev(t_array *arr);
 void			*array_next(t_array *arr);
+t_array			*array_free_content(t_array *arr);
 void			array_free(t_array *arr);
 
 typedef struct	s_map

@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/17 12:42:35 by dlancar           #+#    #+#             */
-/*   Updated: 2017/02/17 12:54:15 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/02/20 17:14:30 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,6 +79,8 @@ t_array	*array_resize(t_array *arr)
 
 void	array_free(t_array *arr)
 {
+	if (arr->flags & ARR_FREE_CONTENT)
+		array_free_content(arr);
 	free(arr->tab);
 	free(arr);
 }
