@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/12 15:13:48 by dlancar           #+#    #+#             */
-/*   Updated: 2017/01/27 13:07:16 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/02/21 14:49:08 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,7 @@ char			*ft_strjoin(const char *s1, const char *s2);
 char			*ft_strjoinf(char *s1, char *s2, t_flags flag);
 char			*ft_strnjoin(const char *s1, const char *s2, size_t n);
 char			*ft_strnjoinf(char *s1, char *s2, size_t n, t_flags flag);
+char			*ft_strjoina(const char **s);
 
 char			*ft_strncat(char *s1, const char *s2, size_t n);
 size_t			ft_strlcat(char *dst, const char *src, size_t size);
