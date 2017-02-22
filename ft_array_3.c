@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/02/07 16:56:09 by dlancar           #+#    #+#             */
-/*   Updated: 2017/02/20 17:18:18 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/02/22 14:33:41 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,20 @@ t_array		*array_free_content(t_array *arr)
 		if (tmp)
 			free(*(char **)tmp);
 		arr->it++;
+	}
+	return (arr);
+}
+
+t_array		*array_add_range(t_array *arr, void *values, size_t n)
+{
+	size_t	i;
+
+	i = 0;
+	while (i < n)
+	{
+		if (array_add(arr, values + i * arr->size_type) == NULL)
+			return (NULL);
+		i++;
 	}
 	return (arr);
 }
