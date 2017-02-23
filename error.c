@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/22 19:04:53 by dlancar           #+#    #+#             */
-/*   Updated: 2017/02/13 12:56:33 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/02/23 12:20:44 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,24 @@ int			ft_error(void)
 
 int			ft_error_msg(const char *msg, ...)
 {
-	va_list		ap;
+	va_list	ap;
 
 	va_start(ap, msg);
 	ft_vprintf(msg, ap);
+	va_end(ap);
+	if (g_error_flags & ERR_EXIT)
+		exit(EXIT_FAILURE);
+	if (g_error_flags & ERR_FORCE_CRASH)
+		__builtin_trap();
+	return (0);
+}
+
+int			ft_derror(int fd, const char *msg, ...)
+{
+	va_list	ap;
+
+	va_start(ap, msg);
+	ft_vprintf_fd(fd, msg == NULL ? ft_strerror(errno) : msg, ap);
 	va_end(ap);
 	if (g_error_flags & ERR_EXIT)
 		exit(EXIT_FAILURE);
