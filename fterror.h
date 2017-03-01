@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/17 15:14:37 by dlancar           #+#    #+#             */
-/*   Updated: 2017/02/23 12:21:02 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/02/24 12:13:52 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define FTERROR_H
 
 # include "libft.h"
+# include <errno.h>
 
 # define ERR_DISP_NONE		1
 # define ERR_DISP_PERROR	2
@@ -25,7 +26,6 @@ extern t_flags	g_error_flags;
 
 int			ft_error(void);
 int			ft_error_msg(const char *msg, ...);
-int			ft_perror(void);
 const char	*ft_strerror(int errnum);
 int			ft_derror(int fd, const char *msg, ...);
 
