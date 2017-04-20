@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 16:15:49 by dlancar           #+#    #+#             */
-/*   Updated: 2017/02/22 14:24:20 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/04/20 14:48:26 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -103,6 +103,7 @@ size_t			count_digit(unsigned int n);
 size_t			count_digit_base(unsigned int n, unsigned int base);
 
 char			*get_env(const char *name);
+void			env_set(const char *key, const char *value);
 char			*get_path(int index);
 
 #endif

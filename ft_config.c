@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/26 17:56:57 by dlancar           #+#    #+#             */
-/*   Updated: 2016/12/08 14:31:55 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/04/20 14:59:32 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,40 @@ char	*get_env(const char *name)
 	size = ft_strlen(name);
 	while (environ[i])
 	{
-		if (ft_strcmp(environ[i], name) == 61)
+		if (ft_strcmp(environ[i], name) == '=')
 			return (environ[i] + size + 1);
 		i++;
 	}
 	return (NULL);
+}
+
+void	env_set(const char *key, const char *value)
+{
+	extern char	**environ;
+	t_array		arr;
+	int			i;
+	const char	*tmp = get_env(key);
+
+	if (tmp == NULL)
+	{
+		array_init(&arr, sizeof(char *), 0);
+		while (environ[arr.it] != NULL)
+		{
+			array_add(&arr, &environ[arr.it]);
+			arr.it++;
+		}
+		array_add(&arr, (char *[]) {
+					ft_strjoina((const char *[]) { key, "=", value, NULL }) });
+		environ = arr.tab;
+		return ;
+	}
+	i = 0;
+	while (environ[i] != NULL)
+	{
+		if (ft_strcmp(environ[i], key) == '=')
+			environ[i] = ft_strjoina((const char*[]) { key, "=", value, NULL });
+		i++;
+	}
 }
 
 char	*get_path(int index)
