@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/26 17:56:57 by dlancar           #+#    #+#             */
-/*   Updated: 2017/04/20 17:11:43 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/04/20 17:29:19 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,18 +61,16 @@ void	env_set(const char *key, const char *value)
 	}
 }
 
-char	*get_path(int index)
+char	*get_path(unsigned int index)
 {
-	static t_array	*path = NULL;
+	t_array	*path;
+	char	*s;
 
-	if (!path)
-		path = ft_strsplit(get_env("PATH"), ':');
-	if (index < 0)
-	{
-		array_free(path);
+	s = get_env("PATH");
+	if (s == NULL)
 		return (NULL);
-	}
-	if ((unsigned int)index >= path->size)
+	path = ft_strsplit(s, ':');
+	if ((size_t)index >= path->size)
 		return (NULL);
 	return (*(char **)array_get(path, index));
 }
