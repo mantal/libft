@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/26 17:56:57 by dlancar           #+#    #+#             */
-/*   Updated: 2017/04/20 17:29:19 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/04/20 17:29:52 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,6 +59,28 @@ void	env_set(const char *key, const char *value)
 			environ[i] = ft_strjoina((const char*[]) { key, "=", value, NULL });
 		i++;
 	}
+}
+
+/*
+** TODO fix leaks
+*/
+
+void	env_remove(const char *key)
+{
+	extern char	**environ;
+	t_array		arr;
+	const char	*target = get_env(key);
+
+	if (target == NULL)
+		return ;
+	array_init(&arr, sizeof(char *), 0);
+	while (environ[arr.it] != NULL)
+	{
+		if (environ[arr.it] != target)
+			array_add(&arr, &environ[arr.it]);
+		arr.it++;
+	}
+	environ = arr.tab;
 }
 
 char	*get_path(unsigned int index)

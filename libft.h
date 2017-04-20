@@ -104,6 +104,7 @@ size_t			count_digit_base(unsigned int n, unsigned int base);
 
 char			*get_env(const char *name);
 void			env_set(const char *key, const char *value);
+void			env_remove(const char *key);
 char			*get_path(unsigned int index);
 
 #endif
