@@ -6,13 +6,12 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/25 13:55:46 by dlancar           #+#    #+#             */
-/*   Updated: 2016/12/07 17:17:14 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/04/20 15:19:40 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_math.h"
+#include "ftmath.h"
 #include "libft.h"
-
 #include <stdint.h>
 
 static int64_t	get(int64_t n)

@@ -6,12 +6,11 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/27 16:01:19 by dlancar           #+#    #+#             */
-/*   Updated: 2015/10/19 13:41:21 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/04/20 15:20:51 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cbuffer.h"
-#include "net.h"
+#include "ftnet.h"
 
 void		socket_init_fd(t_fd *fd)
 {

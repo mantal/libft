@@ -6,14 +6,14 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/19 16:42:43 by dlancar           #+#    #+#             */
-/*   Updated: 2017/02/14 15:27:43 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/04/20 15:21:11 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fterror.h"
 #include "ftio.h"
 #include "libft.h"
-#include "net.h"
+#include "ftnet.h"
 
 #include <sys/select.h>
 #include <sys/resource.h>

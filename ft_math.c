@@ -6,11 +6,11 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/12/12 16:59:08 by dlancar           #+#    #+#             */
-/*   Updated: 2016/12/08 15:20:07 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/04/20 15:19:50 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_math.h"
+#include "ftmath.h"
 
 int				ft_pow(int a, unsigned int n)
 {

@@ -6,11 +6,11 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/04 16:30:54 by dlancar           #+#    #+#             */
-/*   Updated: 2016/12/08 14:53:06 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/04/20 15:20:31 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_math.h"
+#include "ftmath.h"
 
 void	set_vec2d(t_vec2d *vec, double x, double y)
 {

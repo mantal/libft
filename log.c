@@ -6,12 +6,12 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/12/01 17:21:57 by dlancar           #+#    #+#             */
-/*   Updated: 2016/12/01 17:40:47 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/04/18 17:13:18 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ftio.h"
-#include "term.h"
+#include "ftterm.h"
 #include <stdarg.h>
 
 int		g_ftio_logsfd = STDERR_FILENO;

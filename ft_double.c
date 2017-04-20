@@ -6,11 +6,11 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/01/03 17:53:06 by dlancar           #+#    #+#             */
-/*   Updated: 2016/12/08 15:18:11 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/04/20 15:20:17 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_math.h"
+#include "ftmath.h"
 
 int		ft_round(double d)
 {

@@ -6,13 +6,13 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/19 16:43:03 by dlancar           #+#    #+#             */
-/*   Updated: 2017/02/09 13:10:07 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/04/20 15:20:40 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fterror.h"
 #include "ftio.h"
-#include "net.h"
+#include "ftnet.h"
 
 #include <stdlib.h>
 #include <sys/socket.h>

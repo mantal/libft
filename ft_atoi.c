@@ -6,11 +6,11 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2013/11/27 15:27:06 by dlancar           #+#    #+#             */
-/*   Updated: 2017/01/27 13:02:47 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/04/20 15:18:45 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_math.h"
+#include "ftmath.h"
 #include "libft.h"
 
 static const char	*skip_white_space(const char *s)

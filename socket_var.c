@@ -6,11 +6,11 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/03/26 16:39:40 by dlancar           #+#    #+#             */
-/*   Updated: 2015/10/12 16:31:38 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/04/20 15:20:58 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "net.h"
+#include "ftnet.h"
 
 void		socket_set_default_accept(int (*def_accept)(t_socket *, int))
 {
