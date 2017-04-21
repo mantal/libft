@@ -6,7 +6,7 @@
 /*   By: dlancar <dlancar@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/01/09 16:56:18 by dlancar           #+#    #+#             */
-/*   Updated: 2017/02/09 13:08:26 by dlancar          ###   ########.fr       */
+/*   Updated: 2017/04/21 15:47:04 by dlancar          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,10 @@
 # ifndef STDERR_FILENO
 #  define STDERR_FILENO 2
 # endif
+
+# define STDIN  STDIN_FILENO
+# define STDOUT STDOUT_FILENO
+# define STDERR STDERR_FILENO
 
 void			ft_putchar(char c);
 void			ft_putchar_fd(int fd, char c);
@@ -97,5 +101,13 @@ typedef struct	s_sarray
 	unsigned int	it;
 	unsigned int	capacity;
 }				t_sarray;
+
+extern char		*g_path_root;
+
+bool			path_is_valid(const char *path);
+bool			path_is_valid_dir(const char *path);
+char			*path_to_absolute(const char *path);
+char			*path_join(const char *p1, const char *p2);
+char			*path_sanitize(const char *path);
 
 #endif

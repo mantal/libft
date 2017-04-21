@@ -45,7 +45,7 @@ SRC		= ft_bzero.c ft_memset.c ft_memcpy.c ft_memccpy.c ft_memmove.c 		\
 																			\
 			count_digit.c													\
 																			\
-			ft_config.c														\
+			ft_config.c path.c path_2.c										\
 																			\
 			socket.c socket_utils.c socket_var.c select.c					\
 																			\
